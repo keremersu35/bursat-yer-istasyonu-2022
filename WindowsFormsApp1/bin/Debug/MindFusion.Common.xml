@@ -1,0 +1,3720 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MindFusion.Common</name>
+    </assembly>
+    <members>
+        <member name="T:MindFusion.Drawing.Pen">
+            <summary>
+            A wrapper for the System.Drawing.Pen class.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.GraphicObject">
+            <summary>
+            The base class for graphical objects such as pens and brushes.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.GraphicObject.GetHashCode">
+            <summary>
+            Returns a hash code for this object.
+            </summary>
+            <returns>
+            A hash code for this object.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.GraphicObject.Equals(System.Object)">
+            <summary>
+            Determines whether two GraphicObject instances are equal.
+            </summary>
+            <param name="obj">
+            The object to compare to this one.
+            </param>
+            <returns>
+            true is the objects are equal; otherwise false.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.GraphicObject.Clone">
+            <summary>
+            Creates an exact copy of the graphic object.
+            </summary>
+            <returns>
+            A copy of this object.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.GraphicObject.Store">
+            <summary>
+            When overriden in a derived class,
+            serializes the object into a string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.GraphicObject.Restore(System.String)">
+            <summary>
+            When overriden in a derived class,
+            deserializes the object from a string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.GraphicObject.Serialize(MindFusion.Drawing.GraphicObject)">
+            <summary>
+            Serializes the specified object to a string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.GraphicObject.Deserialize(System.String)">
+            <summary>
+            Creates and returns a new graphics object
+            given its string representation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Pen.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.Pen class
+            given its string representation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Pen.#ctor(MindFusion.Drawing.Brush)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.Pen class
+            with a specified MindFusion.Drawing.Brush object.
+            </summary>
+            <param name="brush">
+            The brush used to paint lines drawn with this pen.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.Pen.#ctor(System.Drawing.Color)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.Pen class
+            with the specified color.
+            </summary>
+            <param name="color">
+            Specifies the pen color.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.Pen.#ctor(MindFusion.Drawing.Brush,System.Single)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.Pen class
+            with the specified MindFusion.Drawing.Brush object and
+            the specified width.
+            </summary>
+            <param name="brush">
+            The brush used to paint lines drawn by this pen.
+            </param>
+            <param name="width">
+            The width of lines drawn by this pen.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.Pen.#ctor(System.Drawing.Color,System.Single)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.Pen class
+            with the specified color and width.
+            </summary>
+            <param name="color">
+            The color of lines drawn by this pen.
+            </param>
+            <param name="width">
+            The width of lines drawn by this pen.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.Pen.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.Pen class
+            during deserialization.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Pen.Clone">
+            <summary>
+            Creates an exact copy of this MindFusion.Drawing.Pen.
+            </summary>
+            <returns>
+            A copy of this pen.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.Pen.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a System.Runtime.Serialization.SerializationInfo
+            with the data needed to serialize the pen.
+            </summary>
+            <param name="info">
+            The object that holds the serialized object data.
+            </param>
+            <param name="context">
+            The contextual information about the source or destination.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.Pen.Serialize(MindFusion.Drawing.Pen)">
+            <summary>
+            Serializes the specified pen to a string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Pen.Deserialize(System.String)">
+            <summary>
+            Creates and returns a new pen
+            given its string representation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Pen.ToString">
+            <summary>
+            Returns the string representation of this Pen object.
+            </summary>
+            <returns>
+            A string representing this pen.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.Pen.CreateGdiPen">
+            <summary>
+            Creates a System.Drawing.Pen object that can be used to draw
+            in a GDI+ Graphics object.
+            </summary>
+            <returns>
+            A System.Drawing.Pen instance corresponding to this pen.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.Pen.CreateGdiPen(System.Drawing.RectangleF)">
+            <summary>
+            Creates a System.Drawing.Pen object that can be used to draw
+            in a GDI+ Graphics object.
+            </summary>
+            <param name="rc">
+            The rectangle in which painting will be performed.
+            </param>
+            <returns>
+            A System.Drawing.Pen instance corresponding to this pen.
+            </returns>
+        </member>
+        <member name="P:MindFusion.Drawing.Pen.Brush">
+            <summary>
+            Gets or sets a Brush instance specifying attributes of this Pen object.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.Pen.Color">
+            <summary>
+            Gets or sets the color of this Pen object.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.Pen.CompoundArray">
+            <summary>
+            Gets or sets an array of values that specify a compound pen.
+            A compound pen draws a compound line made up of thinner parallel lines.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.Pen.DashStyle">
+            <summary>
+            Gets or sets the style used for drawing dashed lines.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.Pen.DashPattern">
+            <summary>
+            Gets or sets an array of custom dashes and spaces.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.Pen.DashOffset">
+            <summary>
+            Gets or sets the distance from the start of a line
+            to the beginning of the dash pattern.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.Pen.Width">
+            <summary>
+            Gets or sets the width of this pen.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.Pen.LineJoin">
+            <summary>
+            Gets or sets the join style for the ends of two
+            consecutive lines drawn with this Pen object.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.Pen.MiterLimit">
+            <summary>
+            Gets or sets the limit of the thickness of the join on a mitered corner.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.Pen.Alignment">
+            <summary>
+            Gets or sets the alignment for this System.Drawing.Pen.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.ImageAlign">
+            <summary>
+            Specifies the position and alignment of a picture in a box
+            or table, or that of the background image.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Drawing.ImageAlign.Center">
+            <summary>
+            The image is centered in the node or diagram.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Drawing.ImageAlign.Fit">
+            <summary>
+            The image is resized to fit the size of the object or
+            the component's client area.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Drawing.ImageAlign.Stretch">
+            <summary>
+            The image is stretched to fill the object or the component's
+            client area.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Drawing.ImageAlign.Tile">
+            <summary>
+            The image is tiled across the node or the component's area.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Drawing.ImageAlign.TopLeft">
+            <summary>
+            The image is aligned to the top left corner.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Drawing.ImageAlign.BottomLeft">
+            <summary>
+            The image is aligned to the bottom left corner.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Drawing.ImageAlign.TopRight">
+            <summary>
+            The image is aligned o the top right corner.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Drawing.ImageAlign.BottomRight">
+            <summary>
+            The image is aligned to the bottom right corner.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Drawing.ImageAlign.TopCenter">
+            <summary>
+            The image is centered horizontally and aligned to the top side.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Drawing.ImageAlign.BottomCenter">
+            <summary>
+            The image is centered horizontally and aligned to the bottom side.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Drawing.ImageAlign.MiddleLeft">
+            <summary>
+            The image is centered vertically and aligned to the left-hand side.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Drawing.ImageAlign.MiddleRight">
+            <summary>
+            The image is centered vertically and aligned to the right-hand side.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Drawing.Design.StringFormatEdit.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.StringFormatEdit.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.StringFormatEdit.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.SolidBrush">
+            <summary>
+            A wrapper for the System.Drawing.SolidBrush class.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.Brush">
+            <summary>
+            The base class for brushes, used to fill geometrical shapes.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Brush.Serialize(MindFusion.Drawing.Brush)">
+            <summary>
+            Serializes the specified brush to a string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Brush.Deserialize(System.String)">
+            <summary>
+            Creates and returns a new brush
+            given its string representation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Brush.CreateGdiBrush(System.Drawing.RectangleF)">
+            <summary>
+            Returns an instance of a System.Drawing.Brush -derived class 
+            that can be used to paint in a GDI+ Graphics object.
+            </summary>
+            <param name="rc">
+            The rectangle in which painting will be performed.
+            </param>
+            <returns>
+            A System.Drawing.Brush instance corresponding to this brush.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.Brush.CreateGdiBrush(System.Drawing.RectangleF,System.Single,System.Single)">
+            <summary>
+            Returns an instance of a System.Drawing.Brush -derived class 
+            that can be used to paint in a GDI+ Graphics object. The specified
+            offset is used for texture or pattern brushes whose contents
+            must scroll with the rest of the drawn image.
+            </summary>
+            <param name="rc">
+            The rectangle in which painting will be performed.
+            </param>
+            <param name="dx">
+            Specifies a horizontal offset to apply to this brush.
+            </param>
+            <param name="dy">
+            Specifies a vertical offset to apply to this brush.
+            </param>
+            <returns>
+            A System.Drawing.Brush instance corresponding to this brush.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.SolidBrush.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.SolidBrush class
+            given its string representation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.SolidBrush.#ctor(System.Drawing.Color)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.SolidBrush class
+            with the specified color.
+            </summary>
+            <param name="color">
+            Specifies the color painted by this brush.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.SolidBrush.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.SolidBrush class
+            during deserialization.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.SolidBrush.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a System.Runtime.Serialization.SerializationInfo
+            with the data needed to serialize the brush.
+            </summary>
+            <param name="info">
+            The object that holds the serialized object data.
+            </param>
+            <param name="context">
+            The contextual information about the source or destination.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.SolidBrush.Clone">
+            <summary>
+            Creates an exact copy of this MindFusion.Drawing.SolidBrush.
+            </summary>
+            <returns>
+            A copy of this object.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.SolidBrush.ToString">
+            <summary>
+            Returns "Solid".
+            </summary>
+            <returns>
+            A string representing this brush.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.SolidBrush.CreateGdiBrush(System.Drawing.RectangleF)">
+            <summary>
+            Creates a System.Drawing.SolidBrush instance that can be used
+            to paint in a GDI+ Graphics object.
+            </summary>
+            <param name="rc">
+            The rectangle in which painting will be performed.
+            </param>
+            <returns>
+            A System.Drawing.Brush instance corresponding to this brush.
+            </returns>
+        </member>
+        <member name="P:MindFusion.Drawing.SolidBrush.Color">
+            <summary>
+            Gets or sets the color of this brush.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.Design.PenEdit">
+            <summary>
+            MindFusion.Drawing.Pen editing form.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.PenEdit.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.PenEdit.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Text.Layout">
+            <summary>
+            Layouts text in the interior of various shapes.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Layout.#ctor">
+            <summary>
+            Initializes a new instance of the Layout class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Layout.LayoutInRectangle(MindFusion.Text.Text,System.Drawing.RectangleF,MindFusion.Text.LayoutOptions,MindFusion.Drawing.IGraphics,System.Drawing.Font)">
+            <summary>
+            Layouts the specified text in the specified rectangle.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Layout.LayoutInEllipse(MindFusion.Text.Text,System.Drawing.RectangleF,MindFusion.Text.LayoutOptions,MindFusion.Drawing.IGraphics,System.Drawing.Font)">
+            <summary>
+            Layouts the specified text in the specified ellipse.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Layout.LayoutInPolygon(MindFusion.Text.Text,System.Drawing.PointF[],MindFusion.Text.LayoutOptions,MindFusion.Drawing.IGraphics,System.Drawing.Font)">
+            <summary>
+            Layouts the specified text in the specified polygon.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Layout.GetBounds(System.Single,System.Single,MindFusion.Text.DrawTextHint)">
+            <summary>
+            Returns the bounding rectangle of a previously laid-out text.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Layout.Draw(System.Single,System.Single,MindFusion.Text.RenderTextCallback,MindFusion.Text.DrawTextHint)">
+            <summary>
+            Draws a previously laid-out text with the specified offset.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Layout.GetHLines(System.Int32)">
+            <summary>
+            Returns the appropriate h-lines collection
+            depending on the line alignment and the total
+            number of lines.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Layout.FirstLine(System.Int32)">
+            <summary>
+            Returns the index of the first h-line depending
+            on the line alignment and the total number of lines.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Layout.FitTextInRect(System.Int32,System.Drawing.RectangleF,MindFusion.Drawing.IGraphics,System.Drawing.Font,System.Boolean@,System.Int32@,System.Boolean@)">
+            <summary>
+            Tries to fit as many words from the source text
+            as possible in the specified rectangle, starting
+            from the word with the specified index.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Layout.BuildLine(System.Single)">
+            <summary>
+            Creates single h-line at the specified vertical offset.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Layout.BuildLines">
+            <summary>
+            Finds all h-lines which could fit in the specified
+            area depending on the current layout settings.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Layout.PolygonIntersect(System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Calculates all intersections between the internal
+            polygon and the line segment defined by pt1 and pt2.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Text.RenderTextCallback">
+            <summary>
+            Delegate used by the layouting object when the text needs to be drawn.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Json.JsonContext">
+            <summary>
+            Contains methods that can help you serialize and deserialize to and from JSON.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.#ctor">
+            <summary>
+            Initializes a new instance of the JsonContext class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadObject(MindFusion.Json.JsonValue)">
+            <summary>
+            Reads an object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadPointF(MindFusion.Json.JsonValue)">
+            <summary>
+            Reads a PointF object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadPointString(MindFusion.Json.JsonValue)">
+            <summary>
+            Reads a Point string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadSizeF(MindFusion.Json.JsonValue)">
+            <summary>
+            Reads a SizeF object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadRectangleF(MindFusion.Json.JsonValue)">
+            <summary>
+            Reads a RectangleF object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadEnum(MindFusion.Json.JsonValue)">
+            <summary>
+            Reads an enum value.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadColor(MindFusion.Json.JsonValue)">
+            <summary>
+            Reads a color.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadColor(MindFusion.Json.JsonValue,System.Drawing.Color)">
+            <summary>
+            Reads a color.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadPen(MindFusion.Json.JsonValue)">
+            <summary>
+            Reads a MindFusion.Drawing.Pen object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadPen(MindFusion.Json.JsonValue,MindFusion.Drawing.Pen)">
+            <summary>
+            Reads a MindFusion.Drawing.Pen object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadColorBlend(MindFusion.Json.JsonValue)">
+            <summary>
+            Reads a ColorBlend object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadBrush(MindFusion.Json.JsonValue)">
+            <summary>
+            Reads a MindFusion.Drawing.Brush object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadBrush(MindFusion.Json.JsonValue,MindFusion.Drawing.Brush)">
+            <summary>
+            Reads a MindFusion.Drawing.Brush object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadBrushes(MindFusion.Json.JsonValue)">
+            <summary>
+            Reads all brushes.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadBrushColor(MindFusion.Json.JsonValue)">
+            <summary>
+            Reads a Brush object with the specified color.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadFont(MindFusion.Json.JsonObject)">
+            <summary>
+            Reads a Font object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadFont(MindFusion.Json.JsonObject,System.Drawing.Font)">
+            <summary>
+            Reads a Font object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadImage(MindFusion.Json.JsonValue)">
+            <summary>
+            Reads an Image object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadImages(MindFusion.Json.JsonValue)">
+            <summary>
+            Reads all images.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ReadStringFormat(MindFusion.Json.JsonValue)">
+            <summary>
+            Reads a StringFormat object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.WriteObject(System.Object)">
+            <summary>
+            Writes an object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.WritePointF(System.Drawing.PointF)">
+            <summary>
+            Writes a PointF object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.WritePointString(System.Collections.Generic.List{System.Drawing.PointF})">
+            <summary>
+            Writes a Point string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.WriteSizeF(System.Drawing.SizeF)">
+            <summary>
+            Writes a SizeF object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.WriteRectangleF(System.Drawing.RectangleF)">
+            <summary>
+            Writes a RectangleF object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.WriteBrush(MindFusion.Drawing.Brush)">
+            <summary>
+            Writes a MindFusion.Drawing.Brush object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.WriteBrushes">
+            <summary>
+            Writes all currently accumulated brushes.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.WriteBrushColor(MindFusion.Drawing.Brush)">
+            <summary>
+            Writes the color of the specified brush.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.WriteColorBlend(System.Drawing.Drawing2D.ColorBlend)">
+            <summary>
+            Writes a ColorBlend object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.WritePen(MindFusion.Drawing.Pen)">
+            <summary>
+            Writes a MindFusion.Drawing.Pen object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.WriteFont(System.Drawing.Font)">
+            <summary>
+            Writes a Font object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.WriteImage(System.Drawing.Image)">
+            <summary>
+            Writes an Image object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.WriteImages">
+            <summary>
+            Writes all currently accumulated images.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.WriteEnum(System.Object)">
+            <summary>
+            Writes an enum value.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.WriteColor(System.Drawing.Color)">
+            <summary>
+            Writes a Color object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.WriteStringFormat(System.Drawing.StringFormat)">
+            <summary>
+            Writes a StringFormat object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.Parse(System.String)">
+            <summary>
+            Deserializes the specified JSON formatted string to a JsonObject.
+            </summary>
+            <param name="json">
+            The JSON string.
+            </param>
+            <returns>
+            The deserialized JsonObject.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.Serialize(MindFusion.Json.JsonObject)">
+            <summary>
+            Serializes the specified JsonObject to a JSON formatted string.
+            </summary>
+            <param name="obj">
+            The JsonObject to serialize.
+            </param>
+            <returns>
+            The serialized string.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ToCamelCase(System.String)">
+            <summary>
+            Converts a string to Pascal case.
+            </summary>
+            <param name="text">Input string.</param>
+            <returns>The string in Pascal case</returns>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.ToPascalCase(System.String)">
+            <summary>
+            Converts a string to Camel case.
+            </summary>
+            <param name="text">Input string.</param>
+            <returns>The string in Camel case</returns>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.Base64Encode(System.String)">
+            <summary>
+            Encodes a string to Base64 representation.
+            </summary>
+            <param name="plainText">Input string.</param>
+            <returns>Base64 encoded string.</returns>
+        </member>
+        <member name="M:MindFusion.Json.JsonContext.Base64Decode(System.String)">
+            <summary>
+            Decodes a string from Base64 representation.
+            </summary>
+            <param name="base64EncodedData">Input base64 encoded string.</param>
+            <returns>The decoded string.</returns>
+        </member>
+        <member name="F:MindFusion.Json.JsonContext.inplaceResources">
+            <summary>
+            Specifies whether resource accumulation is disabled.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Json.JsonContext.inplaceImages">
+            <summary>
+            Specifies whether images are encoded in place.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Json.JsonContext.brushes">
+            <summary>
+            A list of all brushes.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Json.JsonContext.images">
+            <summary>
+            A list of all images.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Json.Serializer">
+            <summary>
+            Serializes objects to JSON format.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.Serializer.#ctor">
+            <summary>
+            Initializes a new instance of the Serializer class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.Serializer.Serialize(MindFusion.Json.JsonObject,MindFusion.Json.JsonContext)">
+            <summary>
+            Serializes the specified JsonObject.
+            </summary>
+            <param name="obj">
+            The JsonObject to serialize.
+            </param>
+            <param name="context">
+            An JsonContext object providing contextual information about
+            the serialization process and some helper serialization methods.
+            </param>
+        </member>
+        <member name="T:MindFusion.Json.Parser">
+            <summary>
+            Deserializes objects from a JSON-formatted string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.Parser.#ctor">
+            <summary>
+            Initializes a new instance of the Parser class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.Parser.ReadJsonObject(System.String,MindFusion.Json.JsonContext)">
+            <summary>
+            Deserializes a JsonObject from the specified JSON-formatted string.
+            </summary>
+            <param name="json">
+            The JSON-formatted string.
+            </param>
+            <param name="context">
+            An JsonContext object providing contextual information about
+            the serialization process and some helper serialization methods.
+            </param>
+        </member>
+        <member name="T:MindFusion.Json.JsonObject">
+            <summary>
+            Represents a dictionary of property names and values.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonObject.#ctor">
+            <summary>
+            Initializes a new instance of the JsonObject class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonObject.GetValue(System.String)">
+            <summary>
+            Returns the value associated with the specified key, 
+            or a default value if the key is not present in the dictionary.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonObject.GetValue(System.String,MindFusion.Json.JsonValue)">
+            <summary>
+            Returns the value associated with the specified key, 
+            or a default value if the key is not present in the dictionary.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonObject.FromDictionary``2(System.Collections.Generic.Dictionary{``0,``1})">
+            <summary>
+            Converts a generic dictionary to a JsonObject.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Json.JsonValue">
+            <summary>
+            Represents a property value.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the JsonValue class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Implicit(MindFusion.Json.JsonValue)~System.String">
+            <summary>
+            Converts the value to string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Implicit(System.String)~MindFusion.Json.JsonValue">
+            <summary>
+            Converts a string to JsonValue.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Implicit(MindFusion.Json.JsonValue)~System.Boolean">
+            <summary>
+            Converts the value to bool.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Implicit(System.Boolean)~MindFusion.Json.JsonValue">
+            <summary>
+            Converts a bool to JsonValue.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Implicit(MindFusion.Json.JsonValue)~System.Int64">
+            <summary>
+            Converts the value to long.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Implicit(System.Int64)~MindFusion.Json.JsonValue">
+            <summary>
+            Converts a long to JsonValue.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Implicit(MindFusion.Json.JsonValue)~System.Int32">
+            <summary>
+            Converts the value to int.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Implicit(System.Int32)~MindFusion.Json.JsonValue">
+            <summary>
+            Converts an int to JsonValue.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Implicit(MindFusion.Json.JsonValue)~System.Single">
+            <summary>
+            Converts the value to float.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Implicit(System.Single)~MindFusion.Json.JsonValue">
+            <summary>
+            Converts a float to JsonValue.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Implicit(MindFusion.Json.JsonValue)~System.Double">
+            <summary>
+            Converts the value to double.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Implicit(System.Double)~MindFusion.Json.JsonValue">
+            <summary>
+            Converts a double to JsonValue.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Implicit(MindFusion.Json.JsonValue)~System.Nullable{System.DateTime}">
+            <summary>
+            Converts the value to DateTime.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Implicit(System.DateTime)~MindFusion.Json.JsonValue">
+            <summary>
+            Converts a DateTime to JsonValue.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Implicit(MindFusion.Json.JsonValue)~MindFusion.Json.JsonObject">
+            <summary>
+            Converts the value to JsonObject.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Implicit(MindFusion.Json.JsonObject)~MindFusion.Json.JsonValue">
+            <summary>
+            Converts a JsonObject to JsonValue.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.ToArrayList">
+            <summary>
+            Converts the value to ArrayList.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.ToString">
+            <summary>
+            Object.ToString overload.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Equality(MindFusion.Json.JsonValue,MindFusion.Json.JsonValue)">
+            <summary>
+            Equality operator overload.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.op_Inequality(MindFusion.Json.JsonValue,MindFusion.Json.JsonValue)">
+            <summary>
+            Equality operator overload.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.Equals(System.Object)">
+            <summary>
+            Object.Equals overload.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.JsonValue.GetHashCode">
+            <summary>
+            Object.GetHashCode overload.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Json.JsonValue.Value">
+            <summary>
+            Gets the value.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Json.Converter">
+            <summary>
+            Provides capabilities to convert various types to and from strings
+            in a cutlure-independent way.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.Converter.#cctor">
+            <summary>
+            Static constructor.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.Converter.#ctor">
+            <summary>
+            Initializes a new instance of the Converter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Json.Converter.ToBoolean(System.String)">
+            <summary>
+            Converts the specified string value to bool.
+            </summary>
+            <param name="s">
+            The string value to convert from.
+            </param>
+            <returns>
+            A boolean value that is deserialized from the specified string.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.FromBoolean(System.Boolean)">
+            <summary>
+            Converts the specified bool value to string.
+            </summary>
+            <param name="val">
+            The value to convert.
+            </param>
+            <returns>
+            A string representing the specified value.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.ToSingle(System.String)">
+            <summary>
+            Converts the specified string value to float.
+            </summary>
+            <param name="s">
+            The string value to convert from.
+            </param>
+            <returns>
+            A float value that is deserialized from the specified string.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.FromSingle(System.Single)">
+            <summary>
+            Converts the specified float value to string.
+            </summary>
+            <param name="val">
+            The value to convert.
+            </param>
+            <returns>
+            A string representing the specified value.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.ToDouble(System.String)">
+            <summary>
+            Converts the specified string value to double.
+            </summary>
+            <param name="s">
+            The string value to convert from.
+            </param>
+            <returns>
+            A double value that is deserialized from the specified string.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.FromDouble(System.Double)">
+            <summary>
+            Converts the specified double value to string.
+            </summary>
+            <param name="val">
+            The value to convert.
+            </param>
+            <returns>
+            A string representing the specified value.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.ToInt32(System.String)">
+            <summary>
+            Converts the specified string value to 32-bit integer.
+            </summary>
+            <param name="s">
+            The string value to convert from.
+            </param>
+            <returns>
+            A 32-bit integer value that is deserialized from the specified string.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.FromInt32(System.Int32)">
+            <summary>
+            Converts the specified 32-bit integer value to string.
+            </summary>
+            <param name="val">
+            The value to convert.
+            </param>
+            <returns>
+            A string representing the specified value.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.ToInt64(System.String)">
+            <summary>
+            Converts the specified string value to 64-bit integer.
+            </summary>
+            <param name="s">
+            The string value to convert from.
+            </param>
+            <returns>
+            A 64-bit integer value that is deserialized from the specified string.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.FromInt64(System.Int64)">
+            <summary>
+            Converts the specified 64-bit integer to string.
+            </summary>
+            <param name="val">
+            The value to convert.
+            </param>
+            <returns>
+            A string representing the specified value.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.ToDateTime(System.String)">
+            <summary>
+            Converts the specified string value to DateTime.
+            </summary>
+            <param name="s">
+            The string value to convert from.
+            </param>
+            <returns>
+            A DateTime value that is deserialized from the specified string.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.ToColor(System.String)">
+            <summary>
+            Converts the specified string value to Color.
+            </summary>
+            <param name="s">
+            The string value to convert from.
+            </param>
+            <returns>
+            A Color value that is deserialized from the specified string.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.FromColor(System.Drawing.Color)">
+            <summary>
+            Converts the specified color value to string in the format #AARRGGBB.
+            </summary>
+            <param name="val">
+            The value to convert.
+            </param>
+            <returns>
+            A string representing the specified value.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.ToImage(System.String)">
+            <summary>
+            Converts the specified string value to image.
+            </summary>
+            <param name="s">
+            The string value to convert from.
+            </param>
+            <returns>
+            A Image object that is deserialized from the specified string.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.FromImage(System.Drawing.Image)">
+            <summary>
+            Converts the specified image to string.
+            </summary>
+            <param name="val">
+            The image object to convert.
+            </param>
+            <returns>
+            A string representing the specified value.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.ToBase64String(System.String)">
+            <summary>
+            Converts the specified string to a Base64String.
+            </summary>
+            <param name="plainText">
+            The string value to convert from.
+            </param>
+            <returns>
+            A Base64String.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.FromBase64String(System.String)">
+            <summary>
+            Converts the specified Base64String to a string.
+            </summary>
+            <param name="base64EncodedData">
+            The Base64String to convert.
+            </param>
+            <returns>
+            A string representing the specified value.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.ToPointString(System.Collections.Generic.List{System.Drawing.PointF})">
+            <summary>
+            Converts the list of PointF objects to a comma separated string.
+            </summary>
+            <param name="points">
+            The list of PointF objects to convert.
+            </param>
+            <returns>
+            A comma separated string.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Json.Converter.FromPointString(System.String)">
+            <summary>
+            Converts the specified comma separated string to a list of PointF objects.
+            </summary>
+            <param name="s">
+            The comma separated string.
+            </param>
+            <returns>
+            A list of PointF objects.
+            </returns>
+        </member>
+        <member name="T:MindFusion.ModifierKeyConverter">
+            <summary>
+            TypeConverter for modifier keys such as Control and Shift.
+            </summary>
+        </member>
+        <member name="M:MindFusion.ModifierKeyConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeConverter.CanConvertFrom override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.ModifierKeyConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            TypeConverter.ConvertFrom override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.ModifierKeyConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeConverter.CanConvertTo override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.ModifierKeyConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            TypeConverter.ConvertTo override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.BrushConverter">
+            <summary>
+            Used to generate construction code for brushes
+            during design-time serialization.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.BrushConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeConverter.CanConvertTo override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.BrushConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            TypeConverter.ConvertTo override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.BrushConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeConverter.CanConvertFrom override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.BrushConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            TypeConverter.ConvertFrom override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.PenConverter">
+            <summary>
+            Used to generate construction code for pens
+            during design-time serialization.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.PenConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeConverter.CanConvertTo override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.PenConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            TypeConverter.ConvertTo override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.PenConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeConverter.ConvertTo override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.PenConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            TypeConverter.ConvertFrom override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.PenCollection">
+            <summary>
+            A collection of MindFusion.Drawing.Pen objects.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.PenCollection.#ctor">
+            <summary>
+            Initializes a new instance of the PenCollection class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.PenCollection.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the PenCollection class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.PenCollection.Clone">
+            <summary>
+            Returns a shallow copy of this PenCollection object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.PenCollection.Add(MindFusion.Drawing.Pen)">
+            <summary>
+            Adds the specified Pen to the collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.PenCollection.Remove(MindFusion.Drawing.Pen)">
+            <summary>
+            Removes the first occurrence of the specified Pen from the collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.PenCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the Pen at the specified index.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.PenCollection.Contains(MindFusion.Drawing.Pen)">
+            <summary>
+            Checks whether the specified Pen is contained in the collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.PenCollection.IndexOf(MindFusion.Drawing.Pen)">
+            <summary>
+            Returns the index of the first occurrence of the specified Pen.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.PenCollection.Insert(System.Int32,MindFusion.Drawing.Pen)">
+            <summary>
+            Inserts the specified Pen at the specified position within the collection.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.PenCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the Pen, located at the specified position.
+            </summary>
+        </member>
+        <member name="T:MindFusion.FlagEnumEditor">
+            <summary>
+            Design-time editor for flagged enums.
+            </summary>
+        </member>
+        <member name="M:MindFusion.FlagEnumEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            UITypeEditor.EditValue override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.FlagEnumEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            UITypeEditor.GetEditStyle override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.FlagEnumEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            UITypeEditor.GetPaintValueSupported override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Controls.FlagEnumEdit">
+            <summary>
+            Control for editing of enumeration values
+            marked with the Flag attribute.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Controls.FlagEnumEdit.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.FlagEnumEdit.#ctor">
+            <summary>
+            Initializes a new instance of the FlagEnumEdit class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.FlagEnumEdit.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.FlagEnumEdit.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.FlagEnumEdit.ToLong(System.Object,System.Type)">
+            <summary>
+            Converts the specified byte, sbyte, short, ushort, int, uint,
+            long or ulong number to a long value.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Controls.FlagEnumEdit.Value">
+            <summary>
+            Gets or sets the enumeration value displayed in the editor.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Controls.BrushView">
+            <summary>
+            A control whose sole purpose is to display a System.Drawing.Brush object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.BrushView.#ctor">
+            <summary>
+            Initializes a new instance of the BrushView class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.BrushView.Dispose(System.Boolean)">
+            <summary>
+            Control.Dispose override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.BrushView.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Control.OnPaint override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Controls.BrushView.Brush">
+            <summary>
+            Gets or sets the brush to be displayed in the control.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Controls.BrushView.Text">
+            <summary>
+            Hides the Text property inherited from Control.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.Design.BrushEdit">
+            <summary>
+            MindFusion.Drawing.Brush editing form.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.BrushEdit.#ctor">
+            <summary>
+            Initializes a new instance of the BrushEdit class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.BrushEdit.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.BrushEdit.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.TextureBrush">
+            <summary>
+            A wrapper for the System.Drawing.TextureBrush class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.TextureBrush.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.TextureBrush class
+            given its string representation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.TextureBrush.#ctor(System.Drawing.Image)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.TextureBrush class
+            with the specified image.
+            </summary>
+            <param name="image">
+            The texture image.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.TextureBrush.#ctor(System.Drawing.Image,System.Drawing.Drawing2D.WrapMode)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.TextureBrush class
+            with the specified image and wrap mode.
+            </summary>
+            <param name="image">
+            Sets the texture image.
+            </param>
+            <param name="wrapMode">
+            Sets the texture wrap mode.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.TextureBrush.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.TextureBrush class
+            during deserialization.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.TextureBrush.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a System.Runtime.Serialization.SerializationInfo
+            with the data needed to serialize the brush.
+            </summary>
+            <param name="info">
+            The object that holds the serialized object data.
+            </param>
+            <param name="context">
+            The contextual information about the source or destination.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.TextureBrush.Clone">
+            <summary>
+            Creates an exact copy of this MindFusion.Drawing.TextureBrush.
+            </summary>
+            <returns>
+            A copy of this object.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.TextureBrush.Equals(System.Object)">
+            <summary>
+            Determines whether two TextureBrush instances are equal.
+            </summary>
+            <returns>
+            true is the brushes are equal; otherwise false.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.TextureBrush.GetHashCode">
+            <summary>
+            Returns the hash code for this brush instance.
+            </summary>
+            <returns>
+            A hash code for this object.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.TextureBrush.ToString">
+            <summary>
+            Returns "Texture".
+            </summary>
+            <returns>
+            A string representing this brush.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.TextureBrush.CreateGdiBrush(System.Drawing.RectangleF)">
+            <summary>
+            Creates a System.Drawing.TextureBrush instance that can be
+            used to paint in a GDI+ Graphics object.
+            </summary>
+            <param name="rc">
+            The rectangle in which painting will be performed.
+            </param>
+            <returns>
+            A System.Drawing.Brush instance corresponding to this brush.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.TextureBrush.CreateGdiBrush(System.Drawing.RectangleF,System.Single,System.Single)">
+            <summary>
+            Creates a System.Drawing.TextureBrush instance that can be
+            used to paint in a GDI+ Graphics object.
+            </summary>
+            <param name="rc">
+            The rectangle in which painting will be performed.
+            </param>
+            <param name="dx">
+            Specifies a horizontal offset to apply to this brush.
+            </param>
+            <param name="dy">
+            Specifies a vertical offset to apply to this brush.
+            </param>
+            <returns>
+            A System.Drawing.Brush instance corresponding to this brush.
+            </returns>
+        </member>
+        <member name="P:MindFusion.Drawing.TextureBrush.Image">
+            <summary>
+            Gets or sets the image object associated with this brush.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.TextureBrush.WrapMode">
+            <summary>
+            Gets or sets a WrapMode enumeration that indicates the
+            wrap mode for this TextureBrush object.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.TextureBrush.ScaleFactor">
+            <summary>
+            Gets or sets the scale factor applied to all texture brushes.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.Design.PenCollectionEditor">
+            <summary>
+            Design-time editor for MindFusion.Drawing.PenCollection objects.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.HatchBrush">
+            <summary>
+            A wrapper for the System.Drawing.Drawing2D.HatchBrush class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.HatchBrush.#ctor(System.String)">
+            <summary>
+            Constructs a new MindFusion.Drawing.HatchBrush
+            object given its string representation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.HatchBrush.#ctor(System.Drawing.Drawing2D.HatchStyle,System.Drawing.Color)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.HatchBrush class
+            with the specified hatch style and color.
+            </summary>
+            <param name="hatchStyle">
+            Specifies the brush hatch style.
+            </param>
+            <param name="foreColor">
+            Specifies the brush foreground color.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.HatchBrush.#ctor(System.Drawing.Drawing2D.HatchStyle,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.HatchBrush class
+            with the specified style, foreground color and background color.
+            </summary>
+            <param name="hatchStyle">
+            Specifies the brush hatch style.
+            </param>
+            <param name="foreColor">
+            Specifies the brush foreground color.
+            </param>
+            <param name="backColor">
+            Specifies the brush background color.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.HatchBrush.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.HatchBrush class
+            during deserialization.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.HatchBrush.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a System.Runtime.Serialization.SerializationInfo
+            with the data needed to serialize the brush.
+            </summary>
+            <param name="info">
+            The object that holds the serialized object data.
+            </param>
+            <param name="context">
+            The contextual information about the source or destination.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.HatchBrush.Clone">
+            <summary>
+            Creates an exact copy of this MindFusion.Drawing.HatchBrush.
+            </summary>
+            <returns>
+            A copy of this object.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.HatchBrush.ToString">
+            <summary>
+            Returns "Hatch".
+            </summary>
+            <returns>
+            A string representing this brush.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.HatchBrush.CreateGdiBrush(System.Drawing.RectangleF)">
+            <summary>
+            Returns an instance of the System.Drawing.Drawing2D.HatchBrush class 
+            that can be used to paint in a GDI+ Graphics object.
+            </summary>
+            <param name="rc">
+            The rectangle in which painting will be performed.
+            </param>
+            <returns>
+            A System.Drawing.Brush instance corresponding to this brush.
+            </returns>
+        </member>
+        <member name="P:MindFusion.Drawing.HatchBrush.HatchStyle">
+            <summary>
+            Gets or sets the hatch style of this HatchBrush object.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.HatchBrush.ForegroundColor">
+            <summary>
+            Gets or sets the color of hatch lines drawn by this HatchBrush object.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.HatchBrush.BackgroundColor">
+            <summary>
+            Gets or sets the color of the background space left
+            between the hatch lines.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Controls.DashEdit">
+            <summary>
+            Allows interactive dash pattern editing.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.DashEdit.#ctor">
+            <summary>
+            Initializes a new instance of the DashEdit class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.DashEdit.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Control.OnPaint override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.DashEdit.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Control.OnMouseDown override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.DashEdit.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Control.OnMouseMove override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.DashEdit.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Control.OnMouseUp override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.DashEdit.OnResize(System.EventArgs)">
+            <summary>
+            Control.OnResize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.DashEdit.GetDashPattern(MindFusion.Drawing.Pen)">
+            <summary>
+            Updates the dash pattern of the specified pen
+            to the one currently displayed in the control.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.DashEdit.SetDashPattern(MindFusion.Drawing.Pen)">
+            <summary>
+            Updates the currently displayed dash pattern
+            to match the one of the specified pen.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.DashEdit.RedimTiles">
+            <summary>
+            Recalculates the number of tiles which would
+            fit in the client area, based on the tile size
+            and the client area itself.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.DashEdit.ToggleAt(System.Drawing.Point)">
+            <summary>
+            Toggles the tile at the specified
+            client point.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Controls.DashEdit.DashChanged">
+            <summary>
+            Raised when the dash style has been changed by the user.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Utilities">
+            <summary>
+            Contains common helper methods.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.#ctor">
+            <summary>
+            Prevent instantiation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.TransformRect(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Drawing2D.CoordinateSpace,System.Drawing.Drawing2D.CoordinateSpace)">
+            <summary>
+            Transforms the specified rectangle from one coordinate
+            space to another using the affine transformation from the
+            specified graphics.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.TransformRect(System.Drawing.Graphics,System.Drawing.RectangleF,System.Drawing.Drawing2D.CoordinateSpace,System.Drawing.Drawing2D.CoordinateSpace)">
+            <summary>
+            Transforms the specified rectangle from one coordinate
+            space to another.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DocToDevice(MindFusion.Drawing.IGraphics,System.Drawing.PointF)">
+            <summary>
+            Transforms the specified point from world to device
+            coordinates.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DocToDeviceF(MindFusion.Drawing.IGraphics,System.Drawing.PointF)">
+            <summary>
+            Transforms the specified point from world to device
+            coordinates.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DocToDeviceF(MindFusion.Drawing.IGraphics,System.Drawing.SizeF)">
+            <summary>
+            Converts the specified size from world to device measures.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DocToDevice(MindFusion.Drawing.IGraphics,System.Single,System.Single,System.Int32@,System.Int32@)">
+            <summary>
+            Transforms the specified coordinates from document to device.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DocToDevice(MindFusion.Drawing.IGraphics,System.Drawing.RectangleF)">
+            <summary>
+            Transforms the specified rectangle from world to
+            device coordinates.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DocToDevice(MindFusion.Drawing.IGraphics,System.Drawing.Rectangle)">
+            <summary>
+            Transforms the specified rectangle from world
+            to device coordinates.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DeviceToDoc(MindFusion.Drawing.IGraphics,System.Drawing.Rectangle)">
+            <summary>
+            Transforms the specified rectangle from one coordinate
+            space to another.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DeviceToDoc(MindFusion.Drawing.IGraphics,System.Drawing.RectangleF)">
+            <summary>
+            Transforms the specified rectangle from device
+            to world coordinates.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DeviceToDoc(MindFusion.Drawing.IGraphics,System.Single,System.Single)">
+            <summary>
+            Transforms the specified point from device to
+            world coordinates.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DeviceToDoc(MindFusion.Drawing.IGraphics,System.Drawing.PointF)">
+            <summary>
+            Transforms the specified point from device to
+            world coordinates.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DrawImage(MindFusion.Drawing.IGraphics,System.Drawing.Image,System.Drawing.RectangleF,MindFusion.Drawing.ImageAlign)">
+            <summary>
+            Draws the specified image to the specified graphics,
+            using the specified destination rectangle and alignment.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DrawImage(MindFusion.Drawing.IGraphics,System.Drawing.Image,System.Drawing.RectangleF,MindFusion.Drawing.ImageAlign,System.Single,System.Drawing.PointF)">
+            <summary>
+            Draws the specified image to the specified graphics,
+            using the specified destination rectangle, alignment and
+            rotation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DrawImage(MindFusion.Drawing.IGraphics,System.Drawing.Image,System.Drawing.RectangleF,MindFusion.Drawing.ImageAlign,System.Single,System.Drawing.PointF,System.Drawing.RectangleF)">
+            <summary>
+            Draws the specified image to the specified graphics,
+            using the specified destination rectangle, alignment,
+            rotation and clipping.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DrawImage(MindFusion.Drawing.IGraphics,System.Drawing.Image,System.Drawing.RectangleF,MindFusion.Drawing.ImageAlign,System.Single,System.Drawing.PointF,System.Drawing.RectangleF,System.Single)">
+            <summary>
+            Draws the specified image to the specified graphics,
+            using the specified destination rectangle, alignment,
+            rotation and clipping.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.PointInSegment(System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Checks whether the line segment defined by the specified
+            points contain the specified point.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.PointInEllipse(System.Drawing.PointF,System.Drawing.RectangleF)">
+            <summary>
+            Checks whether the specified point is contained in
+            the ellipse defined by the specified rectangle.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.PointInPolygon(System.Drawing.PointF[],System.Drawing.PointF)">
+            <summary>
+            Determines if the specified point is within the specified polygon.
+            </summary>
+            <remarks>
+            It uses the classical polygon hit-testing algorithm:
+            a horizontal ray starting at the point is extended infinitely
+            rightwards and the number of polygon edges that intersect
+            the ray are counted. If the number is odd, the point is
+            inside the polygon.
+            </remarks>
+            <returns>
+            true if the point is inside the polygon, false if not.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Utilities.PointInPolyRect(System.Drawing.PointF[],System.Drawing.PointF,System.Drawing.RectangleF@)">
+            <summary>
+            Determines if the specified point is within the smallest
+            rectangle that encloses the specified polygon.
+            </summary>
+            <returns>
+            true or false depending on whether the point is in the rect or not.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Utilities.AddPoints(System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Adds two points. In .NET 2.0 Point.Offset() may be used instead.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.ToPoint(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Converts MouseEventArgs to point for easy manipulation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.Intersect(System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Determines whether the specified line segments intersect.
+            </summary>
+            <returns>
+            true if the segments intersect, false if not.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Utilities.Ccw(System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Determines, given three points, if when travelling from the first to
+            the second to the third, we travel in a counterclockwise direction.
+            </summary>
+            <remarks>
+            1 if the movement is in a counterclockwise direction, -1 if not.
+            </remarks>
+        </member>
+        <member name="M:MindFusion.Utilities.LineIntersect(System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Finds the intersection point of the lines defined by the
+            specified point pairs.
+            </summary>
+            <returns>
+            The intersection point of the specified lines or
+            Point(float.MinValue, float.MinValue) if the lines
+            do not intersect.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Utilities.LineIntersect(MindFusion.PointD,MindFusion.PointD,MindFusion.PointD,MindFusion.PointD)">
+            <summary>
+            Finds the intersection point of the lines defined by the
+            specified point pairs.
+            </summary>
+            <returns>
+            The intersection point of the specified lines or
+            PointD(double.MinValue, double.MinValue) if the lines
+            do not intersect.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Utilities.GetSymmetricPoint(System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Returns the opposite of point p with respect to specified line
+            </summary>
+            <param name="linePoint1"></param>
+            <param name="linePoint2"></param>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MindFusion.Utilities.Perpendicular(MindFusion.Utilities.Vector)">
+            <summary>
+            Just like Left(), but with semantic hint that we do not care of sign, Right() will also work
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MindFusion.Utilities.LineIntersectNaN(System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Finds the intersection point of the lines defined by the
+            specified point pairs.
+            </summary>
+            <returns>
+            The intersection point of the specified lines or
+            Point(double.NaN, double.NaN) if the lines
+            do not intersect.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Utilities.SegmentIntersect(System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF@)">
+            <summary>
+            Checks whether the segments defined by the specified
+            point pairs intersect and returns the intersection point.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.CalcBezierCoef(System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>
+            Calculates the bezier coefficients in the equation
+            of the specified bezier curve.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DistToBezier(System.Drawing.PointF,System.Collections.IList,System.Int32)">
+            <summary>
+            Calculates the shortest distance from the specified point
+            to the specified bezier curve.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.GetRoundRect(System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Creates a graphics path of a rounded rectangle with
+            the specified dimensions and round radius.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.AddRoundRect(System.Single,System.Single,System.Single,System.Single,System.Single,System.Drawing.Drawing2D.GraphicsPath)">
+            <summary>
+            Creates a graphics path of a rounded rectangle with
+            the specified dimensions and round radius.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DistToLineSegment(System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Calculates distance from the specified
+            point to the specified line segment
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DistancePoint(System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Calculates the point of the the specified line segment which determines the distance from the specified
+            point to the line segment
+            </summary>
+            <summary>
+            Calculates the point of the the specified line segment which determines the distance from the specified
+            point to the line segment
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.Closer(System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Returns the point from the specified pair, which lies
+            closer to the specified pivot.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DistToRect(System.Drawing.PointF,System.Drawing.RectangleF)">
+            <summary>
+            Calculates distance from the specified
+            point to the specified rectangle.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DistToPolyline(System.Drawing.PointF,System.Collections.IList,System.Int32)">
+            <summary>
+            Calculates the shortest distance from the specified
+            point to the specified polyline.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DistToPolyline(System.Drawing.PointF,System.Collections.IList,System.Int32,System.Int32@)">
+            <summary>
+            Calculates the shortest distance from the specified
+            point to the specified polyline, also returning the
+            index of the segment the point is closest to.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.GetNearestPt(System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Calculates the orthogonal projection of the specified point
+            on the line defined be the specified point pair.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.Distance(System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Calculates the distance between the specified points.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.Distance(System.Single,System.Single)">
+            <summary>
+            Calculates the length of the hypotenuse of a right rectangle
+            whose catheti have the specified length.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.DistanceSq(System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Calculates the square of the distance between the specified points.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.GetRectIntr(System.Drawing.RectangleF,System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF@)">
+            <summary>
+            Calculates the intersection point between the specified
+            rectangle and the line segment defined by the specified
+            points.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.GetEllipseIntr(System.Drawing.RectangleF,System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF@)">
+            <summary>
+            Calculate the intersection point between the ellipse
+            with the specified bounds and the line segment defined
+            by the specified points.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.GetBezierPt(System.Collections.IList,System.Int32,System.Single)">
+            <summary>
+            Gets the point from the specified bezier curve,
+            corresponding to the specified parameter t [0, 1].
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.ApproxBezier(System.Drawing.PointF[],System.Int32,System.Int32)">
+            <summary>
+            Approximates the specified bezier curve with a polyline.
+            The specified quality parameter varies in the interval
+            [1, ...) and is proportional to the number of points
+            in the resulting polyline.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.NormalizeRect(System.Drawing.Rectangle)">
+            <summary>
+            Normalizes the specified rectangle ensuring its height
+            and width are non-negative numbers.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.NormalizeRect(System.Drawing.RectangleF)">
+            <summary>
+            Normalizes the specified rectangle ensuring its height
+            and width are non-negative numbers.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.PointInRect(System.Drawing.PointF,System.Drawing.RectangleF)">
+            <summary>
+            Checks whether the specified rectangle contains the specified point.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.CompareFiles(System.String,System.String)">
+            <summary>
+            Compares two files.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.CompareStreams(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            Compares two streams. The streams should the buffered for performance.
+            The streams are not closed.
+            </summary>
+            <returns>
+            Returns the index of the first different byte or -1 if files are equal.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Utilities.SaveToFile(System.String,System.Byte[])">
+            <summary>
+            Saves the specified bytes to file. The file is overwritten if exists.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Utilities.SaveToFile(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Saves the specified string to file.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.IGraphics">
+            <summary>
+            This interface exposes the public interface of the
+            System.Drawing.Graphics class.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Geometry.Geometry2D.Convert">
+            <summary>
+            Provides various conversions.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Convert.#ctor">
+            <summary>
+            Prevent instantiation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Convert.PolarToCartesian(System.Drawing.PointF,System.Single,System.Single,System.Drawing.PointF@)">
+            <summary>
+            Converts polar coordinates to the corresponding
+            Cartesian coordinates, using the specified point as
+            a center of the coordinate system.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Convert.CartesianToPolar(System.Drawing.PointF,System.Drawing.PointF,System.Single@,System.Single@)">
+            <summary>
+            Converts Cartesian coordinates to the corresponding
+            polar coordinates, using the specified point as
+            a center of the coordinate system.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Geometry.Geometry2D.PointList">
+            <summary>
+            Represents a collection of points.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.PointList.#ctor">
+            <summary>
+            Initializes a new instance of the PointList class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.PointList.#ctor(System.Collections.Generic.IEnumerable{System.Drawing.PointF})">
+            <summary>
+            Initializes a new instance of the PointList class.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Geometry.Geometry2D.ReadOnlyPointList">
+            <summary>
+            Represents a read-only collection of points.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.ReadOnlyPointList.#ctor(System.Collections.ICollection)">
+            <summary>
+            Initializes a new instance of the ReadOnlyPointList class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Geometry.Geometry2D.ReadOnlyPointList.Item(System.Int32)">
+            <summary>
+            Gets the point at the specified index.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Geometry.Geometry2D.Line">
+            <summary>
+            Represents a line in the plane defined by two points.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Line.#ctor(System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Initializes a new instance of the Line class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Line.#ctor(MindFusion.Geometry.Geometry2D.Line)">
+            <summary>
+            Initializes a new instance of the Line class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Line.IntersectLine(System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Calculates the intersection point with the line
+            defined by the given points. If there is no intersection
+            the return value is an infinite point.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Line.IntersectLine(MindFusion.Geometry.Geometry2D.Line)">
+            <summary>
+            Calculates the intersection point with the specified line.
+            If there is no intersection the return value is an infinite point.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Line.IntersectSegment(System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Calculates the intersection point with the 
+            line segment defined by the given points.
+            If there is no intersection the return
+            value is an infinite point.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Line.IntersectSegment(MindFusion.Geometry.Geometry2D.Line)">
+            <summary>
+            Calculates the intersection point with the given line segment.
+            If there is no intersection the return value is an infinite point.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Line.ContainsInSegment(System.Drawing.PointF)">
+            <summary>
+            Checks whether the given point lies on the line segment.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Line.Between(System.Single,System.Single,System.Single,System.Boolean)">
+            <summary>
+            Checks whether x lies between y and z.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Geometry.Geometry2D.Line.A">
+            <summary>
+            Gets or sets the first point defining the line.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Geometry.Geometry2D.Line.B">
+            <summary>
+            Gets or sets the second point defining the line.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Geometry.Geometry2D.Line.Bounds">
+            <summary>
+            Gets the smallest rectangle bounding the segment
+            which defines the line.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Geometry.Geometry2D.Polygon">
+            <summary>
+            Represents immutable closed plane figure with
+            three or more straight sides.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Polygon.#ctor(MindFusion.Geometry.Geometry2D.PointList)">
+            <summary>
+            Initializes a new instance of the Polygon class from
+            the specified collection of points.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Polygon.#ctor(System.Drawing.RectangleF)">
+            <summary>
+            Initializes a new instance of the Polygon class from
+            the specified rectangle.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Polygon.#ctor(System.Drawing.RectangleF,System.Int32)">
+            <summary>
+            Initializes a new instance of the Polygon class
+            approximating the ellipse defined by the specified rectangle.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Polygon.Complete">
+            <summary>
+            Internal initialization routine.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Polygon.IntersectSegment(System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Calculates the intersections between the 
+            polygon and the line segment defined by the given points.
+            The result is a list containing all points of intersection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Polygon.IntersectSegment(MindFusion.Geometry.Geometry2D.Line)">
+            <summary>
+            Calculates the intersections between the 
+            polygon and the given line segment. The result is
+            a list containing all points of intersection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Polygon.IntersectLine(System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Calculates the intersections between the 
+            polygon and the line defined by the given points.
+            The result is a list containing all points of intersection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Polygon.IntersectLine(MindFusion.Geometry.Geometry2D.Line)">
+            <summary>
+            Calculates the intersections between the 
+            polygon and the given line. The result is
+            a list containing all points of intersection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Polygon.Contains(System.Drawing.PointF)">
+            <summary>
+            Checks whether the specified point lies
+            whithin the polygon.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Polygon.Intersect(System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Given two line segments, determine if they intersect.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Polygon.CCW(System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Determines, given three points, if when travelling from the first to
+            the second to the third, we travel in a counterclockwise direction.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Polygon.GetInternalPoint">
+            <summary>
+            Finds a point inside the polygon.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Geometry.Geometry2D.Polygon.FindConvexVertex">
+            <summary>
+            Finds a convex vertex of the polygon.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Geometry.Geometry2D.Polygon.Points">
+            <summary>
+            Gets a collection of the polygon points.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Geometry.Geometry2D.Polygon.Bounds">
+            <summary>
+            Gets the smallest rectangle bounding the polygon.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.Design.PenEditor">
+            <summary>
+            Design-time editor for MindFusion.Drawing.Pen objects.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Convert">
+            <summary>
+            Converts various types to and from string in a
+            culture-independent way.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.#ctor">
+            <summary>
+            Prevent instantiation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.ToSingle(System.String)">
+            <summary>
+            Converts the specified string to Single.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.FromSingle(System.Single)">
+            <summary>
+            Converts the specified Single to string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.ToDouble(System.String)">
+            <summary>
+            Converts the specified string to Double.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.FromDouble(System.Double)">
+            <summary>
+            Converts the specified Double to string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.ToInt16(System.String)">
+            <summary>
+            Converts the specified string to Int16.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.FromInt16(System.Int16)">
+            <summary>
+            Converts the specified Int16 to string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.ToInt32(System.String)">
+            <summary>
+            Converts the specified string to Int32.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.FromInt32(System.Int32)">
+            <summary>
+            Converts the specified Int32 to string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.ToInt64(System.String)">
+            <summary>
+            Converts the specified string to Int64.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.FromInt64(System.Int64)">
+            <summary>
+            Converts the specified Int64 to string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.ToColor(System.String)">
+            <summary>
+            Converts the specified string to Color.
+            The string should be in the format #AARRGGBB.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.FromColor(System.Drawing.Color)">
+            <summary>
+            Converts the specified Color to string.
+            The resulting string is in the format #AARRGGBB.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.ToImage(System.String)">
+            <summary>
+            Converts the specified string to an Image.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.FromImage(System.Drawing.Image)">
+            <summary>
+            Converts the specified Image to a string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.ToStream(System.String)">
+            <summary>
+            Converts the specified string to a Stream.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.FromStream(System.IO.Stream)">
+            <summary>
+            Converts the specified Stream to a string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.FromBoolean(System.Boolean)">
+            <summary>
+            Converts the specified boolean value to string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.ToBoolean(System.String)">
+            <summary>
+            Converts the specified string to a boolean.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Convert.ToEnum(System.Type,System.String,System.Boolean)">
+            <summary>
+            Converts the specified string value to the
+            corresponding field of the specified enum type.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Convert._culture">
+            <summary>
+            Uses always the same culture settings.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Animations.Animation">
+            <summary>
+            Represents an object that is used to animate items.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Animations.Animation.#ctor(MindFusion.Animations.IAnimationItem,MindFusion.Animations.AnimationOptions)">
+            <summary>
+            Initializes a new instance of the Animation class.
+            </summary>
+            <param name="item">
+            The item to animate.
+            </param>
+            <param name="options">
+            An object used to specify various property values for the animation.
+            </param>
+        </member>
+        <member name="M:MindFusion.Animations.Animation.#ctor(MindFusion.Animations.IAnimationItem,MindFusion.Animations.AnimationOptions,MindFusion.Animations.UpdateCallback)">
+            <summary>
+            Initializes a new instance of the Animation class.
+            </summary>
+            <param name="item">
+            The item to animate.
+            </param>
+            <param name="options">
+            An object used to specify various property values for the animation.
+            </param>
+            <param name="onUpdateCallback">
+            A callback function called on every animation tick.
+            </param>
+        </member>
+        <member name="M:MindFusion.Animations.Animation.#ctor(MindFusion.Animations.IAnimationItem,MindFusion.Animations.AnimationOptions,MindFusion.Animations.UpdateCallback,MindFusion.Animations.CustomFunctionCallback)">
+            <summary>
+            Initializes a new instance of the Animation class.
+            </summary>
+            <param name="item">
+            The item to animate.
+            </param>
+            <param name="options">
+            An object used to specify various property values for the animation.
+            </param>
+            <param name="onUpdateCallback">
+            A callback function called on every animation tick.
+            </param>
+            <param name="onCustomFunctionCallback">
+            A callback function called when the animation type is set to Custom.
+            </param>
+        </member>
+        <member name="M:MindFusion.Animations.Animation.Dispose">
+            <summary>
+            IDisposable.Dispose implementation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Animations.Animation.Start">
+            <summary>
+            Starts or resumes the animation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Animations.Animation.Stop">
+            <summary>
+            Stops the animation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Animations.Animation.OnAnimationComplete(System.EventArgs)">
+            <summary>
+            Raises the AnimationComplete event.
+            </summary>
+            <param name="e">
+            An object providing the event data.
+            </param>
+        </member>
+        <member name="P:MindFusion.Animations.Animation.Item">
+            <summary>
+            Gets or sets the item to animate.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Animations.Animation.Options">
+            <summary>
+            Gets or sets the object used to specify various property values for the animation.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Animations.Animation.IsRunning">
+            <summary>
+            Indicates whether the animation is currently running.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Animations.Animation.Progress">
+            <summary>
+            Gets the progress of the current animation iteration.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Animations.Animation.AnimationComplete">
+            <summary>
+            Raised when an Animation completes.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Animations.IAnimationItem">
+            <summary>
+            Represents an item that can be animated by an Animation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Animations.IAnimationItem.UpdateAnimation(MindFusion.Animations.Animation,System.Double)">
+            <summary>
+            The method responsible to repond to changes in the animation progress.
+            </summary>
+            <param name="animation">The Animation object used to animate this item.</param>
+            <param name="animationDelta">A value representing the current animation progress</param>
+        </member>
+        <member name="T:MindFusion.Animations.AnimationType">
+            <summary>
+            Specifies the animation function used by an Animation object.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Animations.AnimationType.Linear">
+            <summary>
+            Represents an animation that accelerates/deccelerates using a linear function.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Animations.AnimationType.Power">
+            <summary>
+            Represents an animation that accelerates/deccelerates through exponentiation formula - x^n where n 
+            can be set through the Animation's param property. The default exponent equals 2.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Animations.AnimationType.Exponential">
+            <summary>
+            Represents an animation that accelerates/deccelerates using an exponential function. 
+            The exponent can be set through the Animation's Param property. The default exponent equals 10.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Animations.AnimationType.Circular">
+            <summary>
+            Represents an animation that accelerates/deccelerates using a circular function.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Animations.AnimationType.BackBow">
+            <summary>
+            Represents an effect that simulates a retraction in the motion of the animation. The amplitude 
+            of the retraction can be controlled through the Animation's Param property. The default param value is 1.5;
+            </summary>
+        </member>
+        <member name="F:MindFusion.Animations.AnimationType.Bounce">
+            <summary>
+            Represents a bouncing effect animation.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Animations.AnimationType.Elastic">
+            <summary>
+            Represents an oscillating effect animation. The oscillation frequency can be controlled 
+            through the Animation's Param property. The default param value is 0.5;
+            </summary>
+        </member>
+        <member name="F:MindFusion.Animations.AnimationType.Custom">
+            <summary>
+            Specifies a user-set function. When this value is used the actual animation function must be 
+            set through the Animation's custom function callback.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Animations.EasingType">
+            <summary>
+            Specifies the easing applied to an animation.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Animations.EasingType.EaseIn">
+            <summary>
+            Follows the animation function associated with the Animation.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Animations.EasingType.EaseOut">
+            <summary>
+            Inverses the animation function associated with the Animation.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Animations.EasingType.EaseInOut">
+            <summary>
+            Uses EaseIn for the first half the the Animation's duration and EaseOut for the second half.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Animations.EasingType.EaseOutIn">
+            <summary>
+            Uses EaseOut for the first half the the Animation's duration and EaseIn for the second half.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Animations.AnimationOptions">
+            <summary>
+            An object used to specify various property values for an Animation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Animations.AnimationOptions.#ctor">
+            <summary>
+            Initializes a new instance of the AnimationOptions class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Animations.AnimationOptions.Duration">
+            <summary>
+            The duration of the animation function in milliseconds.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Animations.AnimationOptions.FromValue">
+            <summary>
+            The initial value of the property that will be animated.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Animations.AnimationOptions.ToValue">
+            <summary>
+            The target value of the property that will be animated.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Animations.AnimationOptions.AnimationType">
+            <summary>
+            The type of the animation.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Animations.AnimationOptions.EasingType">
+            <summary>
+            The easing type of the animation.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Animations.AnimationOptions.Param">
+            <summary>
+            An optional parameter to use in the animation function.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Animations.AnimationOptions.Repeat">
+            <summary>
+            Indicates whether to restart the animation after it completes.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Animations.AnimationOptions.Reverse">
+            <summary>
+            Indicates whether to swap the from and to values after the animation complets.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Animations.UpdateCallback">
+            <summary>
+            A callback function called on every animation tick, 
+            responsible to repond to changes in the animation progress.
+            </summary>
+            <param name="animation">The Animation object used to animate this link.</param>
+            <param name="animationDelta">A value representing the current animation progress</param>
+        </member>
+        <member name="T:MindFusion.Animations.CustomFunctionCallback">
+            <summary>
+            A callback function called when the animation type is set to Custom, 
+            responsible to provide the animation update function.
+            </summary>
+            <param name="progress">The percentage of elapsed animation duration. This value is between 0 and 1.</param>
+            <param name="param">An optional user-set parameter influencing the function.</param>
+            <returns>The animation progress along the animation function.</returns>
+        </member>
+        <member name="T:MindFusion.Controls.AngleEdit">
+            <summary>
+            Angle editing control.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.AngleEdit.#ctor">
+            <summary>
+            Initializes a new instance of the AngleEdit class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.AngleEdit.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Control.OnPaint override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.AngleEdit.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Control.OnPaintBackground override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.AngleEdit.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Control.OnMouseDown override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.AngleEdit.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Control.OnMouseMove override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.AngleEdit.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Control.OnMouseUp override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.AngleEdit.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Control.OnKeyDown override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.AngleEdit.OnKeyUp(System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Control.OnKeyUp override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.AngleEdit.GetSquareRect">
+            <summary>
+            Gets the largets possible square contained in the
+            control's client rectangle.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.AngleEdit.SetAngle(System.Single)">
+            <summary>
+            Sets the displayed angle to the specified value.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Controls.AngleEdit.Angle">
+            <summary>
+            Gets or sets the displayed angle.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Controls.AngleEdit.AngleChanged">
+            <summary>
+            Raises when the displayed angle is changed by the user.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Text.Styles">
+            <summary>
+            Defines styles that can be applied to styled text.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Text.Word">
+            <summary>
+            Represents succession of either printable characters,
+            whitespaces or linebreaks.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Word.#cctor">
+            <summary>
+            Static initialization.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Word.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the Word class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Word.UpdateMeasures(MindFusion.Drawing.IGraphics,System.Drawing.Font)">
+            <summary>
+            Updates the width of the word as it would be
+            when drawn with the specified font in the specified graphics.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Word.GetWidth(System.Int32,System.Int32)">
+            <summary>
+            Returns the width of the subword defined by the specified
+            starting position and length.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Word.CreateFont(System.Drawing.Font)">
+            <summary>
+            Applies the style of the word to the specified font.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Word.DisposeFont(System.Drawing.Font)">
+            <summary>
+            Disposes a previously created font.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.Word.IsWhitespace">
+            <summary>
+            Gets a value, indicating whether the word
+            contains only whitespace characters.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.Word.IsLineBreak">
+            <summary>
+            Gets a value, indicating whether the word
+            contains linebreaking characters.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.Word.Value">
+            <summary>
+            Gets the text representation of the word.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.Word.Width">
+            <summary>
+            Gets the width of the word.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.Word.Offset">
+            <summary>
+            Gets the offset of this word from the origin point.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.Word.SFormat">
+            <summary>
+            Gets a static StringFormat object.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.Word.SRect">
+            <summary>
+            Gets a static rectangle, large enough to wrap any contents.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Text.WordList">
+            <summary>
+            Represents a read-only list of word objects.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.WordList.#ctor(System.Collections.ICollection)">
+            <summary>
+            Initializes a new instance of the WordList class
+            with the specified Word collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.WordList.Contains(MindFusion.Text.Word)">
+            <summary>
+            Checks whether the specified word is contained in the collection.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.WordList.Item(System.Int32)">
+            <summary>
+            Gets the word at the specified index.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Text.Text">
+            <summary>
+            Defines base implementation for immutable text objects.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Text.#ctor">
+            <summary>
+            Initializes a new instance of the Text class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Text.Setup(System.String,MindFusion.Drawing.IGraphics,System.Drawing.Font)">
+            <summary>
+            Assigns new text to the object. The text is formatted
+            according to the specified font and graphics objects.
+            </summary>
+            <remarks>
+            Do not dispose the graphics and font passed to this
+            method after the text has been initialized. Otherwise
+            you risk getting exceptions when the text is laid-out
+            or rendered and the SplitWords option is enabled.
+            </remarks>
+        </member>
+        <member name="M:MindFusion.Text.Text.ProcessText">
+            <summary>
+            Invoked after new text has been assigned to the object to
+            allow clients to perform custom text processing.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Text.NormalizeHtml(System.String)">
+            <summary>
+            Replaces HTML-specific character escapes in the specified text,
+            such as &amp;amp;, &amp;lt; and &amp;gt; with their counterparts -
+            &amp;, &lt; and &gt; respectively.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.Text.Split(System.String)">
+            <summary>
+            Subdivides the specified string to whitespaces and text.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.Text.Words">
+            <summary>
+            Gets a read-only list containing the words in the text.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.Text.RawText">
+            <summary>
+            Gets the raw text.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.Text.PlainText">
+            <summary>
+            Gets the text stripped of any formatting tags.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.Text.InnerWords">
+            <summary>
+            Gets the list containing the words of the text.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.Text.Height">
+            <summary>
+            Gets the height of the text as it is
+            specified in the last Setup operation.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Text.PlainText">
+            <summary>
+            Represents text with no formatting.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.PlainText.#ctor">
+            <summary>
+            Initializes a new instance of the PlainText class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.PlainText.ProcessText">
+            <summary>
+            Performs simple parsing of the text.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Text.StyledText">
+            <summary>
+            Represents a text which can, but not necessarily would,
+            contain formatting tags.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.StyledText.#ctor">
+            <summary>
+            Initializes a new instance of the StyledText class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.StyledText.ProcessText">
+            <summary>
+            Processes formatting text.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Text.StyledText._recognizer">
+            <summary>
+            Regular expression recognizer object used
+            internally in the parsing process.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.StyledText.PlainText">
+            <summary>
+            Gets the text stripped of any formatting tags.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Text.StyledText.FormatToken">
+            <summary>
+            Represents single formatting tag.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.StyledText.FormatToken.#ctor(MindFusion.Text.Styles,System.Object)">
+            <summary>
+            Initializes a new instance of the FormatToken class.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Text.StyledText.StyledWord">
+            <summary>
+            Represents word with uniform formatting.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.StyledText.StyledWord.#ctor(System.String,MindFusion.Text.Styles,System.Drawing.Color)">
+            <summary>
+            Initializes a new instance of the StyledWord class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.StyledText.StyledWord.UpdateMeasures(MindFusion.Drawing.IGraphics,System.Drawing.Font)">
+            <summary>
+            Updates the measures of the word as it would be
+            when drawn with the specified font in the specified graphics,
+            making sure word style is taken into account.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.StyledText.StyledWord.DisposeFont(System.Drawing.Font)">
+            <summary>
+            Disposes the specified font.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.StyledText.StyledWord.CreateBrush(System.Drawing.Brush)">
+            <summary>
+            Applies the word style to the given brush.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MindFusion.Text.StyledText.StyledWord.DisposeBrush(System.Drawing.Brush)">
+            <summary>
+            Disposes the specified brush.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.StyledText.StyledWord.CreateFont(System.Drawing.Font)">
+            <summary>
+            Applies the word style to the given font.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.StyledText.StyledWord.Format">
+            <summary>
+            Gets the word formatting.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.StyledText.StyledWord.Color">
+            <summary>
+            Gets the word color or empty color if no
+            color is associated with the word.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.StyledText.StyledWord.YOffset">
+            <summary>
+            Gets the y-offset of this word in graphics units.
+            In most cases this is 0, except when
+            the text is sub- or sup- ed.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.Design.StringFormatEditor">
+            <summary>
+            Design-time editor for System.Drawing.StringFormat objects.
+            </summary>
+        </member>
+        <member name="T:MindFusion.ModifierKeyEditor">
+            <summary>
+            Design-time editor for modifier keys.
+            </summary>
+        </member>
+        <member name="M:MindFusion.ModifierKeyEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            UITypeEditor.EditValue override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.ModifierKeyEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            UITypeEditor.GetEditStyle override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.ModifierKeyEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            UITypeEditor.GetPaintValueSupported override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Text.LayoutOptions">
+            <summary>
+            Contains options for text layouting.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.LayoutOptions.#ctor">
+            <summary>
+            Initializes a new instance of the LayoutOptions class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.LayoutOptions.Alignment">
+            <summary>
+            Specifies the horizontal alignment of the text.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.LayoutOptions.LineAlignment">
+            <summary>
+            Specifies the vertical alignment of the text.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.LayoutOptions.LineDistance">
+            <summary>
+            Specifies the distance between adjacent text lines.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.LayoutOptions.NoWrap">
+            <summary>
+            Gets or sets a value indicating whether the text should
+            not automatically wrap to a new line when the space to
+            display the text is not sufficient.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.LayoutOptions.SplitWords">
+            <summary>
+            Gets or sets a value indicating whether the words can and
+            should split across new lines.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.Design.PenCollectionForm">
+            <summary>
+            MindFusion.Drawing.PenCollection editing form.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.PenCollectionForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.PenCollectionForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.Design.PenCollectionForm.Collection">
+            <summary>
+            Gets or sets the edited MindFusion.Drawing.PenCollection object.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.LinearGradientBrush">
+            <summary>
+            A wrapper for the System.Drawing.Drawing2D.LinearGradientBrush class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.LinearGradientBrush.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.LinearGradientBrush class
+            given its string representation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.LinearGradientBrush.#ctor(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.LinearGradientBrush class
+            with the specified start and end colors.
+            </summary>
+            <param name="color1">
+            The first color of the gradient.
+            </param>
+            <param name="color2">
+            The second color of the gradient.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.LinearGradientBrush.#ctor(System.Drawing.Color,System.Drawing.Color,System.Single)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.LinearGradientBrush 
+            class with the specified start and end colors and an orientation 
+            angle measured in degrees.
+            </summary>
+            <param name="color1">
+            The first color of the gradient.
+            </param>
+            <param name="color2">
+            The second color of the gradient.
+            </param>
+            <param name="angle">
+            The gradient direction angle.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.LinearGradientBrush.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.LinearGradientBrush class
+            during deserialization.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.LinearGradientBrush.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a System.Runtime.Serialization.SerializationInfo
+            with the data needed to serialize the brush.
+            </summary>
+            <param name="info">
+            The object that holds the serialized object data.
+            </param>
+            <param name="context">
+            The contextual information about the source or destination.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.LinearGradientBrush.Clone">
+            <summary>
+            Creates an exact copy of this MindFusion.Drawing.LinearGradientBrush.
+            </summary>
+            <returns>
+            A copy of this object.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.LinearGradientBrush.ToString">
+            <summary>
+            Returns "Gradient".
+            </summary>
+            <returns>
+            A string representing this brush.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.LinearGradientBrush.CreateGdiBrush(System.Drawing.RectangleF)">
+            <summary>
+            Creates a System.Drawing.Drawing2D.LinearGradientBrush instance
+            that can be used to paint in a GDI+ Graphics object.
+            </summary>
+            <param name="rc">
+            The rectangle in which painting will be performed.
+            </param>
+            <returns>
+            A System.Drawing.Brush instance corresponding to this brush.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.LinearGradientBrush.NormalizeRect(System.Drawing.RectangleF)">
+            <summary>
+            Normalizes the specified rectangle ensuring its height
+            and width are non-negative numbers.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.LinearGradientBrush.Blend">
+            <summary>
+            Gets or sets a Blend object that specifies positions and
+            factors defining a custom falloff for the gradient.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.LinearGradientBrush.LinearColors">
+            <summary>
+            Gets or sets the start and end colors of the gradient.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.LinearGradientBrush.InterpolationColors">
+            <summary>
+            Gets or sets a ColorBlend object that defines
+            a multiple color linear gradient.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.LinearGradientBrush.Angle">
+            <summary>
+            Gets or sets the gradient orientation angle.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Controls.HatchCombo">
+            <summary>
+            An owner-drawn combo box for selecting hatch styles.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.HatchCombo.#ctor">
+            <summary>
+            Initializes a new instance of the HatchCombo class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.HatchCombo.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)">
+            <summary>
+            ComboBox.OnDrawItem override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.HatchCombo.FromString(System.String)">
+            <summary>
+            Gets the hatch style corresponding to the specified string.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Controls.HatchCombo.SelectedStyle">
+            <summary>
+            Gets or sets the HatchStyle selected in the combo box.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Controls.HatchCombo.Items">
+            <summary>
+            Hide the items collection from the property grid and IDE.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Text.DrawTextHint">
+            <summary>
+            Structured data used in formatted text rendering.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.DrawTextHint.#ctor(MindFusion.Drawing.IGraphics,System.Drawing.Font,System.Drawing.Brush,System.Drawing.StringFormat,System.Boolean)">
+            <summary>
+            Initializes a new instance of the DrawTextHint class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.DrawTextHint.SetFont(System.Drawing.Font)">
+            <summary>
+            Sets the text font.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Text.DrawTextHint.SetBrush(System.Drawing.Brush)">
+            <summary>
+            Sets the text brush.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.DrawTextHint.Graphics">
+            <summary>
+            Gets the destination graphics.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.DrawTextHint.Font">
+            <summary>
+            Gets the font of the rendered text.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.DrawTextHint.Brush">
+            <summary>
+            Gets the brush used to render the text.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.DrawTextHint.Format">
+            <summary>
+            Gets the format of the rendered text.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Text.DrawTextHint.AddEllipsis">
+            <summary>
+            Gets a value indicating whether an ellipsis should be added
+            if the text doesn't fit in the destination area.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.PathGradientBrush">
+            <summary>
+            A wrapper for the System.Drawing.Drawing2D.PathGradientBrush class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.PathGradientBrush.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.PathGradientBrush class
+            given its string representation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.PathGradientBrush.#ctor(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.PathGradientBrush class
+            with the specified center and surrounding colors.
+            </summary>
+            <param name="centerColor">
+            Specifies an initial center color.
+            </param>
+            <param name="surroundingColor">
+            Specifies an initial surrounding color.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.PathGradientBrush.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the MindFusion.Drawing.PathGradientBrush class
+            during deserialization.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.PathGradientBrush.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a System.Runtime.Serialization.SerializationInfo
+            with the data needed to serialize the brush.
+            </summary>
+            <param name="info">
+            The object that holds the serialized object data.
+            </param>
+            <param name="context">
+            The contextual information about the source or destination.
+            </param>
+        </member>
+        <member name="M:MindFusion.Drawing.PathGradientBrush.Clone">
+            <summary>
+            Creates an exact copy of this MindFusion.Drawing.PathGradientBrush.
+            </summary>
+            <returns>
+            A copy of this object.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.PathGradientBrush.ToString">
+            <summary>
+            Returns "PathGradient".
+            </summary>
+            <returns>
+            A string representing this brush.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.PathGradientBrush.CreateGdiBrush(System.Drawing.RectangleF)">
+            <summary>
+            Returns an instance of the System.Drawing.Drawing2D.PathGradientBrush
+            class that can be used to paint in a GDI+ Graphics object.
+            </summary>
+            <param name="rc">
+            The rectangle in which painting will be performed.
+            </param>
+            <returns>
+            A System.Drawing.Brush instance corresponding to this brush.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Drawing.PathGradientBrush.NormalizeRect(System.Drawing.RectangleF)">
+            <summary>
+            Normalizes the specified rectangle ensuring its height
+            and width are non-negative numbers.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.PathGradientBrush.CenterColor">
+            <summary>
+            Gets or sets the color at the center of the gradient path.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.PathGradientBrush.SurroundingColor">
+            <summary>
+            Gets or sets the color drawn at the borders of the gradient path.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.PathGradientBrush.CenterPoint">
+            <summary>
+            Gets or sets the center of the gradient path.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.PathGradientBrush.InterpolationColors">
+            <summary>
+            Gets or sets a ColorBlend object that defines a multiple color gradient.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.PathGradientBrush.Path">
+            <summary>
+            Gets or sets a GraphicsPath object that defines the gradient shape.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.Design.BrushCollectionEditor">
+            <summary>
+            Design-time editor for MindFusion.Drawing.BrushCollection objects.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Controls.ModifierKeyEdit">
+            <summary>
+            Control for editing of modifier keys.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Controls.ModifierKeyEdit.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.ModifierKeyEdit.#ctor">
+            <summary>
+            Initializes a new instance of the ModifierKeyEdit class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.ModifierKeyEdit.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.ModifierKeyEdit.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Controls.ModifierKeyEdit.Value">
+            <summary>
+            Gets or sets the displayed value.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.GdiGraphics">
+            <summary>
+            A wrapper of the System.Drawing.Graphics class.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.Design.BrushCollectionForm">
+            <summary>
+            MindFusion.Drawing.BrushCollection editing form.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.BrushCollectionForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.BrushCollectionForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.Design.BrushCollectionForm.Collection">
+            <summary>
+            Gets or sets the edited MindFusion.Drawing.BrushCollection object.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.Design.BrushEditor">
+            <summary>
+            Design-time editor for MindFusion.Drawing.Brush objects.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.Design.BrushCollectionTypeConverter">
+            <summary>
+            Type converter for the MindFusion.Drawing.BrushCollection class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.BrushCollectionTypeConverter.#ctor">
+            <summary>
+            Initializes a new instance of the BrushCollectionTypeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.BrushCollectionTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeProperties.CanConvertTo override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.BrushCollectionTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            TypeConverter.ConvertTo override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.BrushCollectionTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeConverter.CanConvertFrom override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.BrushCollectionTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            TypeConverter.ConvertFrom override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.BrushCollectionTypeConverter.GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            TypeConverter.GetPropertiesSupported override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.BrushCollectionTypeConverter.GetProperties(System.ComponentModel.ITypeDescriptorContext,System.Object,System.Attribute[])">
+            <summary>
+            TypeConverter.GetProperties override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.Design.BrushCollectionTypeConverter.BrushPropertyDescriptor">
+            <summary>
+            Custom property descriptor for Brush objects within a BrushCollection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.BrushCollectionTypeConverter.BrushPropertyDescriptor.#ctor(System.Int32,System.Type,System.String,System.Type)">
+            <summary>
+            Initializes a new instance of the BrushPropertyDescriptor class.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Drawing.Design.BrushCollectionTypeConverter.BrushPropertyDescriptor._index">
+            <summary>
+            The index of the brush represented by this descriptor
+            in the underlying brush collection.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.Design.PenCollectionTypeConverter">
+            <summary>
+            Type converter for the MindFusion.Drawing.PenCollection class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.PenCollectionTypeConverter.#ctor">
+            <summary>
+            Initializes a new instance of the PenCollectionTypeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.PenCollectionTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeConverter.CanConvertTo override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.PenCollectionTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            TypeConverter.ConvertTo override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.PenCollectionTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeConverter.CanConvertFrom override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.PenCollectionTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            TypeConverter.ConvertFrom override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.PenCollectionTypeConverter.GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            TypeConverter.GetPropertiesSupported override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.PenCollectionTypeConverter.GetProperties(System.ComponentModel.ITypeDescriptorContext,System.Object,System.Attribute[])">
+            <summary>
+            TypeConverter.GetProperties override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.Design.PenCollectionTypeConverter.PenPropertyDescriptor">
+            <summary>
+            Custom property descriptor for Pen objects within a PenCollection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.Design.PenCollectionTypeConverter.PenPropertyDescriptor.#ctor(System.Int32,System.Type,System.String,System.Type)">
+            <summary>
+            Initializes a new instance of the PenPropertyDescriptor class.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Drawing.Design.PenCollectionTypeConverter.PenPropertyDescriptor._index">
+            <summary>
+            The index of the pen represented by this descriptor
+            in the underlying pen collection.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Controls.ColorCombo">
+            <summary>
+            A combo box which allows selection of colors.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.ColorCombo.#ctor">
+            <summary>
+            Initializes a new instance of the ColorCombo class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.ColorCombo.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)">
+            <summary>
+            Control.OnDrawItem override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.ColorCombo.OnLeave(System.EventArgs)">
+            <summary>
+            ComboBox.OnLeave override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.ColorCombo.OnSelectedIndexChanged(System.EventArgs)">
+            <summary>
+            ComboBox.OnSelectedIndexChanged override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.ColorCombo.ColorToText(System.Drawing.Color)">
+            <summary>
+            Converts the specified color to a string in a culture
+            independent way.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Controls.ColorCombo.TextToColor(System.String)">
+            <summary>
+            Converts the specified string to a color in a culture
+            independent way.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Controls.ColorCombo.SelectedColor">
+            <summary>
+            Gets or sets the color selected in the combo box.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Drawing.BrushCollection">
+            <summary>
+            A collection of MindFusion.Drawing.Brush objects.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.BrushCollection.#ctor">
+            <summary>
+            Initializes a new instance of the BrushCollection class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.BrushCollection.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the BrushCollection class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.BrushCollection.Clone">
+            <summary>
+            Returns a shallow copy of this BrushCollection object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.BrushCollection.Add(MindFusion.Drawing.Brush)">
+            <summary>
+            Adds the specified Brush to the collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.BrushCollection.Insert(System.Int32,MindFusion.Drawing.Brush)">
+            <summary>
+            Inserts the specified Brush at the specified position within the collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.BrushCollection.Remove(MindFusion.Drawing.Brush)">
+            <summary>
+            Removes the first occurrence of the specified Brush from the collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.BrushCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the Brush at the specified index.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.BrushCollection.Contains(MindFusion.Drawing.Brush)">
+            <summary>
+            Checks whether the specified Brush is contained in the collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Drawing.BrushCollection.IndexOf(MindFusion.Drawing.Brush)">
+            <summary>
+            Returns the index of the first occurrence of the specified Brush.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.BrushCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the Brush, located at the specified position.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Drawing.BrushCollection.DefaultBrush">
+            <summary>
+            Gets or sets the default brush added to a brush collection
+            from within a design-time editor.
+            </summary>
+        </member>
+    </members>
+</doc>

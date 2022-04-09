@@ -1,0 +1,4231 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MindFusion.Gauges</name>
+    </assembly>
+    <members>
+        <member name="T:MindFusion.Gauges.Utils">
+            <summary>
+            Provides various auxiliary methods.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.LinearGradient(System.Object[])">
+            <summary>
+            Creates a linear gradient brush with the specified blend.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.LinearGradient(System.Drawing.PointF,System.Drawing.PointF,System.Object[])">
+            <summary>
+            Creates a linear gradient brush with the specified blend and orientation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.LinearGradient(System.Single,System.Object[])">
+            <summary>
+            Creates a linear gradient brush with the specified blend and orientation angle.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.PathGradient(System.Object[])">
+            <summary>
+            Creates a path gradient brush with the specified blend.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.PathGradient(System.Drawing.PointF,System.Object[])">
+            <summary>
+            Creates a path gradient brush with the specified blend and center point.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.RadialGradient(System.Object[])">
+            <summary>
+            Creates a path gradient brush with the specified blend and bounds.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.RadialGradient(System.Drawing.PointF,System.Object[])">
+            <summary>
+            Creates a path gradient brush with the specified blend and bounds.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.RadialGradient(System.Drawing.RectangleF,System.Object[])">
+            <summary>
+            Creates a path gradient brush with the specified blend and bounds.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.RadialGradient(System.Drawing.RectangleF,System.Drawing.PointF,System.Object[])">
+            <summary>
+            Creates a path gradient brush with the specified blend and bounds.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.Blend(System.Object[])">
+            <summary>
+            Creates a normalized [0..1] color blend out of the specified colors and positions.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.Utils.TransparentFill">
+            <summary>
+            Identifies a transparent solid brush.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.Utils.TransparentStroke">
+            <summary>
+            Identifies a transparent solid pen.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.Transform(System.Drawing.Drawing2D.Matrix,System.Drawing.PointF)">
+            <summary>
+            Transforms the specified point using the specified matrix.
+            </summary>
+            <param name="matrix">
+            The matrix to use for the transformation.
+            </param>
+            <param name="point">
+            The point to transform.
+            </param>
+            <returns>
+            The transformed point.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.Center(System.Drawing.RectangleF)">
+            <summary>
+            Returns the center point of the specified rectangle.
+            </summary>
+            <param name="r">
+            The rectangle of interest.
+            </param>
+            <returns>
+            A PointF representing the rectangle's center.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.Center(System.Drawing.PointF,System.Drawing.PointF)">
+            <summary>
+            Returns the center of the line segment defined by the specified points.
+            </summary>
+            <param name="p1">
+            The first point of the line segment.
+            </param>
+            <param name="p2">
+            The second point of the line segment.
+            </param>
+            <returns>
+            A PointF representing the segment's center.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.ToRectangleF(System.Drawing.SizeF)">
+            <summary>
+            Returns a RectangleF with the specified size and location at (0, 0).
+            </summary>
+            <param name="s">
+            The size of the new rectangle.
+            </param>
+            <returns>
+            A RectangleF with the specified size.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.ToRectangle(System.Drawing.SizeF)">
+            <summary>
+            Returns a Rectangle with the specified size and location at (0, 0).
+            </summary>
+            <param name="s">
+            The size of the new rectangle.
+            </param>
+            <returns>
+            A Rectangle with the specified size.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.ToPointF(System.Drawing.SizeF)">
+            <summary>
+            Returns the point defined by the specified SizeF.
+            </summary>
+            <param name="s">
+            The size defininig the point.
+            </param>
+            <returns>
+            A PointF representing the point at the specified size from the coordinate center.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.Format(System.Single[])">
+            <summary>
+            Returns a string representing the specified array.
+            </summary>
+            <param name="a">
+            An array with floating point numbers.
+            </param>
+            <returns>
+            A comma-delimited string representing the specified array.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.Utils.Gray(System.Byte)">
+            <summary>
+            Returns a gray color with the specified intensity.
+            </summary>
+            <param name="intensity">
+            The intensity of the new color, varying from 0 to 255.
+            </param>
+            <returns>
+            A Color object representing the gray color with the specified intensity.
+            </returns>
+        </member>
+        <member name="T:MindFusion.Gauges.HitTestResultHandler">
+            <summary>
+            Handles (iterates) VisualElements which pass hit tests.
+            </summary>
+            <returns>true if the caller has found what they need and the search should stop.</returns>
+        </member>
+        <member name="T:MindFusion.Gauges.QueryAmbientPropertyValueEventArgs">
+            <summary>
+            Provides data for the QueryAmbientPropertyValue event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.QueryAmbientPropertyValueEventArgs.#ctor">
+            <summary>
+            Initializes a new instance of the QueryAmbientPropertyValueEventArgs class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.QueryAmbientPropertyValueEventArgs.PropertyName">
+            <summary>
+            Gets or sets the name of the property being queried.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.QueryAmbientPropertyValueEventArgs.PropertyValue">
+            <summary>
+            Gets or sets the value of the property.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.ExtendedPropertyChangedEventArgs">
+            <summary>
+            Provides extended data for the INotifyPropertyChanged.PropertyChanged event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.ExtendedPropertyChangedEventArgs.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the ExtendedPropertyChangedEventArgs class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.ExtendedPropertyChangedEventArgs.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the ExtendedPropertyChangedEventArgs class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.ExtendedPropertyChangedEventArgs.RequiresUpdate">
+            <summary>
+            Gets a value indicating whether the property change should cause updates.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.VisualElementContainer">
+            <summary>
+            Represents a visual element which contains other visual elements.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.VisualElement">
+            <summary>
+            Represents an object with outline and fill, which can render itself to an IGraphics.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.#ctor">
+            <summary>
+            Initializes a new instance of the VisualElement class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.ToString">
+            <summary>
+            Object.ToString override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.Measure(System.Drawing.SizeF)">
+            <summary>
+            Updates the visual element in response to a change in its size.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.Arrange">
+            <summary>
+            Repositions and transforms the visual element.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.MeasureOverride(System.Drawing.SizeF)">
+            <summary>
+            Invoked on a visual element during the measure phase.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.ArrangeOverride">
+            <summary>
+            Invoked on a visual element during the arrange phase.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.Paint(MindFusion.Drawing.IGraphics)">
+            <summary>
+            Paints the visual element to the specified IGraphics object.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.VisualElement.filling">
+            <summary>
+            The cached outline of a sealed path figure.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.VisualElement.outline">
+            <summary>
+            The cached outline of a sealed path figure.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.HandleMouse(MindFusion.Gauges.MouseInfo,System.Drawing.PointF)">
+            <summary>
+            Invoked when the mouse is being clicked or moved in order to process it.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.HitTest(System.Drawing.PointF)">
+            <summary>
+            Checks whether the specified point lies within the scale element's
+            visual structure. The point is expected to be normalized and relative
+            to the VisualElement's local coordinate system.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.HitTestObj(System.Drawing.PointF,MindFusion.Gauges.HitTestResultHandler)">
+            <summary>
+            Checks whether the specified point lies within the scale element's
+            visual structure.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.InvalidateMeasure">
+            <summary>
+            Forces the element to be remeasured.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.InvalidateArrange">
+            <summary>
+            Forces the element to be rearranged.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.InvalidateRender">
+            <summary>
+            Forces the element to be repainted.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.OnInvalidated(System.EventArgs)">
+            <summary>
+            Raises the Invalidated event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.OnPrepaint(MindFusion.Gauges.PrepaintEventArgs)">
+            <summary>
+            Raises the Prepaint event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.OnPostpaint(MindFusion.Gauges.CustomPaintEventArgs)">
+            <summary>
+            Raises the Postpaint event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.GetAmbientPropertyValue(System.String)">
+            <summary>
+            Obtains the ambient value of the property with the specified name.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.OnQueryAmbientPropertyValue(MindFusion.Gauges.QueryAmbientPropertyValueEventArgs)">
+            <summary>
+            Raises the QueryAmbientPropertyValue event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.ConfirmPaint(MindFusion.Drawing.IGraphics)">
+            <summary>
+            Verifies that the current element should be painted.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.RaisePostpaint(MindFusion.Drawing.IGraphics)">
+            <summary>
+            Raises the Postpaint event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.GetElementByName(System.String)">
+            <summary>
+            Returns the first child element with the specified name.
+            </summary>
+            <param name="name">
+            The name of the element to search for.
+            </param>
+            <returns>
+            A reference to the first VisualElement with the specified name.
+            </returns>
+            <remarks>
+            This method performs deep search.
+            </remarks>
+        </member>
+        <member name="F:MindFusion.Gauges.VisualElement.RelativeCoordinates">
+            <summary>
+            A value indicating whether the metrics of this element are expressed as relative
+            or absolute quantities.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.VisualElement.RelativeStroke">
+            <summary>
+            A value indicating whether the stroke thickness of this element is expressed as relative
+            or absolute quantity.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.OnRenderSizeChanged">
+            <summary>
+            Invoked when the RenderSize of the element has changed.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.VisualElement.DesiredSize">
+            <summary>
+            The desired size of this element.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElement.Dispose">
+            <summary>
+            IDisposable.Dispose implementation.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.VisualElement.IsVisible">
+            <summary>
+            Gets or sets a value indicating whether this element is visible.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.VisualElement.Name">
+            <summary>
+            Gets or sets the name of this element.
+            </summary>
+            <remarks>
+            The name can be used to obtain a reference to the element through a call
+            to the GetElementByName method.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Gauges.VisualElement.Fill">
+            <summary>
+            Gets or sets the fill of this element.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.VisualElement.DefaultFill">
+            <summary>
+            Gets the default value of the Fill property.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.VisualElement.Stroke">
+            <summary>
+            Gets or sets the stroke of this element.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.VisualElement.DefaultStroke">
+            <summary>
+            Gets the default value of the Stroke property.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.VisualElement.QueryAmbientPropertyValue">
+            <summary>
+            Raised when an inherited property on this object is null, in order
+            to query an ambient value from the parent element (if any).
+            </summary>
+            <remarks>
+            Inheritance is recursive, that is, if the parent's value is null as well,
+            the parent queries its parent and so on, up until the root of the hierarchy.
+            </remarks>
+        </member>
+        <member name="E:MindFusion.Gauges.VisualElement.Invalidated">
+            <summary>
+            Raised when the visual element needs to be repainted.
+            </summary>
+            <remarks>
+            This is a bubbling event. When raised on an element it will
+            propagate the visual element hierarchy up to the root.
+            </remarks>
+        </member>
+        <member name="E:MindFusion.Gauges.VisualElement.Prepaint">
+            <summary>
+            Raised before an element is painted to allow the client to custom-paint.
+            </summary>
+            <remarks>
+            This is a bubbling event. When raised on an element it will
+            propagate the visual element hierarchy up to the root.
+            </remarks>
+        </member>
+        <member name="E:MindFusion.Gauges.VisualElement.Postpaint">
+            <summary>
+            Raised after an element has been painted to allow the client to custom-paint.
+            </summary>
+            <remarks>
+            This is a bubbling event. When raised on an element it will
+            propagate the visual element hierarchy up to the root.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Gauges.VisualElement.Margin">
+            <summary>
+            Gets or sets the margin of this element.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.VisualElement.Transform">
+            <summary>
+            Gets or sets the arrangement transformation of this element.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.VisualElement.Width">
+            <summary>
+            Gets or sets the normalized width of this element.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.VisualElement.RenderSize">
+            <summary>
+            Gets or sets the rendering size of the element.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.VisualElement.Height">
+            <summary>
+            Gets or sets the normalized height of this element.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.VisualElement.X">
+            <summary>
+            Gets or sets the normalized x position of this element, relative to its parent.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.VisualElement.Y">
+            <summary>
+            Gets or sets the normalized y position of this element, relative to its parent.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.VisualElement.Bounds">
+            <summary>
+            Gets or sets the bounding rectangle of this element.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.VisualElement.Size">
+            <summary>
+            Gets or sets the size of this element.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElementContainer.#ctor">
+            <summary>
+            Initializes a new instance of the VisualElementContainer class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElementContainer.MeasureOverride(System.Drawing.SizeF)">
+            <summary>
+            VisualElement.MeasureOverride override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElementContainer.ArrangeOverride">
+            <summary>
+            VisualElement.ArrangeOverride override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElementContainer.Paint(MindFusion.Drawing.IGraphics)">
+            <summary>
+            VisualElement.Paint override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElementContainer.HitTest(System.Drawing.PointF)">
+            <summary>
+            VisualElement.HitTest override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElementContainer.HandleMouse(MindFusion.Gauges.MouseInfo,System.Drawing.PointF)">
+            <summary>
+            VisualElement.HandleMouse override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElementContainer.HitTestObj(System.Drawing.PointF,MindFusion.Gauges.HitTestResultHandler)">
+            <summary>
+            VisualElement.HitTestObj override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElementContainer.OnChildrenChanged(System.Object,MindFusion.Gauges.NotifyCollectionChangedEventArgs{MindFusion.Gauges.VisualElement})">
+            <summary>
+            Handles the CollectionChanged event on the Children collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElementContainer.OnChildInvalidated(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Invalidated event on all underlying child elements.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElementContainer.OnChildPrepaint(System.Object,MindFusion.Gauges.PrepaintEventArgs)">
+            <summary>
+            Handles the Prepaint event on all underlying child elements.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElementContainer.OnChildPostpaint(System.Object,MindFusion.Gauges.CustomPaintEventArgs)">
+            <summary>
+            Handles the Postpaint event on all underlying child elements.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElementContainer.OnChildQueryAmbientPropertyValue(System.Object,MindFusion.Gauges.QueryAmbientPropertyValueEventArgs)">
+            <summary>
+            Handles the QueryAmbientPropertyValue event on all underlying child elements.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElementContainer.InvalidateStage(MindFusion.Gauges.LayoutStage)">
+            <summary>
+            VisualElement.InvalidateStage override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.VisualElementContainer.GetElementByName(System.String)">
+            <summary>
+            Returns the first child element with the specified name.
+            </summary>
+            <param name="name">
+            The name of the element to search for.
+            </param>
+            <returns>
+            A reference to the first VisualElement with the specified name.
+            </returns>
+            <remarks>
+            This method performs deep search.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Gauges.VisualElementContainer.Children">
+            <summary>
+            Gets the child visuals of this container.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.VisualElementContainer.IsHitTestVisible">
+            <summary>
+            Gets or sets a value
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.PathFigure">
+            <summary>
+            Represents a connected series of geometric segments.
+            </summary>
+            <summary>
+            Represents a connected series of geometric segments.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.PathFigure.ParsePathData(System.String)">
+            <summary>
+            Parses the list of segments encoded in the specified string.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.PathFigure.OpRegex">
+            <summary>
+            A regular expression that matches segment identifiers.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.PathFigure.PointRegex">
+            <summary>
+            A regular expression that loosely matches 2D points with floating coordinates.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.PathFigure.ArcRegex">
+            <summary>
+            A regular expression that loosely matches 2D points with floating coordinates and numbers.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.PathFigure.#cctor">
+            <summary>
+            Static constructor.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.PathFigure.#ctor">
+            <summary>
+            Initializes a new instance of the PathFigure class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.PathFigure.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the PathFigure class with the
+            segments defined through the specified string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.PathFigure.HitTest(System.Drawing.PointF)">
+            <summary>
+            VisualElement.HitTest override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.PathFigure.HitTestObj(System.Drawing.PointF,MindFusion.Gauges.HitTestResultHandler)">
+            <summary>
+            VisualElement.HitTestObj override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.PathFigure.Seal">
+            <summary>
+            Seals this instance for improved performance. Modifying
+            a sealed instance is considered an error.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.PathFigure.empty">
+            <summary>
+            An empty figure.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.PathFigure.Segments">
+            <summary>
+            Gets or sets the segments contained in this PathFigure object.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.PathFigure.StartPoint">
+            <summary>
+            Gets or sets the point where the PathFigure begins.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.PathFigure.IsClosed">
+            <summary>
+            Gets or sets a value that specifies whether this figures first and last segments are connected.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.PathFigure.IsSealed">
+            <summary>
+            Gets or sets a value indicating whether this instance is sealed.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.PathFigure.Empty">
+            <summary>
+            Gets the empty path figure.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.MiddleTickSettings">
+            <summary>
+            Provides settings for the middle ticks and labels in a gauge scale.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.TickSettings">
+            <summary>
+            Provides settings for the ticks and labels in a gauge scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.TickSettings.#ctor">
+            <summary>
+            Initializes a new instance of the TickSettings class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.TickSettings.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Raises the PropertyChanged event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.TickSettings.RaisePropertyChanged(System.String)">
+            <summary>
+            Raises the PropertyChanged event on the specified TickSettings object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.TickSettings.RaisePropertyChanged(System.String,System.Boolean)">
+            <summary>
+            Raises the PropertyChanged event on the specified TickSettings object.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.TickType">
+            <summary>
+            Gets the type of ticks this object applies to.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.Count">
+            <summary>
+            Gets or sets the number of ticks and labels.
+            </summary>
+            <remarks>
+            This property is mutually exclusive with the Step property. If both are
+            specified the Step property will take precedence.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.Step">
+            <summary>
+            Gets or sets the value between adjacent ticks and labels.
+            </summary>
+            <remarks>
+            This property is mutually exclusive with the Count property. If both are
+            specified the Step property will take precedence.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.TickWidth">
+            <summary>
+            Gets or sets the width of a tick.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.TickHeight">
+            <summary>
+            Gets or sets the height of a tick.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.Fill">
+            <summary>
+            Gets or sets the fill brush of the ticks.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.Stroke">
+            <summary>
+            Gets or sets the stroke brush of the ticks.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.ShowTicks">
+            <summary>
+            Gets or sets a value indicating whether the ticks are visible.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.ShowLabels">
+            <summary>
+            Gets or sets a value indicating whether the labels are visible.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.LabelFormat">
+            <summary>
+            Gets or sets the format for label texts.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.LabelOffset">
+            <summary>
+            Gets or sets the offset of the labels relative to their calculated position.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.TickOffset">
+            <summary>
+            Gets or sets the offset of he ticks relative to their calculated position.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.LabelRotation">
+            <summary>
+            Gets or sets the rotation mode of the labels.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.FontFamily">
+            <summary>
+            Gets or sets the font family of the labels.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.FontSize">
+            <summary>
+            Gets or sets the font size of the labels.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.FontStyle">
+            <summary>
+            Gets or sets the font style of the labels.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.LabelForeground">
+            <summary>
+            Gets or sets the brush used to paint label texts.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.TickAlignment">
+            <summary>
+            Gets or sets the alignment of the ticks relative to the scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.LabelAlignment">
+            <summary>
+            Gets or sets the alignment of the labels relative to the scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.TickShape">
+            <summary>
+            Gets or sets the shape of the ticks.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.CustomTickShape">
+            <summary>
+            Gets or sets the definition of the tick shape when TickShape is set to Custom.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.ShowMaxValueTick">
+            <summary>
+            Gets or sets a value indicating whether to display a tick for the
+            MaxValue of the scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickSettings.CustomIntervals">
+            <summary>
+            Gets or sets a collection with CustomInterval objects, which can be used to
+            customize the appearance of the ticks in a particular interval.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.TickSettings.PropertyChanged">
+            <summary>
+            Raised when a property value changes.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.MiddleTickSettings.#ctor">
+            <summary>
+            Initializes a new instance of the MiddleTickSettings class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.MiddleTickSettings.TickType">
+            <summary>
+            Gets the type of ticks this object applies to.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.Length">
+            <summary>
+            Specifies distance expressed either absolutely, through pixels, or relatively,
+            through a percentage of the container's size.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Length.#ctor(System.Single)">
+            <summary>
+            Initializes a new instance of the Length structure with the specified absolute value.
+            </summary>
+            <param name="absoluteValue">
+            A float specifying absolute length.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.Length.#ctor(System.Single,MindFusion.Gauges.LengthType)">
+            <summary>
+            Initializes a new instance of the Length structure with the specified value and type.
+            </summary>
+            <param name="value">
+            A float specifying the initial length value.
+            </param>
+            <param name="type">
+            A member of the LengthType enumeration specifying the length type.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.Length.Equals(System.Object)">
+            <summary>
+            ValueType.Equals override. Compares an object to an instance of Length for equality.
+            </summary>
+            <param name="obj">
+            The object to compare.
+            </param>
+            <returns>
+            true if the lengths are equal; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.Length.ToString">
+            <summary>
+            Returns a string representation of this Length object.
+            </summary>
+            <returns>
+            A string representation of this Length.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.Length.GetHashCode">
+            <summary>
+            Gets the hash code for this instance of Length object.
+            </summary>
+            <returns>
+            The hash code for this instance of Length.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.Length.op_Inequality(MindFusion.Gauges.Length,MindFusion.Gauges.Length)">
+            <summary>
+            Compares two Length structures to determine if they are not equal.
+            </summary>
+            <param name="l1">
+            The first instance of Length to compare.
+            </param>
+            <param name="l2">
+            The second instance of Length to compare.
+            </param>
+            <returns>
+            true if the two instances of Length do not have the same
+            value and LengthType; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.Length.op_Equality(MindFusion.Gauges.Length,MindFusion.Gauges.Length)">
+            <summary>
+            Compares two Length structures for equality.
+            </summary>
+            <param name="l1">
+            The first instance of Length to compare.
+            </param>
+            <param name="l2">
+            The second instance of Length to compare.
+            </param>
+            <returns>
+            true if the two instances of Length have the same value
+            and LengthType; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.Length.op_UnaryNegation(MindFusion.Gauges.Length)">
+            <summary>
+            Returns the negative of a specified Length object.
+            </summary>
+            <param name="l">
+            The instance of Length to process.
+            </param>
+            <returns>
+            The negative of the specified length.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.Length.GetAbsoluteLength(System.Double)">
+            <summary>
+            Calculates the absolute length corresponding to the specified argument,
+            relative to the the specified area.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Length.GetAbsoluteLengthF(System.Double)">
+            <summary>
+            Calculates the absolute length corresponding to the specified argument,
+            relative to the the specified area.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Length.Value">
+            <summary>
+            Gets or sets the value representing this length.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Length.Type">
+            <summary>
+            Gets or sets a value indicating how to interpret Value.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.Alignment">
+            <summary>
+            Indicates an alignment of an object relative to the scale. In the descriptions
+            below 'outbound' refers to an element's outer outline, 'inbound' refers to an
+            element's inner outline and 'center' refers to en element's center, that is,
+            the middle of the inbound and outbound.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.Alignment.InnerInside">
+            <summary>
+            Specifies that the outbound of an object is aligned with the inbound of the scale.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.Alignment.InnerCenter">
+            <summary>
+            Specifies that the center of an object is aligned with the inbound of the scale.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.Alignment.InnerOutside">
+            <summary>
+            Specifies that the inbound of an object is aligned with the inbound of the scale.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.Alignment.OuterInside">
+            <summary>
+            Specifies that the outbound of an object is aligned with the outbound of the scale.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.Alignment.OuterCenter">
+            <summary>
+            Specifies that the center of an object is aligned with the outbound of the scale.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.Alignment.OuterOutside">
+            <summary>
+            Specifies that the inbound of an object is aligned with the outbound of the scale.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.Alignment.CenterInside">
+            <summary>
+            Specifies that the outbound of an object is aligned with the center of the scale.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.Alignment.TrueCenter">
+            <summary>
+            Specifies that the center of an object is aligned with the center of the scale.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.Alignment.CenterOutside">
+            <summary>
+            Specifies that the inbound of an object is aligned with the center of the scale.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.MajorTickSettings">
+            <summary>
+            Provides settings for the major ticks and labels in a gauge scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.MajorTickSettings.#ctor">
+            <summary>
+            Initializes a new instance of the MajorTickSettings class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.MajorTickSettings.TickType">
+            <summary>
+            Gets the type of ticks this object applies to.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.CachedVisualElement">
+            <summary>
+            Represents a VisualElement, which renders all its children in a Bitmap and
+            uses this cached bitmap when painting.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.CachedVisualElement.MeasureOverride(System.Drawing.SizeF)">
+            <summary>
+            VisualElementContainer.MeasureOverride override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.CachedVisualElement.Paint(MindFusion.Drawing.IGraphics)">
+            <summary>
+            VisualElementContainer.Paint override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.CachedVisualElement.OnInvalidated(System.EventArgs)">
+            <summary>
+            VisualElement.OnInvalidated override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.CachedVisualElement.Recache(System.Drawing.SizeF)">
+            <summary>
+            Invalidates the current cache. The cache will be recreated during
+            the next paint operation.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.Segment">
+            <summary>
+            Represents a segment of a PathFigure object.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Segment.#ctor">
+            <summary>
+            Initializes a new instance of the Segment class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Segment.AddTo(System.Drawing.Drawing2D.GraphicsPath,System.Drawing.PointF,System.Boolean)">
+            <summary>
+            Adds the segment to the specified graphics path.
+            </summary>
+            <remarks>
+            If the segment is not stroked and the path represents an outline,
+            the segment is not added, but the current point is still adjusted.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Gauges.Segment.IsStroked">
+            <summary>
+            Gets or sets a value that indicates whether the segment is stroked.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.LengthType">
+            <summary>
+            Indicates the type of the units of a Length object.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.LengthType.Absolute">
+            <summary>
+            Specifies absolute length, expressed in pixels.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.LengthType.Relative">
+            <summary>
+            Specifies relative length, expressed as a percentage of the container's size.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.FunctionDelegate">
+            <summary>
+            Represents a user-defined method, which performs custom distribution
+            of values along the gauge scale.
+            </summary>
+            <param name="value">
+            The source parameter value.
+            </param>
+            <param name="argument">
+            An optional argument passed to the function. This is the value of
+            the FunctionArgument property of the BaseScale class.
+            </param>
+            <returns>
+            The function result.
+            </returns>
+        </member>
+        <member name="T:MindFusion.Gauges.ArcArea">
+            <summary>
+            An adorner element representing an intersection of two ellipses.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.ArcArea.#ctor">
+            <summary>
+            Initializes a new instance of the ArcArea class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.ArcArea.ArrangeOverride">
+            <summary>
+            VisualElement.ArrangeOverride override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.ArcArea.Paint(MindFusion.Drawing.IGraphics)">
+            <summary>
+            VisualElement.Paint override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.ArcArea.StartAngle">
+            <summary>
+            Gets or sets the start angle of the arc.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.ArcArea.EndAngle">
+            <summary>
+            Gets or sets the end angle of the arc.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.Text">
+            <summary>
+            Represents a static text within a scale.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.ScaleElement">
+            <summary>
+            Represents a visual element within a scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.ScaleElement.#ctor">
+            <summary>
+            Initializes a new instance of the ScaleElement class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.ScaleElement.HandleMouse(MindFusion.Gauges.MouseInfo,System.Drawing.PointF)">
+            <summary>
+            VisualElementContainer.HandleMouse override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.ScaleElement.OnClicked(MindFusion.Gauges.GaugeMouseEventArgs)">
+            <summary>
+            Raises the Clicked event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="P:MindFusion.Gauges.ScaleElement.Scale">
+            <summary>
+            Gets or sets the scale this element belongs to.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.ScaleElement.Clicked">
+            <summary>
+            Raised when the user clicks this element with the mouse.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Text.#ctor">
+            <summary>
+            Initializes a new instance of the Text class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Text.MeasureOverride(System.Drawing.SizeF)">
+            <summary>
+            VisualElementContainer.MeasureOverride override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Text.Paint(MindFusion.Drawing.IGraphics)">
+            <summary>
+            ScaleElement.Paint override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Text.FontFamily">
+            <summary>
+            Gets or sets the font family of the text.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Text.FontSize">
+            <summary>
+            Gets or sets the font size of the text.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Text.FontStyle">
+            <summary>
+            Gets or sets the font style of the text.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Text.Content">
+            <summary>
+            Gets or sets the displayed text content.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Text.Foreground">
+            <summary>
+            Gets or sets the color of the text.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Text.Alignment">
+            <summary>
+            Gets or sets the horizontal alignment of the text.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Text.LineAlignment">
+            <summary>
+            Gets or sets the vertical alignment of the text.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.RectangleElement">
+            <summary>
+            Represents a rectangular visual element.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.Tick">
+            <summary>
+            Represents a tick mark within a gauge scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Tick.#ctor(MindFusion.Gauges.TickSettings)">
+            <summary>
+            Initializes a new instance of the Tick class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Tick.CreateVisuals">
+            <summary>
+            Creates the visual structure of the tick.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Tick.ToString">
+            <summary>
+            Object.ToString override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Tick.MeasureOverride(System.Drawing.SizeF)">
+            <summary>
+            VisualElementContainer.MeasureOverride override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Tick.ArrangeOverride">
+            <summary>
+            VisualElementContainer.ArrangeOverride override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Tick.Value">
+            <summary>
+            Gets or sets the value associated with this tick.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Tick.RawValue">
+            <summary>
+            Gets or sets the value associated with this tick before it was processed
+            by any value distribution functions.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Tick.Settings">
+            <summary>
+            Gets the TickSettings object associated with this tick.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.LabelRotation">
+            <summary>
+            Indicates the rotation of a label within a scale.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.LabelRotation.None">
+            <summary>
+            Specifies no rotation.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.LabelRotation.Auto">
+            <summary>
+            Specifies that the labels are automatically rotated so that their
+            baseline always points downwards.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.LabelRotation.BaselineToCenter">
+            <summary>
+            Specifies that the labels are rotated so that their baseline points
+            towards the center of the scale.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.LabelRotation.BaselineAwayFromCenter">
+            <summary>
+            Specifies that the labels are rotated so that their baseline points
+            away from the center of the scale.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.LabelRotation.Sideways">
+            <summary>
+            Specifies that the labels are aligned sideways to the scale.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.BezierSegment">
+            <summary>
+            Represents a Bezier curve between two points.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BezierSegment.#ctor">
+            <summary>
+            Initializes a new instance of the CurveSegment class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BezierSegment.#ctor(System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF,System.Boolean)">
+            <summary>
+            Initializes a new instance of the CurveSegment class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BezierSegment.AddTo(System.Drawing.Drawing2D.GraphicsPath,System.Drawing.PointF,System.Boolean)">
+            <summary>
+            Segment.AddTo override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BezierSegment.Point1">
+            <summary>
+            Gets or sets the first control point of the Bezier segment.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BezierSegment.Point2">
+            <summary>
+            Gets or sets the second control point of the Bezier segment.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BezierSegment.Point3">
+            <summary>
+            Gets or sets the end point of the Bezier segment.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.RoundRectangle">
+            <summary>
+            Represents a rounded rectangle.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.RoundRectangle.#ctor">
+            <summary>
+            Initializes a new instance of the RoundRectangle class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.RoundRectangle.MeasureOverride(System.Drawing.SizeF)">
+            <summary>
+            VisualElement.MeasureOverride override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.RoundRectangle.Paint(MindFusion.Drawing.IGraphics)">
+            <summary>
+            VisualElement.Paint override.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.RoundRectangle.cachedPath">
+            <summary>
+            The cached path of the round rectangle.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.RoundRectangle.Roundness">
+            <summary>
+            Gets or sets the relative roundness of this rectangle's corners.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.Range">
+            <summary>
+            Represents a range within a gauge scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Range.#ctor">
+            <summary>
+            Initializes a new instance of the Range class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Range.MeasureOverride(System.Drawing.SizeF)">
+            <summary>
+            VisualElement.MeasureOverride override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Range.ArrangeOverride">
+            <summary>
+            VisualElement.ArrangeOverride override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Range.MinValue">
+            <summary>
+            Gets or sets the start value of this range.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Range.MaxValue">
+            <summary>
+            Gets or sets the end value of this range.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Range.Alignment">
+            <summary>
+            Gets or sets the alignment of this range relative to the scale it is
+            associated with.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Range.StartWidth">
+            <summary>
+            Gets or sets the width of this range at its start.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Range.EndWidth">
+            <summary>
+            Gets or sets the width of this range at its end.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Range.Offset">
+            <summary>
+            Gets or sets the offset of the range from the position calculated
+            according to its alignment.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Range.CapStart">
+            <summary>
+            Gets or sets a value indicating whether to draw a stroke the beginning of
+            this range.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Range.CapEnd">
+            <summary>
+            Gets or sets a value indicating whether to draw a stroke the beginning of
+            this range.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Range.StrokeInside">
+            <summary>
+            Gets or sets a value indicating whether to draw a stroke at the inside of
+            this range.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Range.StrokeOutside">
+            <summary>
+            Gets or sets a value indicating whether to draw a stroke at the outside of
+            this range.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Range.AutoSize">
+            <summary>
+            Gets or sets a value indicating whether the start and end width of the
+            range will be automatically adjusted to match the width of the scale.
+            </summary>
+            <remarks>
+            If this property is set to true the values of StartWidth and EndWidth
+            properties are ignored.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Gauges.Range.Margin">
+            <summary>
+            This property is not intended to be modified directly.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.Orientation">
+            <summary>
+            Specifies the orientation of elements.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.Orientation.Horizontal">
+            <summary>
+            The element is oriented horizontally.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.Orientation.Vertical">
+            <summary>
+            The control or element is oriented vertically.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.MouseAction">
+            <summary>
+            Specifies an action performed with the mouse.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.MouseAction.Up">
+            <summary>
+            Indicates the release of a mouse button.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.MouseAction.Down">
+            <summary>
+            Indicates the press of a mouse button.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.MouseAction.Move">
+            <summary>
+            Indicates the move of a mouse button.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.MouseButtons">
+            <summary>
+            Specifies a mouse button.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.MouseButtons.None">
+            <summary>
+            No mouse button was pressed.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.MouseButtons.Left">
+            <summary>
+            The left mouse button was pressed.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.MouseButtons.Right">
+            <summary>
+            The right mouse button was pressed.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.MouseButtons.Middle">
+            <summary>
+            The middle mouse button was pressed.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.MouseButtons.XButton1">
+            <summary>
+            The first XButton was pressed.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.MouseButtons.XButton2">
+            <summary>
+            The second XButton was pressed.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.MouseInfo">
+            <summary>
+            Provides mouse information when processing mouse events in the visual
+            element hierarchy.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.MouseInfo.#ctor">
+            <summary>
+            Initializes a new instance of the MouseInfo class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.MouseInfo.Action">
+            <summary>
+            Gets or sets the action that was performed.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.MouseInfo.X">
+            <summary>
+            Gets or sets the x-coordinate of the mouse.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.MouseInfo.Y">
+            <summary>
+            Gets or sets the y-coordinate of the mouse.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.MouseInfo.NormalizedX">
+            <summary>
+            Gets or sets the normalized x-coordinate of the mouse.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.MouseInfo.NormalizedY">
+            <summary>
+            Gets or sets the normalized y-coordinate of the mouse.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.MouseInfo.NormalizedLocation">
+            <summary>
+            Gets the mouse location in normalized coordinates.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.MinorTickSettings">
+            <summary>
+            Provides settings for the minor ticks and labels in a gauge scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.MinorTickSettings.#ctor">
+            <summary>
+            Initializes a new instance of the MinorTickSettings class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.MinorTickSettings.TickType">
+            <summary>
+            Gets the type of ticks this object applies to.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.GeometryFactory">
+            <summary>
+            A factory class for various geometry objects.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.GeometryFactory.GetOutlineRadius(System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Calculates the radius of a non-uniform arc at the specified angle.
+            A non-uniform arc is a pseudo-circular arc which has different radii at both ends.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.GeometryFactory.Radians(System.Single)">
+            <summary>
+            Converts an angle, specified in degrees, to an angle specified in radians.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.GeometryFactory.CreateLinearGeometry(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Boolean)">
+            <summary>
+            Generates a linear bar geometry with the specified parameters.
+            </summary>
+            <param name="centerX">
+            The x-coordinate of the generated geometry.
+            </param>
+            <param name="centerY">
+            The y-coordinate of the generated geometry.
+            </param>
+            <param name="startInnerOffset">
+            The start inner offset of the generated geometry relative to the specified center.
+            </param>
+            <param name="startOuterOffset">
+            The start outer offset of the generated geometry relative to the specified center.
+            </param>
+            <param name="endInnerOffset">
+            The end inner offset of the generated geometry relative to the specified center.
+            </param>
+            <param name="endOuterOffset">
+            The end outer offset of the generated geometry relative to the specified center.
+            </param>
+            <param name="length">
+            The length of the generated geometry.
+            </param>
+            <param name="isVertical">
+            A flag indicating whether the generated geometry is vertical.
+            </param>
+            <returns>
+            A PathGeometry representing a linear bar with the specified parameters.
+            </returns>
+            <remarks>
+            The generated geometry is a trapezium.
+            For example, a vertical linear geometry with centerX = 10, centerY = 10,
+            startInnerOffset = 0, startOuterOffset = 5, endInnerOffset = 0, endOuerOffset = 10,
+            length = 100; will be a trapezium with points (10, 110) (15, 110), (20, 10), (10, 10).
+            A horizontal lienar geometry with the above parameters will be a trapezium
+            with points (10, 10), (10, 15), (110, 20), (110, 10).
+            </remarks>
+        </member>
+        <member name="M:MindFusion.Gauges.GeometryFactory.CreateLinearGeometry(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Generates a linear bar geometry with the specified parameters.
+            </summary>
+            <param name="centerX">
+            The x-coordinate of the generated geometry.
+            </param>
+            <param name="centerY">
+            The y-coordinate of the generated geometry.
+            </param>
+            <param name="startInnerOffset">
+            The start inner offset of the generated geometry relative to the specified center.
+            </param>
+            <param name="startOuterOffset">
+            The start outer offset of the generated geometry relative to the specified center.
+            </param>
+            <param name="endInnerOffset">
+            The end inner offset of the generated geometry relative to the specified center.
+            </param>
+            <param name="endOuterOffset">
+            The end outer offset of the generated geometry relative to the specified center.
+            </param>
+            <param name="length">
+            The length of the generated geometry.
+            </param>
+            <param name="isVertical">
+            A flag indicating whether the generated geometry is vertical.
+            </param>
+            <param name="capStart">
+            A flag indicating whether to draw a stroke at the start of the bar.
+            </param>
+            <param name="capEnd">
+            A flag indicating whether to draw a stroke at the end of the bar.
+            </param>
+            <param name="strokeInner">
+            A flag indicating whether to draw a stroke at the inner side of the bar.
+            </param>
+            <param name="strokeOuter">
+            A flag indicating whether to draw a stroke at the outer side of the bar.
+            </param>
+            <returns>
+            A PathGeometry representing a linear bar with the specified parameters.
+            </returns>
+            <remarks>
+            The generated geometry is a trapezium.
+            For example, a vertical linear geometry with centerX = 10, centerY = 10,
+            startInnerOffset = 0, startOuterOffset = 5, endInnerOffset = 0, endOuerOffset = 10,
+            length = 100; will be a trapezium with points (10, 110), (15, 110), (20, 10), (10, 10).
+            A horizontal lienar geometry with the above parameters will be a trapezium
+            with points (10, 10), (10, 15), (110, 20), (110, 10).
+            </remarks>
+        </member>
+        <member name="M:MindFusion.Gauges.GeometryFactory.CreateRadialGeometry(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Generates a radial bar geometry with the specified parameters.
+            </summary>
+            <param name="centerX">
+            The x-coordinate of the generated geometry.
+            </param>
+            <param name="centerY">
+            The y-coordinate of the generated geometry.
+            </param>
+            <param name="startInnerRadius">
+            The radius of the start point of the inner outline of the bar.
+            </param>
+            <param name="startOuterRadius">
+            The radius of the start point of the outer outline of the bar.
+            </param>
+            <param name="endInnerRadius">
+            The radius of the end point of the inner outline of the bar.
+            </param>
+            <param name="endOuterRadius">
+            The radius of the end point of the outer outline of the bar.
+            </param>
+            <param name="startAngle">
+            The start angle of the radial bar.
+            </param>
+            <param name="endAngle">
+            The end angle of the radial bar.
+            </param>
+            <returns>
+            A PathGeometry representing a radial bar with the specified parameters.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.GeometryFactory.CreateRadialGeometry(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Generates a radial bar geometry with the specified parameters.
+            </summary>
+            <param name="centerX">
+            The x-coordinate of the generated geometry.
+            </param>
+            <param name="centerY">
+            The y-coordinate of the generated geometry.
+            </param>
+            <param name="startInnerRadius">
+            The radius of the start point of the inner outline of the bar.
+            </param>
+            <param name="startOuterRadius">
+            The radius of the start point of the outer outline of the bar.
+            </param>
+            <param name="endInnerRadius">
+            The radius of the end point of the inner outline of the bar.
+            </param>
+            <param name="endOuterRadius">
+            The radius of the end point of the outer outline of the bar.
+            </param>
+            <param name="startAngle">
+            The start angle of the radial bar.
+            </param>
+            <param name="endAngle">
+            The end angle of the radial bar.
+            </param>
+            <param name="capStart">
+            A flag indicating whether to draw a stroke at the start of the bar.
+            </param>
+            <param name="capEnd">
+            A flag indicating whether to draw a stroke at the end of the bar.
+            </param>
+            <param name="strokeInner">
+            A flag indicating whether to draw a stroke at the inner curve of the bar.
+            </param>
+            <param name="strokeOuter">
+            A flag indicating whether to draw a stroke at the outer curve of the bar.
+            </param>
+            <returns>
+            A PathGeometry representing a radial bar with the specified parameters.
+            </returns>
+        </member>
+        <member name="T:MindFusion.Gauges.CenterPanel">
+            <summary>
+            A container which centers its children and makes them with square size.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.CenterPanel.MeasureOverride(System.Drawing.SizeF)">
+            <summary>
+            VisualElementContainer.MeasureOverride override.
+            </summary>
+            <param name="constraint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MindFusion.Gauges.CenterPanel.ArrangeOverride">
+            <summary>
+            VisualElementContainer.ArrangeOverride override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.DisplayType">
+            <summary>
+            Specifies a display condition.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.DisplayType.Auto">
+            <summary>
+            Indicates that the visibility of an element should be determined
+            automatically.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.DisplayType.Always">
+            <summary>
+            Indicates that the the element should always be displayed.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.DisplayType.Never">
+            <summary>
+            Indicates that the the element should always be hidden.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.TickShape">
+            <summary>
+            Indicates the shape of a scale tick.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.TickShape.None">
+            <summary>
+            Specifies an empty shape, that is, the tick is not displayed.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.TickShape.Custom">
+            <summary>
+            Specifies a custom shape.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.TickShape.Ellipse">
+            <summary>
+            Specifies an elliptical shape.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.TickShape.Rectangle">
+            <summary>
+            Specifies a rectangular shape.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.TickShape.RoundRect">
+            <summary>
+            Specifies a rounded rectangle as a shape.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.TickShape.Rhombus">
+            <summary>
+            Specifies a rhombus as a shape.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.TickShape.Line">
+            <summary>
+            Specifies a line as a shape.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.TickShape.Triangle">
+            <summary>
+            Specifies a triangular shape.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.TickShape.Arrow1">
+            <summary>
+            Specifies an arrow shape.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.TickShape.Arrow2">
+            <summary>
+            Specifies an arrow shape.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.TickShape.Arrow3">
+            <summary>
+            Specifies an arrow shape.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.Led">
+            <summary>
+            A LED-like visual element with a glow effect. This element
+            is suitable for gauge indicators.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Led.#ctor">
+            <summary>
+            Initializes a new instance of the Led class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Led.MeasureOverride(System.Drawing.SizeF)">
+            <summary>
+            VisualElementContainer.MeasureOverride override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Led.DefaultFill">
+            <summary>
+            VisualElement.DefaultFill override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Led.DefaultStroke">
+            <summary>
+            VisualElement.DefaultStroke override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Led.GlowColor">
+            <summary>
+            Gets or sets the glow color of the element.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.Indicator">
+            <summary>
+            Represents a gauge element, which changes its appearance based on its current state.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Indicator.#ctor">
+            <summary>
+            Initializes a new instance of the Indicator class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Indicator.UpdateCurrentState">
+            <summary>
+            Updates the value of the CurrentState property in response to a change
+            of the Value property or States colleciton.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Indicator.DefaultState">
+            <summary>
+            Gets or sets the state to use when the indicator is not
+            in any of the defined states.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Indicator.Value">
+            <summary>
+            Gets or sets the value associated with this indicator.
+            </summary>
+            <remarks>
+            The value of the indicator determines its current state.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Gauges.Indicator.States">
+            <summary>
+            Gets or sets a collection of CustomInterval objects, which define various
+            states for the indicator.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.GenericGauge`1">
+            <summary>
+            Represents the generic base class of linear and oval gauge controls.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.BaseGauge">
+            <summary>
+            Represents the base class of linear and oval gauges.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.#ctor">
+            <summary>
+            Initializes a new instance of the BaseGauge class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.CreateVisuals">
+            <summary>
+            Creates the visual structure of the gauge.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.InvalidateVisuals">
+            <summary>
+            Forces recreation of the visual structure of the gauge.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.OnRootInvalidated(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Invalidated event of the root visual.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.OnRootPrepaint(System.Object,MindFusion.Gauges.PrepaintEventArgs)">
+            <summary>
+            Handles the Prepaint event of the root visual.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.OnRootPostpaint(System.Object,MindFusion.Gauges.CustomPaintEventArgs)">
+            <summary>
+            Handles the Postpaint event of the root visual.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.Draw(MindFusion.Drawing.IGraphics)">
+            <summary>
+            Draws the gauge to the specified IGraphics object.
+            </summary>
+            <param name="graphics">
+            The target IGraphics object.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.ProcessMouseDown(System.Single,System.Single)">
+            <summary>
+            Invoked to handle a MouseDown event.
+            </summary>
+            <param name="x">
+            The x-coordinate of the mouse in client coordinates.
+            </param>
+            <param name="y">
+            The y-coordinate of the mouse in client coordinates.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.ProcessMouseMove(System.Single,System.Single)">
+            <summary>
+            Invoked to handle a MouseMove event.
+            </summary>
+            <param name="x">
+            The x-coordinate of the mouse in client coordinates.
+            </param>
+            <param name="y">
+            The y-coordinate of the mouse in client coordinates.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.ProcessMouseUp(System.Single,System.Single)">
+            <summary>
+            Invoked to handle a MouseUp event.
+            </summary>
+            <param name="x">
+            The x-coordinate of the mouse in client coordinates.
+            </param>
+            <param name="y">
+            The y-coordinate of the mouse in client coordinates.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.GetElementByName(System.String)">
+            <summary>
+            Returns the scale element with the specified name.
+            </summary>
+            <param name="name">
+            The name of the element to search for.
+            </param>
+            <returns>
+            A reference to the first VisualElement with the specified name.
+            </returns>
+            <remarks>
+            This method performs deep search.
+            </remarks>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.OnPrepaintBackground(MindFusion.Gauges.PrepaintEventArgs)">
+            <summary>
+            Raises the PrepaintBackground event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.OnPaintBackground(MindFusion.Gauges.CustomPaintEventArgs)">
+            <summary>
+            Raises the PaintBackground event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.OnPrepaintForeground(MindFusion.Gauges.PrepaintEventArgs)">
+            <summary>
+            Raises the PrepaintForeground event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.OnPaintForeground(MindFusion.Gauges.CustomPaintEventArgs)">
+            <summary>
+            Raises the PaintForeground event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.OnPrepaintScale(MindFusion.Gauges.PrepaintEventArgs)">
+            <summary>
+            Raises the PrepaintScale event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.OnPaintScale(MindFusion.Gauges.CustomPaintEventArgs)">
+            <summary>
+            Raises the PaintScale event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.OnPrepaintPointer(MindFusion.Gauges.PrepaintEventArgs)">
+            <summary>
+            Raises the PrepaintPointer event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.OnPaintPointer(MindFusion.Gauges.CustomPaintEventArgs)">
+            <summary>
+            Raises the PaintPointer event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.OnPrepaintTick(MindFusion.Gauges.PrepaintEventArgs)">
+            <summary>
+            Raises the PrepaintTick event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.OnPaintTick(MindFusion.Gauges.CustomPaintEventArgs)">
+            <summary>
+            Raises the PaintTick event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.OnInvalidated(System.EventArgs)">
+            <summary>
+            Raises the Invalidated event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseGauge.HitTestObj(System.Drawing.PointF,MindFusion.Gauges.HitTestResultHandler)">
+            <summary>
+            Checks whether the specified point lies within the visual structure of a scale element.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.BaseGauge.root">
+            <summary>
+            The root visual element.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.BaseGauge.scaleContainer">
+            <summary>
+            The container of all scale elements in this gauge.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.BaseGauge.background">
+            <summary>
+            A VisualElement containing all background elements.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.BaseGauge.foreground">
+            <summary>
+            A VisualElement containing all foreground elements.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseGauge.CacheVisuals">
+            <summary>
+            Gets or sets a value indicating whether the gauge will cache all background
+            and foreground elements to improve performance.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseGauge.Size">
+            <summary>
+            Gets or sets the size of the gauge.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseGauge.Width">
+            <summary>
+            Gets the width of the gauge.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseGauge.Height">
+            <summary>
+            Gets the height of the gauge.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseGauge.DefaultSize">
+            <summary>
+            Gets the initial size of the gauge.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.BaseGauge.PrepaintBackground">
+            <summary>
+            Raised when the gauge background is being painted.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.BaseGauge.PaintBackground">
+            <summary>
+            Raised when the gauge background is being painted.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.BaseGauge.PrepaintForeground">
+            <summary>
+            Raised when the gauge foreground is being painted.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.BaseGauge.PaintForeground">
+            <summary>
+            Raised when the gauge foreground is being painted.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.BaseGauge.PrepaintScale">
+            <summary>
+            Raised when a tick in the gauge is being painted.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.BaseGauge.PaintScale">
+            <summary>
+            Raised when a tick in the gauge is being painted.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.BaseGauge.PrepaintPointer">
+            <summary>
+            Raised when a pointer in the gauge is being painted.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.BaseGauge.PaintPointer">
+            <summary>
+            Raised when a pointer in the gauge is being painted.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.BaseGauge.PrepaintTick">
+            <summary>
+            Raised when a tick in the gauge is being painted.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.BaseGauge.PaintTick">
+            <summary>
+            Raised when a tick in the gauge is being painted.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.BaseGauge.Invalidated">
+            <summary>
+            Raised when the gauge has visually changed to allow containers to repaint.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.GenericGauge`1.#ctor">
+            <summary>
+            Initializes a new instance of the GenericGauge class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.GenericGauge`1.OnScalesChanged(System.Object,MindFusion.Gauges.NotifyCollectionChangedEventArgs{`0})">
+            <summary>
+            Handles the CollectionChanged event of the Scales collection.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.GenericGauge`1.scales">
+            <summary>
+            A collection of scales contained in the gauge.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.GenericGauge`1.Scales">
+            <summary>
+            Gets or sets the scales contained in the gauge.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.BaseScale">
+            <summary>
+            Represents a scale within a gauge control. The scale contains collections
+            of pointers, labels, ticks and ranges along with any arbitrary controls.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.#ctor">
+            <summary>
+            Initializes a new instance of the BaseScale class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.BeginInit">
+            <summary>
+            ISupportInitialize.BeginInit override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.EndInit">
+            <summary>
+            ISupportInitialize.EndInit override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.CreateVisuals">
+            <summary>
+            Creates the scale's visual structure.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.HandleMouse(MindFusion.Gauges.MouseInfo,System.Drawing.PointF)">
+            <summary>
+            VisualElementContainer.HandleMouse override;
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.UpdateInteractivePointers(System.Drawing.PointF,System.Boolean)">
+            <summary>
+            Updates all interactive pointers in this scale.
+            </summary>
+            <param name="point">
+            The point the pointers should point to.
+            </param>
+            <param name="final">
+            Indicates whether 
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.ArrangeOverride">
+            <summary>
+            VisualElementContainer.ArrangeOverride override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.OnRenderSizeChanged">
+            <summary>
+            VisualElement.OnRenderSizeChanged override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.InvalidateArrange(System.Boolean)">
+            <summary>
+            Invalidates the arrangement of the specified scale, optionally
+            rebuilding all ticks and labels.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.GetValueFromPoint(System.Drawing.PointF)">
+            <summary>
+            Returns the value corresponding to the specified point.
+            </summary>
+            <param name="point">
+            The point to test.
+            </param>
+            <returns>
+            The value from the scale, corresponding to the point, possibly MinValue or
+            MaxValue if the specified point cannot be associated with a value.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.CreateScaleGeometry">
+            <summary>
+            Rebuilds the scale path geometry.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.MeasurePointer(MindFusion.Gauges.Pointer,System.Drawing.SizeF)">
+            <summary>
+            Measures the specified pointer according to its PointerWidth and PointerHeight.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.ArrangePointer(MindFusion.Gauges.Pointer)">
+            <summary>
+            Arranges the specified pointer according to its Value.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.MeasureTick(MindFusion.Gauges.Tick,System.Drawing.SizeF)">
+            <summary>
+            Measures the specified tick according to the setting's TickWidth and TickHeight.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.ArrangeTick(MindFusion.Gauges.Tick)">
+            <summary>
+            Arranges the specified tick according to its Value.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.ArrangeLabel(MindFusion.Gauges.TickLabel)">
+            <summary>
+            Arranges the specified label according to the value it represents.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.MeasureRange(MindFusion.Gauges.Range,System.Drawing.SizeF)">
+            <summary>
+            Measures the specified range.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.CreateRangeGeometry(MindFusion.Gauges.Range)">
+            <summary>
+            Creates a geometry for the specified range, taking into consideration
+            its start and end value, start and end width and its alignment.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.CalculateAbsoluteLength(MindFusion.Gauges.Length)">
+            <summary>
+            Returns an absolute value corresponding to the specified length.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.ConvertValueBack(System.Single)">
+            <summary>
+            Calculates the position corresponding to the specified already converted value
+            according to the currently used function.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.ConvertValue(System.Single)">
+            <summary>
+            Calculates the value at the specified position of the scale according
+            to the currently used function.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.GetTickStep(MindFusion.Gauges.TickSettings,System.Single)">
+            <summary>
+            Returns the step between adjacent ticks according to the specified settings.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.UpdateTicksAndLabels">
+            <summary>
+            Rebuilds the tick and label elements in the scale completely.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.RenderTicksAndLabels(System.Collections.Generic.Stack{MindFusion.Gauges.TickSettings},System.Single,System.Single,System.Single,System.Boolean,System.Boolean)">
+            <summary>
+            Recursively creates ticks and labels and adds them to the appropriate containers.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.AddTickAndLabel(System.Single,MindFusion.Gauges.TickSettings)">
+            <summary>
+            Create a tick and a label representing the specified value and adds them
+            to the underlying containers.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.AddPointer(MindFusion.Gauges.Pointer)">
+            <summary>
+            Adds the specified pointer to the scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.RemovePointer(MindFusion.Gauges.Pointer)">
+            <summary>
+            Removes the specified pointer from the scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.OnPointerClicked(System.Object,MindFusion.Gauges.GaugeMouseEventArgs)">
+            <summary>
+            Handles the Clicked event on all underlying pointers.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.AddRange(MindFusion.Gauges.Range)">
+            <summary>
+            Adds the specified range to the scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.RemoveRange(MindFusion.Gauges.Range)">
+            <summary>
+            Removes the specified range from the scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.OnRangeClicked(System.Object,MindFusion.Gauges.GaugeMouseEventArgs)">
+            <summary>
+            Handles the Clicked event on all underlying ranges.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.AddChild(MindFusion.Gauges.ScaleElement)">
+            <summary>
+            Adds the specified element to the scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.RemoveChild(MindFusion.Gauges.ScaleElement)">
+            <summary>
+            Removes the specified element from the scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.OnTickClicked(System.Object,MindFusion.Gauges.GaugeMouseEventArgs)">
+            <summary>
+            Handles the Clicked event on all underlying tick marks.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.OnPointerClicked(MindFusion.Gauges.GaugeMouseEventArgs)">
+            <summary>
+            Raises the PointerClicked event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.OnRangeClicked(MindFusion.Gauges.GaugeMouseEventArgs)">
+            <summary>
+            Raises the RangeClicked event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.OnTickClicked(MindFusion.Gauges.GaugeMouseEventArgs)">
+            <summary>
+            Raises the TickClicked event.
+            </summary>
+            <param name="e">
+            An object, containing the event data
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.OnScaleGeometryClicked(MindFusion.Gauges.GaugeMouseEventArgs)">
+            <summary>
+            Raises the ScaleGeometryClicked event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.GetLabelValue(System.Single,MindFusion.Gauges.TickSettings)">
+            <summary>
+            Raises the QueryLabelValue event in order to retrieve a custom value for a label.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.OnQueryLabelValue(MindFusion.Gauges.QueryLabelValueEventArgs)">
+            <summary>
+            Raises the QueryLabelValue event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.OnPointersChanged(System.Object,MindFusion.Gauges.NotifyCollectionChangedEventArgs{MindFusion.Gauges.Pointer})">
+            <summary>
+            Handles the CollectionChanged event on the Pointers collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.OnRangesChanged(System.Object,MindFusion.Gauges.NotifyCollectionChangedEventArgs{MindFusion.Gauges.Range})">
+            <summary>
+            Handles the CollectionChanged event on the Ranges collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.OnScaleChildrenChanged(System.Object,MindFusion.Gauges.NotifyCollectionChangedEventArgs{MindFusion.Gauges.ScaleElement})">
+            <summary>
+            Handles the CollectionChanged event on the ScaleChildren collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.GetScale(MindFusion.Gauges.ScaleElement)">
+            <summary>
+            Gets the value of the ScaleElement.Scale property for a given scale element. 
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.SetScale(MindFusion.Gauges.ScaleElement,MindFusion.Gauges.BaseScale)">
+            <summary>
+            Sets the value of the ScaleElement.Scale property for a given scale element. 
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.ClearScale(MindFusion.Gauges.ScaleElement)">
+            <summary>
+            Clears the value of the ScaleElement.Scale property for a given scale element.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.BaseScale.MeasureString(System.String,System.Drawing.Font)">
+            <summary>
+            Measures the specified string when painted with the specified font.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.BaseScale.initializationStage">
+            <summary>
+            A flag indicating whether the control is currently being initialized.
+            A value greater than 0 indicates that the control is initializing.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.BaseScale.tickContainer">
+            <summary>
+            A visual container for the scale ticks.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.BaseScale.rangeContainer">
+            <summary>
+            A visual container for the scale ranges.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.BaseScale.labelContainer">
+            <summary>
+            A visual container for the scale labels.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.BaseScale.childrenContainer">
+            <summary>
+            A visual container for the scale children.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.BaseScale.pointerContainer">
+            <summary>
+            A visual container for the scale pointers.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.BaseScale.geometry">
+            <summary>
+            A path figure representing the scale geometry.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.BaseScale.geometryContainer">
+            <summary>
+            A visual container for the geometry scale.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.BaseScale.customFunction">
+            <summary>
+            The custom value distribution function.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.BaseScale.reversedCustomFunction">
+            <summary>
+            The reversed analogue to the custom function.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.BaseScale.suspendUpdates">
+            <summary>
+            A flag indicating whether updates are currently suspended.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.BaseScale.updateRequested">
+            <summary>
+            A flag indicating whether an update has been requested while
+            updates were suspended.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseScale.Pointers">
+            <summary>
+            Gets or sets a collection with the pointers displayed in the scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseScale.Ranges">
+            <summary>
+            Gets or sets a collection with the ranges displayed in the scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseScale.ScaleChildren">
+            <summary>
+            Gets or sets a collection with elements displayed in the scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseScale.MinValue">
+            <summary>
+            Gets or sets the minimal value displayed by the scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseScale.MaxValue">
+            <summary>
+            Gets or sets the maximal value displayed by the scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseScale.MajorTickSettings">
+            <summary>
+            Gets or sets the settings for the major ticks and their associated labels.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseScale.MiddleTickSettings">
+            <summary>
+            Gets or sets the settings for the middle ticks and their associated labels.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseScale.MinorTickSettings">
+            <summary>
+            Gets or sets the settings for the minor ticks and their associated labels.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseScale.StartWidth">
+            <summary>
+            Gets or sets the width of the scale bar at its beginning.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseScale.EndWidth">
+            <summary>
+            Gets or sets the width of the scale bar at its end.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseScale.FunctionType">
+            <summary>
+            Gets or sets the type of the function used to calculate the distribution
+            of values along the scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseScale.FunctionArgument">
+            <summary>
+            Gets or sets the argument passed to custom functions.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseScale.LogarithmBase">
+            <summary>
+            Gets or sets the logarithm base when FunctionType is set to Logarithmic.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseScale.CustomFunction">
+            <summary>
+            Gets or sets the function to be used for distribution of values along
+            the scale when FunctionType is set to Custom.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseScale.ReversedCustomFunction">
+            <summary>
+            Gets or sets the reversed version of the function specified through CustomFunction.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.BaseScale.Margin">
+            <summary>
+            Gets or sets the margin of this scale.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.BaseScale.PointerClicked">
+            <summary>
+            Occurs when a pointer within the scale is clicked with the mouse.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.BaseScale.RangeClicked">
+            <summary>
+            Occurs when a range within the scale is clicked with the mouse.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.BaseScale.TickClicked">
+            <summary>
+            Occurs when a tick mark within the scale is clicked with the mouse.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.BaseScale.ScaleGeometryClicked">
+            <summary>
+            Occurs when the scale geometry is clicked with the mouse.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.BaseScale.QueryLabelValue">
+            <summary>
+            Occurs when the labels in the scale are being generated in order
+            to associate custom values with them.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.PrepaintEventArgs">
+            <summary>
+            Provides data for various pre-paint events.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.CustomPaintEventArgs">
+            <summary>
+            Provides data for the various custom painting event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.CustomPaintEventArgs.#ctor">
+            <summary>
+            Initializes a new instance of the CustomPaintEventArgs class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.CustomPaintEventArgs.PaintVisualElement(MindFusion.Gauges.VisualElement,System.Drawing.SizeF)">
+            <summary>
+            Paints the specified visual element to the underlying IGraphics.
+            </summary>
+            <param name="element">
+            The VisualElement to paint.
+            </param>
+            <param name="constraint">
+            The available size.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.CustomPaintEventArgs.CreateLinearGradient(System.Drawing.PointF,System.Drawing.PointF,System.Object[])">
+            <summary>
+            Creates a linear gradient with orientation defined by two points and
+            a blend specified by a series of positions and color objects.
+            </summary>
+            <param name="a">
+            The first point determining the gradient orientation.
+            </param>
+            <param name="b">
+            The second point determining the gradient orientation.
+            </param>
+            <param name="positionsAndColors">
+            An alternating sequence of float and Color pairs where each pair defines
+            a gradient stop. The positions in the sequence need to be in ascending order.
+            </param>
+            <returns>
+            A MindFusion.Drawing.LinearGradientBrush with the specified characteristics.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.CustomPaintEventArgs.CreateLinearGradient(System.Single,System.Object[])">
+            <summary>
+            Creates a linear gradient with orientation defined by an angle and
+            a blend specified by a series of positions and color objects.
+            </summary>
+            <param name="angle">
+            The orientation of the gradient, expressed in degrees.
+            </param>
+            <param name="positionsAndColors">
+            An alternating sequence of float and Color pairs where each pair defines
+            a gradient stop. The positions in the sequence need to be in ascending order.
+            </param>
+            <returns>
+            A MindFusion.Drawing.LinearGradientBrush with the specified characteristics.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.CustomPaintEventArgs.CreatePathGradient(System.Drawing.PointF,System.Object[])">
+            <summary>
+            Creates a path gradient with the specified center point and
+            a blend specified by a series of positions and color objects.
+            </summary>
+            <param name="centerPoint">
+            The center point of the path gradient.
+            </param>
+            <param name="positionsAndColors">
+            An alternating sequence of float and Color pairs where each pair defines
+            a gradient stop. The positions in the sequence need to be in ascending order.
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="P:MindFusion.Gauges.CustomPaintEventArgs.Element">
+            <summary>
+            Gets the element being custom drawn.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.CustomPaintEventArgs.Graphics">
+            <summary>
+            Gets the target graphics.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.PrepaintEventArgs.#ctor">
+            <summary>
+            Initializes a new instance of the PrepaintEventArgs class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.PrepaintEventArgs.CancelDefaultPainting">
+            <summary>
+            Gets or sets a value indicating whether the default painting of
+            this element should be performed.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.Pointer">
+            <summary>
+            Represents a needle (or arrow) within a gauge scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Pointer.#ctor">
+            <summary>
+            Initializes a new instance of the Pointer class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Pointer.CreateVisuals">
+            <summary>
+            Creates the visual representation of the pointer based on its shape.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Pointer.MeasureOverride(System.Drawing.SizeF)">
+            <summary>
+            VisualElementContainer.MeasureOverride override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Pointer.ArrangeOverride">
+            <summary>
+            VisualElementContainer.ArrangeOverride override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Pointer.OnValueChanged(MindFusion.Gauges.ValueChangedEventArgs{System.Single})">
+            <summary>
+            Raises the ValueChanged event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.Pointer.OnValueChanging(MindFusion.Gauges.ValueChangedEventArgs{System.Single})">
+            <summary>
+            Raises the ValueChanging event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.Pointer.ProcessValueChanged(System.Single,System.Single)">
+            <summary>
+            Adjusts the pointer value due to changes to the Value or IsDiscrete
+            properties and raises the ValueChanged event if necessary.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Pointer.DefaultFill">
+            <summary>
+            VisualElement.DefaultFill override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Pointer.DefaultStroke">
+            <summary>
+            VisualElement.DefaultStroke override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Pointer.Value">
+            <summary>
+            Gets or sets the value this pointer points to.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Pointer.IsInteractive">
+            <summary>
+            Gets or sets a value indicating whether the pointer position
+            should be affected by user interactions.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Pointer.PointerWidth">
+            <summary>
+            Gets or sets the width of the pointer.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Pointer.PointerHeight">
+            <summary>
+            Gets or sets the height of the pointer.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Pointer.PointerOffset">
+            <summary>
+            Gets or sets the offset of the pointer along the direction it points to.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Pointer.Alignment">
+            <summary>
+            Gets or sets the alignment of the pointer relative to the scale.
+            </summary>
+            <remarks>
+            This property is ignored in oval gauges where the pointer is always pinned
+            to the center of the gauge.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Gauges.Pointer.IsDiscrete">
+            <summary>
+            Gets or sets a value indicating whether the pointer value can be changed only discretely.
+            In other words, the pointer Value can be only integer.
+            </summary>
+            <remarks>
+            This property can be useful when implementing analog-style pointers, which can move
+            only discretely.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Gauges.Pointer.Shape">
+            <summary>
+            Gets or sets the shape of the pointer.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Pointer.CustomShape">
+            <summary>
+            Gets or sets the definition of the pointer shape when Shape is set to Custom.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.Pointer.Margin">
+            <summary>
+            This property is not intended to be modified directly.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.Pointer.ValueChanged">
+            <summary>
+            Occurs when the Value of this pointer has changed interactively.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.Pointer.ValueChanging">
+            <summary>
+            Occurs when the Value of this pointer is being changed interactively.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.GaugeMouseEventArgs">
+            <summary>
+            Contains the arguments passed to mouse-related event handlers.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.GaugeMouseEventArgs.#ctor(MindFusion.Gauges.ScaleElement,System.Drawing.PointF,System.Single)">
+            <summary>
+            Initializes a new instance of the GaugeMouseEventArgs class.
+            </summary>
+            <param name="element">
+            The clicked gauge element, if any.
+            </param>
+            <param name="position">
+            The position of the mouse relative to the clicked element.
+            </param>
+            <param name="value">
+            The gauge value corresponding to the clicked point.
+            </param>
+        </member>
+        <member name="P:MindFusion.Gauges.GaugeMouseEventArgs.Element">
+            <summary>
+            Gets a reference to the clicked gauge element, if any.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.GaugeMouseEventArgs.Position">
+            <summary>
+            Gets the position of the mouse relative to the clicked element.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.GaugeMouseEventArgs.Value">
+            <summary>
+            Get the gauge value corresponding to the clicked point.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.ValueChangedEventArgs`1">
+            <summary>
+            Contains the arguments passed to value change notification handlers.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.ValueChangedEventArgs`1.#ctor">
+            <summary>
+            Initializes a new instance of the ValueChangedEventArgs class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.ValueChangedEventArgs`1.#ctor(`0,`0)">
+            <summary>
+            Initializes a new instance of the ValueChangedEventArgs class.
+            </summary>
+            <param name="oldValue">
+            The previous value of the changed property.
+            </param>
+            <param name="newValue">
+            The new value of the changed property.
+            </param>
+        </member>
+        <member name="P:MindFusion.Gauges.ValueChangedEventArgs`1.OldValue">
+            <summary>
+            Gets the previous value of the changed property.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.ValueChangedEventArgs`1.NewValue">
+            <summary>
+            Gets the new value of the changed property.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.ValueChangedEventHandler`1">
+            <summary>
+            Represents the method that will handle value change notification events.
+            </summary>
+            <param name="sender">
+            The source of the event.
+            </param>
+            <param name="e">
+            A ValueChangedEventArgs&lt;T&gt; that contains the event data. 
+            </param>
+        </member>
+        <member name="T:MindFusion.Gauges.TickLabel">
+            <summary>
+            Represents a tick label within a gauge scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.TickLabel.#ctor(MindFusion.Gauges.TickSettings)">
+            <summary>
+            Initializes a new instance of the TickLabel class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.TickLabel.MeasureOverride(System.Drawing.SizeF)">
+            <summary>
+            VisualElementContainer.MeasureOverride override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.TickLabel.ArrangeOverride">
+            <summary>
+            VisualElementContainer.ArrangeOverride override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.TickLabel.Paint(MindFusion.Drawing.IGraphics)">
+            <summary>
+            ScaleElement.Paint override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickLabel.Value">
+            <summary>
+            Gets the value associated with this label.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickLabel.ValueAsString">
+            <summary>
+            Gets the string representation of the associated value.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickLabel.RawValue">
+            <summary>
+            Gets the value associated with this label before it was processed
+            by any value distribution functions.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickLabel.FontSize">
+            <summary>
+            Gets the actual size of the font of this label.
+            </summary>
+            <remarks>
+            The value of this property is calculated from the FontSize property of
+            the associated TickSettings, based on the size of the containing scale.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Gauges.TickLabel.Foreground">
+            <summary>
+            Gets the foreground color of this label.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.TickLabel.Settings">
+            <summary>
+            Gets the TickSettings associated with this label.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.OvalScale">
+            <summary>
+            Represents a radial scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.#ctor">
+            <summary>
+            Initializes a new instance of the OvalScale class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.MeasureOverride(System.Drawing.SizeF)">
+            <summary>
+            BaseScale.MeasureOverride override.
+            </summary>
+            <param name="constraint">
+            The maximum size that the method can return.
+            </param>
+            <returns>
+            The size of the control, up to the maximum specified by constraint.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.ArrangeOverride">
+            <summary>
+            BaseScale.ArrangeOverride override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.GetValueFromPoint(System.Drawing.PointF)">
+            <summary>
+            BaseScale.GetValueFromPoint override.
+            </summary>
+            <param name="point">
+            The point to test.
+            </param>
+            <returns>
+            The value from the scale, corresponding to the point, possibly MinValue or
+            MaxValue if the specified point cannot be associated with a value.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.GetInnerOutlineOffset(System.Single)">
+            <summary>
+            Calculates the width of the scale geometry at the specified angle.
+            For example if the start width of the scale is 10 and its end width
+            is 20, calling this method for an angle representing the middle
+            of the scale geometry will yield 15.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.GetAngleFromPoint(System.Drawing.PointF)">
+            <summary>
+            Calculates the angle corresponding to the specified point.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.GetValueFromAngle(System.Single)">
+            <summary>
+            Calculates the value corresponding to the specified angle.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.GetAngleFromValue(System.Single)">
+            <summary>
+            Calculates the angle corresponding to the specified value.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.GetAbsoluteLength(MindFusion.Gauges.Length)">
+            <summary>
+            Calculates the absolute length corresponding to the specified argument,
+            relative to the current scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.AlignBasePoint(MindFusion.Gauges.Length,MindFusion.Gauges.Alignment,System.Single,System.Drawing.SizeF)">
+            <summary>
+            Aligns the base point according to the specified settings.
+            </summary>
+            <param name="offset">
+            The offset of the point from the outside outline of the scale. The offset
+            is applied inwards, that is, positive offset moves the point to the center.
+            </param>
+            <param name="alignment">
+            The alignment of the base point relative to the scale.
+            </param>
+            <param name="angle">
+            The rotation angle of the base point.
+            </param>
+            <param name="size">
+            The size of the object being aligned, (0, 0) for points.
+            </param>
+            <returns>
+            The aligned base point.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.DistanceFromCenter(System.Drawing.PointF)">
+            <summary>
+            Returns the distance of the specified point from the scale center.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.CreateScaleGeometry">
+            <summary>
+            Rebuilds the scale path.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.CalculateAbsoluteLength(MindFusion.Gauges.Length)">
+            <summary>
+            BaseScale.CalculateAbsoluteLength override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.MeasurePointer(MindFusion.Gauges.Pointer,System.Drawing.SizeF)">
+            <summary>
+            BaseScale.MeasurePointer override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.ArrangePointer(MindFusion.Gauges.Pointer)">
+            <summary>
+            BaseScale.ArrangePointer override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.MeasureTick(MindFusion.Gauges.Tick,System.Drawing.SizeF)">
+            <summary>
+            BaseScale.MeasureTick override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.ArrangeTick(MindFusion.Gauges.Tick)">
+            <summary>
+            BaseScale.ArrangeTick override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.ArrangeLabel(MindFusion.Gauges.TickLabel)">
+            <summary>
+            BaseScale.ArrangeLabel override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.MeasureRange(MindFusion.Gauges.Range,System.Drawing.SizeF)">
+            <summary>
+            BaseScale.MeasureRange override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalScale.CreateRangeGeometry(MindFusion.Gauges.Range)">
+            <summary>
+            BaseScale.CreateRangeGeometry override.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.OvalScale.scaleRadius">
+            <summary>
+            The radius of the scale.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.OvalScale.scaleHalfSize">
+            <summary>
+            The half size of the scale. Usually the same as radius unless
+            the radius is set to a value different than 0.5.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.OvalScale.scaleCenter">
+            <summary>
+            The center of the scale, usually (r, r) where r is the radius.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.OvalScale.scaleSize">
+            <summary>
+            The size of the scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.OvalScale.DefaultFill">
+            <summary>
+            VisualElement.DefaultFill override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.OvalScale.DefaultStroke">
+            <summary>
+            VisualElement.DefaultFill override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.OvalScale.ScaleRelativeRadius">
+            <summary>
+            Gets or sets the radius of the scale relative to the scale bounds.
+            A value of 0.5 indicates that the radius is half the size of the scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.OvalScale.ScaleRelativeCenter">
+            <summary>
+            Gets or sets the center of the scale relative to the scale bounds.
+            A value of (0.5, 0.5) indicates the center of the bounds, a value
+            of (0, 0) indicates the top-left corner.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.OvalScale.DefaultMargin">
+            <summary>
+            ScaleElement.DefaultMargin override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.OvalScale.StartAngle">
+            <summary>
+            Gets or sets the start angle of the scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.OvalScale.EndAngle">
+            <summary>
+            Gets or sets the end angle of the scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.OvalScale.BasePoint">
+            <summary>
+            Gets the baseline point. This is the point at the outer outline of the scale,
+            corresponding to the angle of 0 degrees.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.LineSegment">
+            <summary>
+            Represents a line between two points.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LineSegment.#ctor">
+            <summary>
+            Initializes a new instance of the LineSegment class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LineSegment.#ctor(System.Drawing.PointF,System.Boolean)">
+            <summary>
+            Initializes a new instance of the LineSegment class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LineSegment.AddTo(System.Drawing.Drawing2D.GraphicsPath,System.Drawing.PointF,System.Boolean)">
+            <summary>
+            Segment.AddTo override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.LineSegment.Point">
+            <summary>
+            Gets or sets the end point of the line segment.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.LinearScale">
+            <summary>
+            Represents a linear scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.#ctor">
+            <summary>
+            Initializes a new instance of the LinearScale class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.MeasureOverride(System.Drawing.SizeF)">
+            <summary>
+            VisualElementContainer.MeasureOverride override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.GetValueFromPoint(System.Drawing.PointF)">
+            <summary>
+            BaseScale.GetValueFromPoint override.
+            </summary>
+            <param name="point">
+            The point to test.
+            </param>
+            <returns>
+            The value from the scale, corresponding to the point, possibly MinValue or
+            MaxValue if the specified point cannot be associated with a value.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.GetValueFromDistance(System.Single)">
+            <summary>
+            Calculates the value corresponding to the specified distance from
+            the origin of the scale.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.GetDistanceFromValue(System.Single)">
+            <summary>
+            Returns the distance from the origin of the scale to the point
+            representing the specified value.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.CreateScaleGeometry">
+            <summary>
+            Rebuilds the scale path.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.MeasurePointer(MindFusion.Gauges.Pointer,System.Drawing.SizeF)">
+            <summary>
+            BaseScale.MeasurePointer override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.ArrangeOverride">
+            <summary>
+            BaseScale.ArrangeOverride override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.ArrangePointer(MindFusion.Gauges.Pointer)">
+            <summary>
+            BaseScale.ArrangePointer override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.MeasureTick(MindFusion.Gauges.Tick,System.Drawing.SizeF)">
+            <summary>
+            BaseScale.MeasureTick override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.GetOutlineOffset(System.Single)">
+            <summary>
+            Calculates the width of the scale geometry at the specified value.
+            For example if the start width of the scale is 10 and its end width
+            is 20, calling this method for a value representing the middle
+            of the scale geometry will yield 15.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.GetDistanceFromPoint(System.Drawing.PointF)">
+            <summary>
+            Calculates the angle corresponding to the specified point.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.ArrangeTick(MindFusion.Gauges.Tick)">
+            <summary>
+            BaseScale.ArrangeTick override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.IsLeftAlignment(MindFusion.Gauges.Alignment,System.Single)">
+            <summary>
+            Checks whether the specified alignment is to the left of (in horizontal scale)
+            or above (in vertical scale) the scale. The offset is used only in the TrueCenter
+            case. Positive offsets in this case yield true, negative offsets yield false,
+            zero offset yields null.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.ArrangeLabel(MindFusion.Gauges.TickLabel)">
+            <summary>
+            BaseScale.ArrangeLabel override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.MeasureRange(MindFusion.Gauges.Range,System.Drawing.SizeF)">
+            <summary>
+            BaseScale.MeasureRange override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.CreateRangeGeometry(MindFusion.Gauges.Range)">
+            <summary>
+            BaseScale.CreateRangeGeometry override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearScale.CalculateAbsoluteLength(MindFusion.Gauges.Length)">
+            <summary>
+            BaseScale.CalculateAbsoluteLength override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.LinearScale.Left">
+            <summary>
+            Gets or sets the distance between the left of this scale and the left
+            of its container.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.LinearScale.Top">
+            <summary>
+            Gets or sets the distance between the top of the scale and the top
+            of its container.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.LinearScale.ScaleLength">
+            <summary>
+            Gets or sets the length of the scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.LinearScale.Orientation">
+            <summary>
+            Gets or sets the orientation of the scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.LinearScale.ScaleAlignment">
+            <summary>
+            Gets or sets the alignment of the scale.
+            </summary>
+            <remarks>
+            All Inner* values align a vertical scale to the left side and a horizontal
+            scale to the top side of the control. All Outer* values align a vertical
+            scale to the right side and a horizontal scale to the bottom side of the
+            control. All Center* values center the scale along its length.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Gauges.LinearScale.BasePoint">
+            <summary>
+            Gets the baseline point. This is the (left, top) point in a horizontal scale and
+            (left, bottom) point in a vertical scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.LinearScale.AbsoluteWidth">
+            <summary>
+            Gets the max thickness of the scale along all its length.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.LinearScale.AbsoluteLength">
+            <summary>
+            Gets the total length of the scale - the span where ticks and labels
+            should be distributed. This is the width in a horizontal scale and the
+            height in a vertical scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.LinearScale.AbsoluteStartWidth">
+            <summary>
+            Gets the absolute start width of the scale, calculated according to
+            the current scale size.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.LinearScale.AbsoluteEndWidth">
+            <summary>
+            Gets the absolute end width of the scale, calculated according to
+            the current scale size.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.LinearScale.AbsoluteLeft">
+            <summary>
+            Gets the absolute left side coordinate of the scale, calculated according to
+            the current scale size.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.LinearScale.AbsoluteTop">
+            <summary>
+            Gets the absolute top side coordinate of the scale, calculated according to
+            the current scale size.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.LinearScale.IsVertical">
+            <summary>
+            Gets a value indicating whether the scale is vertical.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.Ellipse">
+            <summary>
+            Represents an ellipse visual.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Ellipse.#ctor">
+            <summary>
+            Initializes a new instance of the Ellipse class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Ellipse.HitTest(System.Drawing.PointF)">
+            <summary>
+            VisualElement.HitTest override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.Ellipse.HitTestObj(System.Drawing.PointF,MindFusion.Gauges.HitTestResultHandler)">
+            <summary>
+            VisualElement.HitTestObj override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.CustomInterval">
+            <summary>
+            Represents an interval with associated custom values for fill and stroke.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.CustomInterval.#ctor">
+            <summary>
+            Initializes a new instance of the CustomInterval class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.CustomInterval.Contains(System.Single)">
+            <summary>
+            Checks whether the specified value falls within this interval.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.CustomInterval.RaisePropertyChanged(System.String)">
+            <summary>
+            Raises the PropertyChanged event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.CustomInterval.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Raises the PropertyChanged event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="P:MindFusion.Gauges.CustomInterval.MinValue">
+            <summary>
+            Gets or sets the start of this custom interval.
+            </summary>
+            <remarks>
+            If this property is set to NaN, negative infinity will be
+            considered as the start of the interval.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Gauges.CustomInterval.MaxValue">
+            <summary>
+            Gets or sets the end of this custom interval.
+            </summary>
+            <remarks>
+            If this property is set to NaN, positive infinity will be
+            considered as the end of the interval.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Gauges.CustomInterval.Fill">
+            <summary>
+            Gets or sets the brush to apply as a background of the elements
+            within the custom interval.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.CustomInterval.Stroke">
+            <summary>
+            Gets or sets the brush to apply as an outline of the elements
+            within the custom interval.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.CustomInterval.Foreground">
+            <summary>
+            Gets or sets the color to apply as a foreground to the elements
+            within this custom interval.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Gauges.CustomInterval.PropertyChanged">
+            <summary>
+            Occurs when a property of the interval changes.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.TickType">
+            <summary>
+            Indicates the type of a scale tick.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.TickType.None">
+            <summary>
+            Specifies ticks of an unknown type.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.TickType.Major">
+            <summary>
+            Specifies a major tick.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.TickType.Middle">
+            <summary>
+            Specifies a middle tick.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.TickType.Minor">
+            <summary>
+            Specifies a minor tick.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.QueryLabelValueEventArgs">
+            <summary>
+            Provides data for the QueryLabelValue event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.QueryLabelValueEventArgs.#ctor">
+            <summary>
+            Initializes a new instance of the QueryLabelValueEventArgs class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.QueryLabelValueEventArgs.CalculatedLabelValue">
+            <summary>
+            Gets the floating point value, which has been calculated for
+            the label and which will be used if no custom value is provided.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.QueryLabelValueEventArgs.Settings">
+            <summary>
+            Gets the TickSettings object which specifies the settings of the label.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.QueryLabelValueEventArgs.NewValue">
+            <summary>
+            Gets or sets the new value to associate with the label.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.PointerShape">
+            <summary>
+            Indicates the shape of a pointer.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.PointerShape.None">
+            <summary>
+            Specifies an empty shape, that is, the tick is not displayed.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.PointerShape.Custom">
+            <summary>
+            Specifies a custom shape.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.PointerShape.Needle">
+            <summary>
+            Specifies a sharp pointer with a circle at its base.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.PointerShape.Needle2">
+            <summary>
+            Specifies a sharp pointer with a circle at its base.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.PointerShape.Ellipse">
+            <summary>
+            Specifies an elliptical shape.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.PointerShape.Rectangle">
+            <summary>
+            Specifies a rectangular shape.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.ObservableCollection`1">
+            <summary>
+            Represents a dynamic data collection that provides notifications when items
+            get added, removed, or when the whole list is refreshed.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.ObservableCollection`1.#ctor">
+            <summary>
+            Initializes a new instance of the ObservableCollection&lt;T&gt; class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.ObservableCollection`1.#ctor(System.Collections.Generic.ICollection{`0})">
+            <summary>
+            Initializes a new instance of the ObservableCollection&lt;T&gt; class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.ObservableCollection`1.AddRange(System.Collections.Generic.ICollection{`0})">
+            <summary>
+            Adds the specified objects to the end of the collection.
+            </summary>
+            <param name="items">
+            The objects to add.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.ObservableCollection`1.InsertItem(System.Int32,`0)">
+            <summary>
+            Collection&lt;T&gt;.InsertItem override.
+            </summary>
+            <param name="index">
+            The zero-based index at which item should be inserted.
+            </param>
+            <param name="item">
+            The object to insert. The value can be null for reference types.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.ObservableCollection`1.RemoveItem(System.Int32)">
+            <summary>
+            Collection&lt;T&gt;.RemoveItem override.
+            </summary>
+            <param name="index">
+            The zero-based index of the element to remove.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.ObservableCollection`1.SetItem(System.Int32,`0)">
+            <summary>
+            Collection&lt;T&gt;.SetItem override.
+            </summary>
+            <param name="index">
+            The zero-based index of the element to replace.
+            </param>
+            <param name="item">
+            The new value for the element at the specified index.
+            The value can be null for reference types.
+            </param>
+        </member>
+        <member name="M:MindFusion.Gauges.ObservableCollection`1.ClearItems">
+            <summary>
+            Collection&lt;T&gt;.ClearItems override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.ObservableCollection`1.OnCollectionChanged(MindFusion.Gauges.NotifyCollectionChangedEventArgs{`0})">
+            <summary>
+            Raises the CollectionChanged event.
+            </summary>
+            <param name="e">
+            An object, containing the event data.
+            </param>
+        </member>
+        <member name="E:MindFusion.Gauges.ObservableCollection`1.CollectionChanged">
+            <summary>
+            Occurs when an item is added, removed, changed, moved, or the entire list is refreshed.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.NotifyCollectionChangedEventArgs`1">
+            <summary>
+            Provides data for the ObservableCollection&lt;T&gt;.CollectionChanged event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.NotifyCollectionChangedEventArgs`1.#ctor">
+            <summary>
+            Initializes a new instance of the NotifyCollectionChangedEventArgs class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.NotifyCollectionChangedEventArgs`1.Action">
+            <summary>
+            Gets or sets the action that caused the event.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.NotifyCollectionChangedEventArgs`1.NewItems">
+            <summary>
+            Gets the list of new items involved in the change.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.NotifyCollectionChangedEventArgs`1.OldItems">
+            <summary>
+            Gets the list of items affected by a Replace, Remove, or Reset action.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.NotifyCollectionChangedAction">
+            <summary>
+            Describes the action that caused a CollectionChanged event.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.NotifyCollectionChangedAction.Add">
+            <summary>
+            One or more items were added to the collection.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.NotifyCollectionChangedAction.Remove">
+            <summary>
+            One or more items were removed from the collection.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.NotifyCollectionChangedAction.Replace">
+            <summary>
+            One or more items were replaced in the collection.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.NotifyCollectionChangedAction.Reset">
+            <summary>
+            The content of the collection changed dramatically.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.FunctionType">
+            <summary>
+            Indicates the type of function that will be used to distribute values
+            along the gauge scale.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.FunctionType.Linear">
+            <summary>
+            Specifies that the values will be distributed linearly.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.FunctionType.Logarithmic">
+            <summary>
+            Specifies a logarithmic function with base specified by the LogarithmBase property.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.FunctionType.Custom">
+            <summary>
+            Specifies a user defined function, which will be supplied by the CustomFunction property.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.ArcSegment">
+            <summary>
+            Represents an elliptical arc between two points.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.ArcSegment.#ctor">
+            <summary>
+            Initializes a new instance of the ArcSegment class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.ArcSegment.#ctor(System.Drawing.PointF,System.Drawing.SizeF,System.Single,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the ArcSegment class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.ArcSegment.AddTo(System.Drawing.Drawing2D.GraphicsPath,System.Drawing.PointF,System.Boolean)">
+            <summary>
+            Segment.AddTo override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.ArcSegment.IsLargeArc">
+            <summary>
+            Gets or sets a value that indicates whether the arc should be greater than 180 degrees.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.ArcSegment.Point">
+            <summary>
+            Gets or sets the endpoint of the elliptical arc.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.ArcSegment.RotationAngle">
+            <summary>
+            Gets or sets the amount (in degrees) by which the ellipse is rotated about the x-axis.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.ArcSegment.Size">
+            <summary>
+            Gets or sets the x- and y-radius of the arc as a Size structure.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.ArcSegment.IsCounterclockwise">
+            <summary>
+            Gets or sets a value that specifies whether the arc is drawn in counterclockwise
+            or clockwise direction.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Thickness">
+            <summary>
+            Describes the thickness on all four sides of a rectangular frame.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Thickness.#ctor(System.Single)">
+            <summary>
+            Initializes a new instance of the Thickness structure.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Thickness.#ctor(System.Single,System.Boolean)">
+            <summary>
+            Initializes a new instance of the Thickness structure.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Thickness.#ctor(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Initializes a new instance of the Thickness structure.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Thickness.#ctor(System.Single,System.Single,System.Single,System.Single,System.Boolean)">
+            <summary>
+            Initializes a new instance of the Thickness structure.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Thickness.Equals(System.Object)">
+            <summary>
+            Compares this Thickness structure to another System.Object for equality.
+            </summary>
+            <param name="obj">
+            The object to compare.
+            </param>
+            <returns>
+            true if the two objects are equal; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Thickness.Equals(MindFusion.Thickness)">
+            <summary>
+            Compares this Thickness structure to another Thickness structure for equality.
+            </summary>
+            <param name="other">
+            The Thickness to compare to.
+            </param>
+            <returns>
+            true if the two objects are equal; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Thickness.GetHashCode">
+            <summary>
+            Returns the hash code of the structure.
+            </summary>
+            <returns>
+            A hash code for this instance of Thickness.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Thickness.ToString">
+            <summary>
+            Returns the string representation of the Thickness structure.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Thickness.op_Equality(MindFusion.Thickness,MindFusion.Thickness)">
+            <summary>
+            Compares two Thickness structures for equality.
+            </summary>
+            <param name="t1">
+            The first structure to compare.
+            </param>
+            <param name="t2">
+            The other structure to compare.
+            </param>
+            <returns>
+            true if the two instances of Thickness are equal; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Thickness.op_Inequality(MindFusion.Thickness,MindFusion.Thickness)">
+            <summary>
+            Compares two Thickness structures for inequality.
+            </summary>
+            <param name="t1">
+            The first structure to compare.
+            </param>
+            <param name="t2">
+            The other structure to compare.
+            </param>
+            <returns>
+            true if the two instances of Thickness are not equal; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Thickness.Apply(System.Drawing.RectangleF)">
+            <summary>
+            Applies the current thickness to the specified rectangle by deflating the rectangle.
+            </summary>
+            <param name="r">
+            The rectangle to deflate.
+            </param>
+            <returns>
+            The modified rectangle.
+            </returns>
+        </member>
+        <member name="F:MindFusion.Thickness.IsRelative">
+            <summary>
+            A flag indicating whether the thickness properties are expressed as relative
+            or absolute quantities.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Thickness.ToAbsolute(System.Drawing.SizeF)">
+            <summary>
+            Converts the current thickness to absolute value relative to the specified size.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Thickness.Zero">
+            <summary>
+            Represents an empty (0) thickness.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Thickness.Left">
+            <summary>
+            Gets or sets the width of the left side of the frame.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Thickness.Top">
+            <summary>
+            Gets or sets the width of the top side of the frame.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Thickness.Right">
+            <summary>
+            Gets or sets the width of the right side of the frame.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Thickness.Bottom">
+            <summary>
+            Gets or sets the width of the bottom side of the frame.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.OvalGaugeStyle">
+            <summary>
+            Specifies the appearance of an oval gauge.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.OvalGaugeStyle.Circular">
+            <summary>
+            Indicates a regular circular appearance.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.OvalGaugeStyle.QuadraticNE">
+            <summary>
+            Indicates a quadratic appearance with the scales oriented towards North-East.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.OvalGaugeStyle.QuadraticNW">
+            <summary>
+            Indicates a quadratic appearance with the scales oriented towards North-West.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.OvalGaugeStyle.QuadraticSE">
+            <summary>
+            Indicates a quadratic appearance with the scales oriented towards South-East.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.OvalGaugeStyle.QuadraticSW">
+            <summary>
+            Indicates a quadratic appearance with the scales oriented towards South-West.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.OvalGaugeStyle.SemicircleN">
+            <summary>
+            Indicates a semi-circular appearance with the scales oriented towards North.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.OvalGaugeStyle.SemicircleE">
+            <summary>
+            Indicates a semi-circular appearance with the scales oriented towards East.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.OvalGaugeStyle.SemicircleS">
+            <summary>
+            Indicates a semi-circular appearance with the scales oriented towards South.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Gauges.OvalGaugeStyle.SemicircleW">
+            <summary>
+            Indicates a semi-circular appearance with the scales oriented towards West.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.LinearGauge">
+            <summary>
+            Represents a linear gauge.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearGauge.#ctor">
+            <summary>
+            Initializes a new instance of the LinearGauge class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearGauge.CreateVisuals">
+            <summary>
+            BaseGauge&lt;T&gt;.CreateVisuals override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LinearGauge.GetAmbientPropertyValue(System.String)">
+            <summary>
+            BaseGauge&lt;T&gt;.GetAmbientPropertyValue override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.LinearGauge.Orientation">
+            <summary>
+            Gets or sets the orientation of the gauge.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.LinearGauge.DefaultSize">
+            <summary>
+            BaseGauge.DefaultSize override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Vector">
+            <summary>
+            Represents a two-dimentional vector.
+            </summary>
+        </member>
+        <member name="T:MindFusion.ThicknessConverter">
+            <summary>
+            Converts instances of other types to and from instances of Thickness.
+            </summary>
+        </member>
+        <member name="M:MindFusion.ThicknessConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeConverter.CanConvertFrom override.
+            </summary>
+            <param name="typeDescriptorContext">
+            The context information of a type.
+            </param>
+            <param name="sourceType">
+            The source type that the type converter is evaluating for conversion.
+            </param>
+            <returns>
+            true if the type converter can create an instance of Thickness
+            from the specified type; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MindFusion.ThicknessConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeConverter.CanConvertTo override.
+            </summary>
+            <param name="typeDescriptorContext">
+            The context information of a type.
+            </param>
+            <param name="destinationType">
+            The type for which the type converter is evaluating this instance of Thickness for conversion.
+            </param>
+            <returns>
+            true if the type converter can convert this instance of Thickness
+            to the destinationType; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MindFusion.ThicknessConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            TypeConverter.ConvertFrom override.
+            </summary>
+            <param name="typeDescriptorContext">
+            The context information for a type.
+            </param>
+            <param name="cultureInfo">
+            The CultureInfo of the type being converted.
+            </param>
+            <param name="source">
+            The source being converted.
+            </param>
+            <returns>
+            An instance of Thickness created from the converted source.
+            </returns>
+        </member>
+        <member name="M:MindFusion.ThicknessConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            TypeConverter.ConvertTo override.
+            </summary>
+            <param name="typeDescriptorContext">
+            The context information of a type.
+            </param>
+            <param name="cultureInfo">
+            The CultureInfo of the type being converted.
+            </param>
+            <param name="value">
+            The instance of Thickness to convert.
+            </param>
+            <param name="destinationType">
+            The type that this instance of Thickness is converted to.
+            </param>
+            <returns>
+            The type that is created when the type converter converts an instance of Thickness.
+            </returns>
+        </member>
+        <member name="T:MindFusion.Gauges.OvalGauge">
+            <summary>
+            Represents a circular gauge.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalGauge.#ctor">
+            <summary>
+            Initializes a new instance of the OvalGauge class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalGauge.CreateVisuals">
+            <summary>
+            BaseGauge&lt;T&gt;.CreateVisuals override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.OvalGauge.GetAmbientPropertyValue(System.String)">
+            <summary>
+            BaseGauge&lt;T&gt;.GetAmbientPropertyValue override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.OvalGauge.Style">
+            <summary>
+            Gets or sets the visual style of the oval gauge.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Gauges.OvalGauge.DefaultSize">
+            <summary>
+            BaseGauge.DefaultSize override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Gauges.LengthConverter">
+            <summary>
+            Represents a TypeConverter for Length objects.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Gauges.LengthConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeConverter.CanConvertFrom override.
+            </summary>
+            <param name="context">
+            An System.ComponentModel.ITypeDescriptorContext that provides a format context.
+            </param>
+            <param name="sourceType">
+            A System.Type that represents the type you want to convert from.
+            </param>
+            <returns>
+            true if this converter can perform the conversion; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.LengthConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeConverter.CanConvertTo override.
+            </summary>
+            <param name="context">
+            An System.ComponentModel.ITypeDescriptorContext that provides a format context.
+            </param>
+            <param name="destinationType">
+            A System.Type that represents the type you want to convert to.
+            </param>
+            <returns>
+            true if this converter can perform the conversion; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.LengthConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            TypeConverter.ConvertFrom override.
+            </summary>
+            <param name="context">
+            An System.ComponentModel.ITypeDescriptorContext that provides a format context.
+            </param>
+            <param name="culture">
+            The System.Globalization.CultureInfo to use as the current culture.
+            </param>
+            <param name="value">
+            The System.Object to convert.
+            </param>
+            <returns>
+            An System.Object that represents the converted value.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Gauges.LengthConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            TypeConverter.ConvertTo override.
+            </summary>
+            <param name="context">
+            The System.Object to convert.
+            </param>
+            <param name="culture">
+            The System.Type to convert the value parameter to.
+            </param>
+            <param name="value">
+            An System.Object that represents the converted value.
+            </param>
+            <param name="destinationType">
+            The System.Type to convert the value parameter to.
+            </param>
+            <returns>
+            An System.Object that represents the converted value.
+            </returns>
+        </member>
+    </members>
+</doc>

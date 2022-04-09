@@ -1,0 +1,1545 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MindFusion.Charting.WinForms</name>
+    </assembly>
+    <members>
+        <member name="T:MindFusion.Charting.WinForms.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Charting.WinForms.BiaxialChart">
+            <summary>
+            A base class for charts that display X and Y axes.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Charting.WinForms.Chart">
+            <summary>
+            A base class for chart controls.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Charting.WinForms.Dashboard">
+            <summary>
+            A control that contains multiple chart plots and gauges and manages their layout.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.#ctor">
+            <summary>
+            Initializes a new instance of the Dashboard class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Control.OnPaint override. Draws the components contained by this dashboard.
+            </summary>
+            <param name="e">A PaintEventArgs instance.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.PrintPreview">
+            <summary>
+            Displays a preview window showing how the dashboard will look when printed.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.PrintPreview(System.Drawing.Printing.PrinterSettings)">
+            <summary>
+            Displays a preview window showing how the dashboard will look when printed.
+            </summary>
+            <param name="settings">A PrinterSettings instance that lets you customize the printer output.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.OnResize(System.EventArgs)">
+            <summary>
+            Control.OnResize override. Invalidates the layout of child components and runs a new layout pass.
+            </summary>
+            <param name="e">An EventArgs instance.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.DataBind">
+            <summary>
+            Binds the chart to current DataSource.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.Draw(MindFusion.Drawing.IGraphics,System.Drawing.Rectangle,System.Drawing.Rectangle)">
+            <summary>
+            Draws the dashboard on specified IGraphics surface.
+            </summary>
+            <param name="g">An IGraphics instance.</param>
+            <param name="layoutRect">Current layout rectangle.</param>
+            <param name="clipRect">Current clip rectangle.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.Print">
+            <summary>
+            Prints the dashboard.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.Print(System.Drawing.Printing.PrinterSettings)">
+            <summary>
+            Prints the dashboard.
+            </summary>
+            <param name="settings">A PrinterSettings instance that lets you customize the printer output.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.CreateImage">
+            <summary>
+            Creates a bitmap image of the dashboard.
+            </summary>
+            <returns>A Bitmap instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.CreateImage(System.Int32,System.Int32)">
+            <summary>
+            Creates a bitmap image of the dashboard.
+            </summary>
+            <param name="width">The bitmap width.</param>
+            <param name="height">The bitmap height.</param>
+            <returns>A Bitmap instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.ExportSvg(System.String)">
+            <summary>
+            Exports the dashboard to a Scalable Vector Graphics (SVG) file.
+            </summary>
+            <param name="filePath">A string specifying file name or path.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.ExportSvg(System.String,System.Int32,System.Int32)">
+            <summary>
+            Exports the dashboard to a Scalable Vector Graphics (SVG) file.
+            </summary>
+            <param name="filePath">A string specifying file name or path.</param>
+            <param name="width">The image width.</param>
+            <param name="height">The image height.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.ExportPdf(System.String)">
+            <summary>
+            Exports the dashboard to a Portable Document Format (PDF) file.
+            </summary>
+            <param name="filePath">A string specifying file name or path.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.ExportPdf(System.String,System.Int32,System.Int32)">
+            <summary>
+            Exports the dashboard to a Portable Document Format (PDF) file.
+            </summary>
+            <param name="filePath">A string specifying file name or path.</param>
+            <param name="width">The image width.</param>
+            <param name="height">The image height.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.ExportImage(System.String)">
+            <summary>
+            Exports the dashboard to a bitmap image file.
+            </summary>
+            <param name="filePath">A string specifying file name or path.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.ExportImage(System.String,System.Int32,System.Int32)">
+            <summary>
+            Exports the dashboard to a bitmap image file.
+            </summary>
+            <param name="filePath">A string specifying file name or path.</param>
+            <param name="width">The image width.</param>
+            <param name="height">The image height.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.CreateRenderContext(MindFusion.Drawing.IGraphics,System.Drawing.Rectangle)">
+            <summary>
+            Creates a RenderContext instance.
+            </summary>
+            <param name="graphics">An IGraphics surface where dashboard elements should be rendered.</param>
+            <param name="clipRect">The current clip rectangle.</param>
+            <returns>A RenderContext instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.HitTest(System.Drawing.PointF)">
+            <summary>
+            Searches for a dashboard element at specified location.
+            </summary>
+            <param name="location">A PointF instance specifying where to look for dashboard elements.</param>
+            <returns>A HitResult instance containing information about found element.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.NearestElement(System.Drawing.PointF)">
+            <summary>
+            Searches for data element closest to specified location.
+            </summary>
+            <param name="location">A PointF instance specifying where to look for data elements.</param>
+            <returns>A HitResult instance containing information about found element.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.OnClick(System.EventArgs)">
+            <summary>
+            Control.OnClick override. Raises the DataItemClicked event
+            if the user has clicked on data element in a plot.
+            </summary>
+            <param name="e">An EventArgs instance.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Control.OnMouseDown override.
+            </summary>
+            <param name="e">A MouseEventArgs instance.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Control.OnMouseMove override.
+            </summary>
+            <param name="e">A MouseEventArgs instance.</param>
+        </member>
+        <member name="F:MindFusion.Charting.WinForms.Dashboard.TooltipBrush">
+            <summary>
+            The System.Drawing.Brush used to fill tooltip's background.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Charting.WinForms.Dashboard.TooltipPen">
+            <summary>
+            The System.Drawing.Pen used to draw tooltip borders.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Control.OnMouseUp override.
+            </summary>
+            <param name="e">A MouseEventArgs instance.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.InvalidateLayout(MindFusion.Charting.Components.Component)">
+            <summary>
+            Implements RootControl.InvalidateLayout. Invalidates layout of specified component.
+            </summary>
+            <param name="panel">The component to invalidate.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Dashboard.Invalidate(MindFusion.Charting.RectD,MindFusion.Charting.Components.Component)">
+            <summary>
+            Implements RootControl.InvalidateLayout. Invalidates the specified region of a component.
+            </summary>
+            <param name="rect">The area to invalidate and redraw.</param>
+            <param name="panel">The reference Component.</param>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Dashboard.RootPanel">
+            <summary>
+            Gets the root Panel in the hierarchy of dashboard components.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Dashboard.LayoutBuilder">
+            <summary>
+            Gets a LayoutBuilder instance that provides shortcut methods for
+            building fragments of dashboard's user interface.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Dashboard.LayoutPanel">
+            <summary>
+            Gets a Panel containing dashboard components that should participate
+            in layout measurements and be arranged relatively to each other.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Dashboard.DefaultSize">
+            <summary>
+            The initial size of the control when it is dropped into a form.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Charting.WinForms.Dashboard.DataItemClicked">
+            <summary>
+            Raised when the user clicks on a data item inside a plot.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Dashboard.Theme">
+            <summary>
+            Gets or sets a Theme specifying appearance of dashboard elements.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Dashboard.BackgroundImage">
+            <summary>
+            Gets or sets dashboard's background image.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Dashboard.BackgroundImageAutoSize">
+            <summary>
+            Gets or sets whether auto-size mode is enabled for BackgroundImage.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Dashboard.BackgroundImageAlign">
+            <summary>
+            Gets or sets the alignment of BackgroundImage relatively to dashboard boundaries.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Dashboard.AllowZoom">
+            <summary>
+            Gets or sets a value indicating whether users are allowed to zoom into plots' data ranges.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Dashboard.LicenseKey">
+            <summary>
+            Gets or sets the license key of the control.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Chart.#ctor">
+            <summary>
+            Initializes a new instance of the Chart class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Chart.#ctor(MindFusion.Charting.SeriesRenderer)">
+            <summary>
+            Initializes a new instance of the Chart class.
+            </summary>
+            <param name="renderer">A SeriesRenderer used to draw chart's data series.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Chart.CreatePlot">
+            <summary>
+            Creates the Plot type corresponding to this chart.
+            </summary>
+            <returns>An instance of Plot -derived class.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Chart.ZoomOut">
+            <summary>
+            Zooms out of current data range.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Chart.ResetZoom">
+            <summary>
+            Resets zoom level to original data range.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Chart.OnPaddingChanged(System.EventArgs)">
+            <summary>
+            Control.OnPaddingChanged override.
+            </summary>
+            <param name="e">An EventArgs instance.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.Chart.OnSizeChanged(System.EventArgs)">
+            <summary>
+            Control.OnSizeChanged override.
+            </summary>
+            <param name="e">An EventArgs instance.</param>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.Plot">
+            <summary>
+            Gets the chart's Plot component.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.PlotPanel">
+            <summary>
+            Gets the Panel that contains the chart's plot and associated elements.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.DataBoundSeries">
+            <summary>
+            Contains series generated from DataSource data.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.ChartPanel">
+            <summary>
+            Gets the GridPanel that contains the chart's PlotPanel and axis renderers.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.Title">
+            <summary>
+            Gets or sets the title of this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.TitleMargin">
+            <summary>
+            Gets or sets the margin space around Title.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.TitleFontName">
+            <summary>
+            Gets or sets the name of Font used to draw chart's Title.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.TitleFontSize">
+            <summary>
+            Gets or sets the size of Font used to draw chart's Title.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.TitleFontStyle">
+            <summary>
+            Gets or sets the style of Font used to draw chart's Title.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.TitleBrush">
+            <summary>
+            Gets or sets the Brush used to draw chart's Title.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.Subtitle">
+            <summary>
+            Gets or sets the sub-title of this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.SubtitleMargin">
+            <summary>
+            Gets or sets the margin space around Subtitle.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.SubtitleFontName">
+            <summary>
+            Gets or sets the name of Font used to draw chart's Subtitle.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.SubtitleFontSize">
+            <summary>
+            Gets or sets the size of Font used to draw chart's Subtitle.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.SubtitleFontStyle">
+            <summary>
+            Gets or sets the style of Font used to draw chart's Subtitle.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.SubtitleBrush">
+            <summary>
+            Gets or sets the Brush used to draw chart's Subtitle.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.PlotImage">
+            <summary>
+            Gets or sets the Image drawn inside chart's plot area.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.PlotImageAutoSize">
+            <summary>
+            Gets or sets whether auto-size mode is enabled for PlotImage.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.PlotImageAlign">
+            <summary>
+            Gets or sets the alignment of PlotImage relatively to the plot boundaries.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.SeriesRenderer">
+            <summary>
+            Gets the default SeriesRenderer for this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.LegendTitle">
+            <summary>
+            Gets or sets the legend title.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.ShowLegendTitle">
+            <summary>
+            Gets or sets a value indicating whether to display the legend title.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.LegendSpacing">
+            <summary>
+            Gets or sets the distance between adjacent entries in the legend.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.LegendHorizontalAlignment">
+            <summary>
+            Gets or sets the horizontal alignment of the legend.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.LegendVerticalAlignment">
+            <summary>
+            Gets or sets the vertical alignment of the legend.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.LegendMargin">
+            <summary>
+            Gets or sets the margin space around the legend.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.LegendElementLabelKind">
+            <summary>
+            Gets or sets the type of legend label to show for series elements. 
+            This property is used for charts that show legend elements for
+            individual data items, such as PieChart and FunnelChart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.ShowLegend">
+            <summary>
+            Gets or sets a value indicating whether the chart should draw a legend.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.LegendRenderer">
+            <summary>
+            Gets the LegendRenderer component used to draw the chart's legend.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.ShowZoomWidgets">
+            <summary>
+            Gets or sets a value indicating whether the plot should show zoom buttons.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.ShowDataLabels">
+            <summary>
+            Gets or sets what kind of labels from data series should be drawn.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.ShowHighlight">
+            <summary>
+            Gets or sets a value indicating whether to show highlights on data items.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.ShowToolTips">
+            <summary>
+            Gets or sets a value indicating whether to show tooltips.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.AllowMoveLegend">
+            <summary>
+            Gets or sets a value indicating whether users are allowed to move the legend.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.DateTimeFormat">
+            <summary>
+            Gets or sets a .NET format string indicating how to format DateTime values as labels.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.DataSource">
+            <summary>
+            Gets or sets the chart's data source.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.XDataFields">
+            <summary>
+            Gets or sets the names of fields in the data source whose values
+            are assigned to X coordinates of rendered graphical elements.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.YDataFields">
+            <summary>
+            Gets or sets the names of fields in the data source whose values
+            are assigned to Y coordinates of rendered graphical elements.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.ZDataFields">
+            <summary>
+            Gets or sets the names of fields in the data source whose values
+            are assigned to Z coordinates of rendered graphical elements.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.InnerLabelsDataFields">
+            <summary>
+            Gets or sets the names of fields in the data source whose values
+            are shown as inner labels of rendered graphical elements.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.OuterLabelsDataFields">
+            <summary>
+            Gets or sets the names of fields in the data source whose values
+            are shown as outer labels of rendered graphical elements.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.ToolTipsDataFields">
+            <summary>
+            Gets or sets the names of fields in the data source whose values
+            are shown as tooltips of rendered graphical elements.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.XAxisLabelsDataFields">
+            <summary>
+            Gets or sets the names of fields in the data source whose values
+            are shown as X axis labels of rendered graphical elements.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.YAxisLabelsDataFields">
+            <summary>
+            Gets or sets the names of fields in the data source whose values
+            are shown as Y axis labels of rendered graphical elements.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.Chart.ZAxisLabelsDataFields">
+            <summary>
+            Gets or sets the names of fields in the data source whose values
+            are shown as Z axis labels of rendered graphical elements.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.BiaxialChart.#ctor">
+            <summary>
+            Initializes a new instance of the BiaxialChart class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.BiaxialChart.#ctor(MindFusion.Charting.Renderer2D)">
+            <summary>
+            Initializes a new instance of the BiaxialChart class.
+            </summary>
+            <param name="seriesRenderer">A SeriesRenderer used to draw chart's data series.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.BiaxialChart.CreateRenderContext(MindFusion.Drawing.IGraphics,System.Drawing.Rectangle)">
+            <summary>
+            Dashboard.CreateRenderContext override. Creates a RenderContext instance.
+            </summary>
+            <param name="graphics">An IGraphics surface where dashboard elements should be rendered.</param>
+            <param name="clipRect">The current clip rectangle.</param>
+            <returns>A RenderContext instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.BiaxialChart.ZoomOut">
+            <summary>
+            Chart.ZoomOut override. Zooms out of current data range.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.BiaxialChart.ResetZoom">
+            <summary>
+            Chart.ResetZoom override. Resets zoom level to original data range.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.GridType">
+            <summary>
+            Gets or sets the type of grid to draw in this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.PinGrid">
+            <summary>
+            Gets or sets a value indicating whether grid stripes should be pinned
+            in place or scroll together with the plot when users pan it.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.XAxis">
+            <summary>
+            Gets or sets an Axis object representing horizontal data range.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.YAxis">
+            <summary>
+            Gets or sets an Axis object representing vertical data range.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.SeriesRenderer">
+            <summary>
+            Chart.SeriesRenderer override. Gets the default SeriesRenderer for this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.Series">
+            <summary>
+            Gets or sets the list of series whose data is drawn in this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.Annotations">
+            <summary>
+            Gets or sets the list of series whose labels are drawn as annotations.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.ShowScatter">
+            <summary>
+            Gets or sets a value indicating whether the chart should render scatter shapes.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.AllowPan">
+            <summary>
+            Gets or sets a value indicating whether users are allowed to pan the chart's plot.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.ShowXCoordinates">
+            <summary>
+            Gets or sets a value indicating whether to show X axis coordinates.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.ShowYCoordinates">
+            <summary>
+            Gets or sets a value indicating whether to show Y axis coordinates.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.ShowXTicks">
+            <summary>
+            Gets or sets a value indicating whether to show X axis ticks.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.ShowYTicks">
+            <summary>
+            Gets or sets a value indicating whether to show Y axis ticks.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.XAxisTickLength">
+            <summary>
+            Gets or sets the length of X axis ticks.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.YAxisTickLength">
+            <summary>
+            Gets or sets the length of Y axis ticks.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.XAxisLabelRotationAngle">
+            <summary>
+            Gets or sets the rotation angle of X axis data labels.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.YAxisLabelRotationAngle">
+            <summary>
+            Gets or sets the rotation angle of Y axis data labels.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.YLabelAlignment">
+            <summary>
+            Gets or sets the horizontal alignment of Y-axis labels.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.ShowXRangeSelector">
+            <summary>
+            Gets or sets a value indicating whether to show a RangeSelector for the X axis,
+            to let users scroll or resize the currently visible horizontal data window.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.XScrollRangeMin">
+            <summary>
+            Gets or sets the smallest value allowed to scroll to using the X axis' RangeSelector.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.XScrollRangeMax">
+            <summary>
+            Gets or sets the largest value allowed to scroll to using the X axis' RangeSelector.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.ShowYRangeSelector">
+            <summary>
+            Gets or sets a value indicating whether to show a RangeSelector for the Y axis,
+            to let users scroll or resize the currently visible vertical data window.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.YScrollRangeMin">
+            <summary>
+            Gets or sets the smallest value allowed to scroll to using the Y axis' RangeSelector.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BiaxialChart.YScrollRangeMax">
+            <summary>
+            Gets or sets the largest value allowed to scroll to using the Y axis' RangeSelector.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Charting.WinForms.FunnelChart">
+            <summary>
+            A control used to draw funnel charts. Funnel charts represent the stages of
+            a process and show relative values or measurements associated with each stage.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.FunnelChart.#ctor">
+            <summary>
+            Initializes a new instance of the FunnelChart class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.FunnelChart.Series">
+            <summary>
+            Gets or sets the series whose data is drawn in this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.FunnelChart.SeriesRenderer">
+            <summary>
+            Chart.SeriesRenderer override. Gets the default SeriesRenderer for this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.FunnelChart.SegmentSpacing">
+            <summary>
+            Gets or sets the spacing between funnel segments.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.FunnelChart.StemWidth">
+            <summary>
+            Gets or sets the width of the funnel stem.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.FunnelChart.Dimension">
+            <summary>
+            Gets or sets the dimension index that should be used to read data from the Series.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Charting.WinForms.BarChart3D">
+            <summary>
+            A control used to draw 3D bar charts.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.BarChart3D.#ctor">
+            <summary>
+            Initializes a new instance of the BarChart3D class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.BarChart3D.#ctor(MindFusion.Charting.BarLayout)">
+            <summary>
+            Initializes a new instance of the BarChart3D class.
+            </summary>
+            <param name="barLayout">A member of the BarLayout enumeration.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.BarChart3D.CreatePlot">
+            <summary>
+            Chart.CreatePlot override. Creates the Plot type corresponding to this chart.
+            </summary>
+            <returns>An instance of the Plot3D class.</returns>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BarChart3D.Series">
+            <summary>
+            BiaxialChart.Series override. Gets or sets the list of series whose data is drawn in this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BarChart3D.SeriesRenderer">
+            <summary>
+            BiaxialChart.SeriesRenderer override. Gets the default SeriesRenderer for this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BarChart3D.BarLayout">
+            <summary>
+            Gets or sets how to arrange bars when rendering multiple series.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Charting.WinForms.BarChart">
+            <summary>
+            A control used to draw bar charts.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.BarChart.#ctor">
+            <summary>
+            Initializes a new instance of the BarChart class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.BarChart.#ctor(MindFusion.Charting.BarLayout)">
+            <summary>
+            Initializes a new instance of the BarChart class.
+            </summary>
+            <param name="barLayout">A member of the BarLayout enumeration.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.BarChart.CreatePlot">
+            <summary>
+            Chart.CreatePlot override. Creates the Plot type corresponding to this chart.
+            </summary>
+            <returns>An instance of the Plot2D class.</returns>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BarChart.Series">
+            <summary>
+            BiaxialChart.Series override. Gets or sets the list of series whose data is drawn in this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BarChart.SeriesRenderer">
+            <summary>
+            BiaxialChart.SeriesRenderer override. Gets the default SeriesRenderer for this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BarChart.BarLayout">
+            <summary>
+            Gets or sets how to arrange bars when rendering multiple series.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BarChart.HorizontalBars">
+            <summary>
+            Gets or sets a value identifying whether bars should be horizontal.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BarChart.BarSpacingRatio">
+            <summary>
+            Gets or sets the ratio of empty space between bars to space occupied by bars.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BarChart.StackOuterLabels">
+            <summary>
+            Gets or sets whether outer labels are displayed stacked on top of stacked bars,
+            instead of showing them on the bar sides.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BarChart.OuterLabelRotation">
+            <summary>
+            Gets or sets the rotation angle of outer labels. If not specified, labels
+            are rotated at predefiend angles depending on bars' orientation and layout.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BarChart.InnerLabelRotation">
+            <summary>
+            Gets or sets the rotation angle of inner labels. If not specified, labels
+            are rotated at predefiend angles depending on bars' orientation and layout.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Charting.WinForms.ScatterChart">
+            <summary>
+            A control used to draw scatter charts.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.ScatterChart.#ctor">
+            <summary>
+            Initializes a new instance of the ScatterChart class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.ScatterChart.Series">
+            <summary>
+            BiaxialChart.Series override. Gets or sets the list of series whose data is drawn in this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.ScatterChart.SeriesRenderer">
+            <summary>
+            BiaxialChart.SeriesRenderer override. Gets the default SeriesRenderer for this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.ScatterChart.Shape">
+            <summary>
+            Gets or sets the type of scatter shapes.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.ScatterChart.ShapeSize">
+            <summary>
+            Gets or sets the size of scatter shapes.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Charting.WinForms.LineChart">
+            <summary>
+            A control used to draw line charts.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LineChart.#ctor">
+            <summary>
+            Initializes a new instance of the LineChart class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LineChart.#ctor(MindFusion.Charting.LineRenderer)">
+            <summary>
+            Initializes a new instance of the LineChart class.
+            </summary>
+            <param name="seriesRenderer">A LineRenderer used to draw chart's data series.</param>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.LineChart.Series">
+            <summary>
+            BiaxialChart.Series override. Gets or sets the list of series whose data is drawn in this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.LineChart.SeriesRenderer">
+            <summary>
+            BiaxialChart.SeriesRenderer override. Gets the default SeriesRenderer for this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.LineChart.LineType">
+            <summary>
+            Gets or sets what type of line segments to draw between data points.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Charting.WinForms.LayoutBuilder">
+            <summary>
+            Provides shortcut methods for building fragments of dashboard's user interface.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.#ctor(MindFusion.Charting.WinForms.Dashboard)">
+            <summary>
+            Initializes a new instance of the LayoutBuilder class.
+            </summary>
+            <param name="board">A Dashboard instance.</param>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAdd1By2RowLayout(MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component)">
+            <summary>
+            Creates a two-row stack panel whose second row is a horizontal stack of two components.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="row1">The component on first row.</param>
+            <param name="row2col1">The first component on second row.</param>
+            <param name="row2col2">The second component on second row.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAdd2By1RowLayout(MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component)">
+            <summary>
+            Creates a two-row stack panel whose first row is a horizontal stack of two components.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="row1col1">The first component on first row.</param>
+            <param name="row1col2">The second component on first row.</param>
+            <param name="row2">The component on first row.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAdd2By1ColumnLayout(MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component)">
+            <summary>
+            Creates a two-column stack panel whose first column is a vertical stack of two components.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="col1row1">The first component in first column.</param>
+            <param name="col1row2">The second component in first column.</param>
+            <param name="col2">The component in second column.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAdd1By2ColumnLayout(MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component)">
+            <summary>
+            Creates a two-column stack panel whose first column is a vertical stack of two components.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="col1">The component in first column.</param>
+            <param name="col2row1">The first component in second column.</param>
+            <param name="col2row2">The second component in second column.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAdd2By2Layout(MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component)">
+            <summary>
+            Creates horizontal stack panels for components on same row
+            and adds them to a vertical stack panel.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="row1col1">The first component on first row.</param>
+            <param name="row1col2">The second component on first row.</param>
+            <param name="row2col1">The first component on second row.</param>
+            <param name="row2col2">The second component on second row.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.Create2By2Layout(MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component)">
+            <summary>
+            Creates horizontal stack panels for components on same row
+            and adds them to a vertical stack panel.
+            </summary>
+            <param name="row1col1">The first component on first row.</param>
+            <param name="row1col2">The second component on first row.</param>
+            <param name="row2col1">The first component on second row.</param>
+            <param name="row2col2">The second component on second row.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.Create1By2RowLayout(MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component)">
+            <summary>
+            Creates a two-row stack panel whose second row is a horizontal stack of two components.
+            </summary>
+            <param name="row1">The component on first row.</param>
+            <param name="row2col1">The first component on second row.</param>
+            <param name="row2col2">The second component on second row.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.Create2By1RowLayout(MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component)">
+            <summary>
+            Creates a two-row stack panel whose first row is a horizontal stack of two components.
+            </summary>
+            <param name="row1col1">The first component on first row.</param>
+            <param name="row1col2">The second component on first row.</param>
+            <param name="row2">The component on first row.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.Create2By1ColumnLayout(MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component)">
+            <summary>
+            Creates a two-column stack panel whose first column is a vertical stack of two components.
+            </summary>
+            <param name="col1row1">The first component in first column.</param>
+            <param name="col1row2">The second component in first column.</param>
+            <param name="col2">The component in second column.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.Create1By2ColumnLayout(MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component,MindFusion.Charting.Components.Component)">
+            <summary>
+            Creates a two-column stack panel whose first column is a vertical stack of two components.
+            </summary>
+            <param name="col1">The component in first column.</param>
+            <param name="col2row1">The first component in second column.</param>
+            <param name="col2row2">The second component in second column.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateLayout(System.Boolean,MindFusion.Charting.Components.Component[],MindFusion.Charting.Components.Component[],MindFusion.Charting.Components.Component[])">
+            <summary>
+            Creates a StackPanel for each array of components and
+            adds it to a parent StackPanel with opposite orientation.
+            </summary>
+            <param name="horizontal">The orientation of the parent panel.</param>
+            <param name="c1">The first stack of components.</param>
+            <param name="c2">The second stack of components.</param>
+            <param name="c3">The third stack of components.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAddPlotAndAxes(MindFusion.Charting.Plot2D,MindFusion.Charting.XAxisRenderer[],MindFusion.Charting.YAxisRenderer[],MindFusion.Charting.XAxisRenderer[],MindFusion.Charting.YAxisRenderer[])">
+            <summary>
+            Creates a GridPanel containing the specified plot and axis renderers.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="plot">A Plot2D instance.</param>
+            <param name="top">An array of XAxisRenderer components that should be placed at top side of the plot.</param>
+            <param name="left">An array of YAxisRenderer components that should be placed at left side of the plot.</param>
+            <param name="bottom">An array of XAxisRenderer components that should be placed at bottom side of the plot.</param>
+            <param name="right">An array of YAxisRenderer components that should be placed at right side of the plot.</param>
+            <returns>A GridPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAddPlotWithTopAndLeftAxes(MindFusion.Charting.Plot2D,MindFusion.Charting.XAxisRenderer,MindFusion.Charting.YAxisRenderer)">
+            <summary>
+            Creates a GridPanel containing the specified plot and axis renderers.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="plot">A Plot2D instance.</param>
+            <param name="top">An XAxisRenderer that should be placed at top side of the plot.</param>
+            <param name="left">A YAxisRenderer that should be placed at left side of the plot.</param>
+            <returns>A GridPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAddPlotWithTopAndRightAxes(MindFusion.Charting.Plot2D,MindFusion.Charting.XAxisRenderer,MindFusion.Charting.YAxisRenderer)">
+            <summary>
+            Creates a GridPanel containing the specified plot and axis renderers.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="plot">A Plot2D instance.</param>
+            <param name="top">An XAxisRenderer that should be placed at top side of the plot.</param>
+            <param name="right">A YAxisRenderer that should be placed at right side of the plot.</param>
+            <returns>A GridPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAddPlotWithBottomAndRightAxes(MindFusion.Charting.Plot2D,MindFusion.Charting.XAxisRenderer,MindFusion.Charting.YAxisRenderer)">
+            <summary>
+            Creates a GridPanel containing the specified plot and axis renderers.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="plot">A Plot2D instance.</param>
+            <param name="bottom">An XAxisRenderer that should be placed at bottom side of the plot.</param>
+            <param name="right">A YAxisRenderer that should be placed at right side of the plot.</param>
+            <returns>A GridPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAddPlotWithBottomAndLeftAxes(MindFusion.Charting.Plot2D,MindFusion.Charting.XAxisRenderer,MindFusion.Charting.YAxisRenderer)">
+            <summary>
+            Creates a GridPanel containing the specified plot and axis renderers.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="plot">A Plot2D instance.</param>
+            <param name="bottom">An XAxisRenderer that should be placed at bottom side of the plot.</param>
+            <param name="left">A YAxisRenderer that should be placed at left side of the plot.</param>
+            <returns>A GridPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreatePlotAndAxes(MindFusion.Charting.Plot2D,MindFusion.Charting.XAxisRenderer[],MindFusion.Charting.YAxisRenderer[],MindFusion.Charting.XAxisRenderer[],MindFusion.Charting.YAxisRenderer[])">
+            <summary>
+            Creates a GridPanel containing the specified plot and axis renderers.
+            </summary>
+            <param name="plot">A Plot2D instance.</param>
+            <param name="top">An array of XAxisRenderer components that should be placed at top side of the plot.</param>
+            <param name="left">An array of YAxisRenderer components that should be placed at left side of the plot.</param>
+            <param name="bottom">An array of XAxisRenderer components that should be placed at bottom side of the plot.</param>
+            <param name="right">An array of YAxisRenderer components that should be placed at right side of the plot.</param>
+            <returns>A GridPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreatePlotWithTopAndLeftAxes(MindFusion.Charting.Plot2D,MindFusion.Charting.XAxisRenderer,MindFusion.Charting.YAxisRenderer)">
+            <summary>
+            Creates a GridPanel containing the specified plot and axis renderers.
+            </summary>
+            <param name="plot">A Plot2D instance.</param>
+            <param name="top">An XAxisRenderer that should be placed at top side of the plot.</param>
+            <param name="left">A YAxisRenderer that should be placed at left side of the plot.</param>
+            <returns>A GridPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreatePlotWithTopAndRightAxes(MindFusion.Charting.Plot2D,MindFusion.Charting.XAxisRenderer,MindFusion.Charting.YAxisRenderer)">
+            <summary>
+            Creates a GridPanel containing the specified plot and axis renderers.
+            </summary>
+            <param name="plot">A Plot2D instance.</param>
+            <param name="top">An XAxisRenderer that should be placed at top side of the plot.</param>
+            <param name="right">A YAxisRenderer that should be placed at right side of the plot.</param>
+            <returns>A GridPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreatePlotWithBottomAndLeftAxes(MindFusion.Charting.Plot2D,MindFusion.Charting.XAxisRenderer,MindFusion.Charting.YAxisRenderer)">
+            <summary>
+            Creates a GridPanel containing the specified plot and axis renderers.
+            </summary>
+            <param name="plot">A Plot2D instance.</param>
+            <param name="bottom">An XAxisRenderer that should be placed at bottom side of the plot.</param>
+            <param name="left">A YAxisRenderer that should be placed at left side of the plot.</param>
+            <returns>A GridPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreatePlotWithBottomAndRightAxes(MindFusion.Charting.Plot2D,MindFusion.Charting.XAxisRenderer,MindFusion.Charting.YAxisRenderer)">
+            <summary>
+            Creates a GridPanel containing the specified plot and axis renderers.
+            </summary>
+            <param name="plot">A Plot2D instance.</param>
+            <param name="bottom">An XAxisRenderer that should be placed at bottom side of the plot.</param>
+            <param name="right">A YAxisRenderer that should be placed at right side of the plot.</param>
+            <returns>A GridPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAddColumnLayout(MindFusion.Charting.XAxisRenderer[],MindFusion.Charting.Plot2D[],MindFusion.Charting.XAxisRenderer[])">
+            <summary>
+            Creates a StackPanel containing the specified plots and axis renderers.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="top">An array of XAxisRenderer components that should be placed at top side of the plots.</param>
+            <param name="plots">An array of Plot2D instances.</param>
+            <param name="bottom">An array of XAxisRenderer components that should be placed at bottom side of the plot.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAddColumnLayout(MindFusion.Charting.XAxisRenderer,MindFusion.Charting.Plot2D,MindFusion.Charting.Plot2D)">
+            <summary>
+            Creates a StackPanel containing the specified plots and axis renderer.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="top">An XAxisRenderer that should be placed at top side of the plots.</param>
+            <param name="plot1">A Plot2D instance.</param>
+            <param name="plot2">A Plot2D instance.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAddColumnLayout(MindFusion.Charting.XAxisRenderer,MindFusion.Charting.Plot2D[],MindFusion.Charting.XAxisRenderer)">
+            <summary>
+            Creates a StackPanel containing the specified plots and axis renderers.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="top">An XAxisRenderer that should be placed at top side of the plots.</param>
+            <param name="plots">An array of Plot2D instances.</param>
+            <param name="bottom">An XAxisRenderer that should be placed at bottom side of the plots.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAddColumnLayout(MindFusion.Charting.XAxisRenderer,MindFusion.Charting.Plot2D,MindFusion.Charting.Plot2D,MindFusion.Charting.Plot2D,MindFusion.Charting.XAxisRenderer)">
+            <summary>
+            Creates a StackPanel containing the specified plots and axis renderers.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="top">An XAxisRenderer that should be placed at top side of the plots.</param>
+            <param name="plot1">A Plot2D instance.</param>
+            <param name="plot2">A Plot2D instance.</param>
+            <param name="plot3">A Plot2D instance.</param>
+            <param name="bottom">An XAxisRenderer that should be placed at top side of the plots.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateColumnLayout(MindFusion.Charting.XAxisRenderer[],MindFusion.Charting.Plot2D[],MindFusion.Charting.XAxisRenderer[])">
+            <summary>
+            Creates a StackPanel containing the specified plots and axis renderers.
+            </summary>
+            <param name="top">An array of XAxisRenderer components that should be placed at top side of the plot.</param>
+            <param name="plots">An array of Plot2D instances.</param>
+            <param name="bottom">An array of XAxisRenderer components that should be placed at bottom side of the plot.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateColumnLayout(MindFusion.Charting.XAxisRenderer,MindFusion.Charting.Plot2D,MindFusion.Charting.Plot2D)">
+            <summary>
+            Creates a StackPanel containing the specified plots and axis renderer.
+            </summary>
+            <param name="top">An XAxisRenderer that should be placed at top side of the plots.</param>
+            <param name="plot1">A Plot2D instance.</param>
+            <param name="plot2">A Plot2D instance.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateColumnLayout(MindFusion.Charting.XAxisRenderer,MindFusion.Charting.Plot2D,MindFusion.Charting.Plot2D,MindFusion.Charting.Plot2D,MindFusion.Charting.XAxisRenderer)">
+            <summary>
+            Creates a StackPanel containing the specified plots and axis renderers.
+            </summary>
+            <param name="top">An XAxisRenderer that should be placed at top side of the plots.</param>
+            <param name="plot1">A Plot2D instance.</param>
+            <param name="plot2">A Plot2D instance.</param>
+            <param name="plot3">A Plot2D instance.</param>
+            <param name="bottom">An XAxisRenderer that should be placed at top side of the plots.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateColumnLayout(MindFusion.Charting.XAxisRenderer,MindFusion.Charting.Plot2D[],MindFusion.Charting.XAxisRenderer)">
+            <summary>
+            Creates a StackPanel containing the specified plots and axis renderers.
+            </summary>
+            <param name="top">An XAxisRenderer that should be placed at top side of the plots.</param>
+            <param name="plots">An array of Plot2D instances.</param>
+            <param name="bottom">An XAxisRenderer that should be placed at bottom side of the plot.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAddRowLayout(MindFusion.Charting.YAxisRenderer[],MindFusion.Charting.Plot2D[],MindFusion.Charting.YAxisRenderer[])">
+            <summary>
+            Creates a StackPanel containing the specified plots and axis renderers.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="left">An array of YAxisRenderer components that should be placed at left side of the plots.</param>
+            <param name="plots">An array of Plot2D instances.</param>
+            <param name="right">An array of YAxisRenderer components that should be placed at right side of the plots.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAddRowLayout(MindFusion.Charting.YAxisRenderer,MindFusion.Charting.Plot2D,MindFusion.Charting.Plot2D)">
+            <summary>
+            Creates a StackPanel containing the specified plots and axis renderer.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="left">A YAxisRenderer that should be placed at left side of the plots.</param>
+            <param name="plot1">A Plot2D instance.</param>
+            <param name="plot2">A Plot2D instance.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAddRowLayout(MindFusion.Charting.YAxisRenderer,MindFusion.Charting.Plot2D,MindFusion.Charting.Plot2D,MindFusion.Charting.Plot2D,MindFusion.Charting.YAxisRenderer)">
+            <summary>
+            Creates a StackPanel containing the specified plots and axis renderers.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="left">A YAxisRenderer that should be placed at left side of the plots.</param>
+            <param name="plot1">A Plot2D instance.</param>
+            <param name="plot2">A Plot2D instance.</param>
+            <param name="plot3">A Plot2D instance.</param>
+            <param name="right">A YAxisRenderer that should be placed at right side of the plots.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateAndAddRowLayout(MindFusion.Charting.YAxisRenderer,MindFusion.Charting.Plot2D[],MindFusion.Charting.YAxisRenderer)">
+            <summary>
+            Creates a StackPanel containing the specified plots and axis renderers.
+            The panel is automatically added to the dashboard's LayoutPanel.
+            </summary>
+            <param name="left">A YAxisRenderer that should be placed at left side of the plots.</param>
+            <param name="plots">An array of Plot2D instances.</param>
+            <param name="right">A YAxisRenderer that should be placed at right side of the plots.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateRowLayout(MindFusion.Charting.YAxisRenderer[],MindFusion.Charting.Plot2D[],MindFusion.Charting.YAxisRenderer[])">
+            <summary>
+            Creates a StackPanel containing the specified plots and axis renderers.
+            </summary>
+            <param name="left">An array of YAxisRenderer components that should be placed at left side of the plots.</param>
+            <param name="plots">An array of Plot2D instances.</param>
+            <param name="right">An array of YAxisRenderer components that should be placed at right side of the plots.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateRowLayout(MindFusion.Charting.YAxisRenderer,MindFusion.Charting.Plot2D,MindFusion.Charting.Plot2D)">
+            <summary>
+            Creates a StackPanel containing the specified plots and axis renderer.
+            </summary>
+            <param name="left">A YAxisRenderer that should be placed at left side of the plots.</param>
+            <param name="plot1">A Plot2D instance.</param>
+            <param name="plot2">A Plot2D instance.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateRowLayout(MindFusion.Charting.YAxisRenderer,MindFusion.Charting.Plot2D,MindFusion.Charting.Plot2D,MindFusion.Charting.Plot2D,MindFusion.Charting.YAxisRenderer)">
+            <summary>
+            Creates a StackPanel containing the specified plots and axis renderers.
+            </summary>
+            <param name="left">A YAxisRenderer that should be placed at left side of the plots.</param>
+            <param name="plot1">A Plot2D instance.</param>
+            <param name="plot2">A Plot2D instance.</param>
+            <param name="plot3">A Plot2D instance.</param>
+            <param name="right">A YAxisRenderer that should be placed at right side of the plots.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.LayoutBuilder.CreateRowLayout(MindFusion.Charting.YAxisRenderer,MindFusion.Charting.Plot2D[],MindFusion.Charting.YAxisRenderer)">
+            <summary>
+            Creates a StackPanel containing the specified plots and axis renderers.
+            </summary>
+            <param name="left">A YAxisRenderer that should be placed at left side of the plots.</param>
+            <param name="plots">An array of Plot2D instances.</param>
+            <param name="right">A YAxisRenderer that should be placed at right side of the plots.</param>
+            <returns>A StackPanel instance.</returns>
+        </member>
+        <member name="T:MindFusion.Charting.WinForms.AreaChart">
+            <summary>
+            A control used to draw area charts.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.AreaChart.#ctor">
+            <summary>
+            Initializes a new instance of the AreaChart class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.AreaChart.Series">
+            <summary>
+            BiaxialChart.Series override. Gets or sets the list of series whose data is drawn in this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.AreaChart.SeriesRenderer">
+            <summary>
+            BiaxialChart.SeriesRenderer override. Gets the default SeriesRenderer for this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.AreaChart.LineType">
+            <summary>
+            Gets or sets what type of line segments to draw between data points.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.AreaChart.AreaOpacity">
+            <summary>
+            Gets or sets the opacity of area polygons.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Charting.WinForms.StringCollectionConverter">
+            <summary>
+            A type converter for string collections.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.StringCollectionConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeConverter.CanConvertFrom override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.StringCollectionConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeConverter.CanConvertTo override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.StringCollectionConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            TypeConverter.ConvertFrom override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.StringCollectionConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            TypeConverter.ConvertTo override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Charting.WinForms.CandlestickChart">
+            <summary>
+            A control used to draw candlestick charts.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.CandlestickChart.#ctor">
+            <summary>
+            Initializes a new instance of the CandlestickChart class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.CandlestickChart.Series">
+            <summary>
+            BiaxialChart.Series override. Gets or sets the list of series whose data is drawn in this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.CandlestickChart.SeriesRenderer">
+            <summary>
+            BiaxialChart.SeriesRenderer override. Gets the default SeriesRenderer for this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.CandlestickChart.CandlestickWidth">
+            <summary>
+            Gets or sets the width of the candlesticks.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Charting.WinForms.RadarChart">
+            <summary>
+            A control used to draw radar charts.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.RadarChart.#ctor">
+            <summary>
+            Initializes a new instance of the RadarChart class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.RadarChart.CreatePlot">
+            <summary>
+            Chart.CreatePlot override. Creates the Plot type corresponding to this chart.
+            </summary>
+            <returns>An instance of the RadarPlot class.</returns>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.RadarChart.SeriesRenderer">
+            <summary>
+            Chart.SeriesRenderer override. Gets the default SeriesRenderer for this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.RadarChart.Series">
+            <summary>
+            Gets or sets the list of series whose data is drawn in this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.RadarChart.ShowScatter">
+            <summary>
+            Gets or sets a value indicating whether the chart should render scatter shapes.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.RadarChart.RadarType">
+            <summary>
+            Gets or sets the type of radar graphics drawn in this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.RadarChart.GridType">
+            <summary>
+            Gets or sets the type of grid drawn in this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.RadarChart.DefaultAxis">
+            <summary>
+            Gets a default Axis object used when data item index does not
+            have corresponding element in the Axes collection.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.RadarChart.Axes">
+            <summary>
+            Gets the list of Axis objects representing ranges
+            of variables represented in the radar chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.RadarChart.GridDivisions">
+            <summary>
+            Gets or sets the number of grid divisions.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.RadarChart.UniformScale">
+            <summary>
+            Gets or sets a value indicating whether all axes should display same data range.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.RadarChart.ShowCoordinates">
+            <summary>
+            Gets or sets a value indicating whether the chart should show axis coordinates.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.RadarChart.GridColor1">
+            <summary>
+            Gets or sets the main color of the grid.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.RadarChart.GridColor2">
+            <summary>
+            Gets or sets the alternating color of the grid.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.RadarChart.AreaOpacity">
+            <summary>
+            Gets or sets the opacity of radar polygons.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.RadarChart.AlignToAxis">
+            <summary>
+            Gets or sets whether pie-radar sectors should be aligned to
+            axes in the radar grid or centered around them.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.RadarChart.AllowRotate">
+            <summary>
+            Gets or sets a value indicating whether users are allowed to rotate this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.RadarChart.StartAngle">
+            <summary>
+            Gets or sets the angle where first data item of series should be drawn.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.RadarChart.ChartPadding">
+            <summary>
+            Gets or sets padding space between the plot's border and series graphics.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Charting.WinForms.PieChart">
+            <summary>
+            A control used to draw pie charts.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.PieChart.#ctor">
+            <summary>
+            Initializes a new instance of the PieChart class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.PieChart.CreatePlot">
+            <summary>
+            Chart.CreatePlot override. Creates the Plot type corresponding to this chart.
+            </summary>
+            <returns>An instance of the PolarPlot class.</returns>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.PieChart.Series">
+            <summary>
+            Gets or sets the series whose data is drawn in this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.PieChart.SeriesRenderer">
+            <summary>
+            Chart.SeriesRenderer override. Gets the default SeriesRenderer for this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.PieChart.StartAngle">
+            <summary>
+            Gets or sets the angle where first data item of series should be drawn.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.PieChart.AllowRotate">
+            <summary>
+            Gets or sets a value indicating whether users are allowed to rotate this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.PieChart.ChartPadding">
+            <summary>
+            Gets or sets padding space between the plot's border and series graphics.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.PieChart.DetachOffset">
+            <summary>
+            Gets or sets the percentage by which detached slices are offset from pie center.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.PieChart.Doughnut">
+            <summary>
+            Gets or sets a value indicating whether the pie should be rendered as a doughnut.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.PieChart.DetachedSlices">
+            <summary>
+            Gets or sets indices of detached slices.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Charting.WinForms.BubbleChart">
+            <summary>
+            A control used to draw bubble charts.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Charting.WinForms.BubbleChart.#ctor">
+            <summary>
+            Initializes a new instance of the BubbleChart class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BubbleChart.Series">
+            <summary>
+            BiaxialChart.Series override. Gets or sets the list of series whose data is drawn in this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BubbleChart.SeriesRenderer">
+            <summary>
+            BiaxialChart.SeriesRenderer override. Gets the default SeriesRenderer for this chart.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Charting.WinForms.BubbleChart.LabelAlignment">
+            <summary>
+            Gets or sets the alignment of labels relative to their associated bubbles.
+            </summary>
+        </member>
+    </members>
+</doc>
