@@ -61,11 +61,21 @@
             this.bursatYaziLabel = new System.Windows.Forms.Label();
             this.takimIsmiLabel = new System.Windows.Forms.Label();
             this.komutlarBox = new System.Windows.Forms.GroupBox();
+            this.konumBox = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.boylamTextBox = new System.Windows.Forms.TextBox();
+            this.enlemTextBox = new System.Windows.Forms.TextBox();
             this.videoAktarimiBox = new System.Windows.Forms.GroupBox();
+            this.secButton = new WindowsFormsApp1.CustomButton();
+            this.gonderButton = new WindowsFormsApp1.CustomButton();
             this.dosyaSecLabel = new System.Windows.Forms.Label();
             this.manuelTahrikbox = new System.Windows.Forms.GroupBox();
+            this.durdurButton = new WindowsFormsApp1.CustomButton();
+            this.baslatButton = new WindowsFormsApp1.CustomButton();
             this.ayrilmaBox = new System.Windows.Forms.GroupBox();
+            this.ayirButton = new WindowsFormsApp1.CustomButton();
             this.uyduKalibresiBox = new System.Windows.Forms.GroupBox();
+            this.kalibreEtButton = new WindowsFormsApp1.CustomButton();
             this.anlikGoruntu = new System.Windows.Forms.PictureBox();
             this.yukseklikGrafik = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.basincGrafik = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -74,9 +84,6 @@
             this.yukseklikGrafik2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.gMap = new GMap.NET.WindowsForms.GMapControl();
             this.dataTable = new System.Windows.Forms.DataGridView();
-            this.gpsAltitudeGrafik = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.basincGrafik2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.sicaklikGrafik = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Takim_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paket_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gonderme_saati = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,14 +107,14 @@
             this.yaw = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donus_sayisi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.video_aktarim_bilgisi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.secButton = new WindowsFormsApp1.CustomButton();
-            this.gonderButton = new WindowsFormsApp1.CustomButton();
-            this.durdurButton = new WindowsFormsApp1.CustomButton();
-            this.baslatButton = new WindowsFormsApp1.CustomButton();
-            this.ayirButton = new WindowsFormsApp1.CustomButton();
-            this.kalibreEtButton = new WindowsFormsApp1.CustomButton();
+            this.gpsAltitudeGrafik = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.basincGrafik2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.sicaklikGrafik = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label3 = new System.Windows.Forms.Label();
+            this.konumGönderButton = new WindowsFormsApp1.CustomButton();
             this.takimBilgileriBox.SuspendLayout();
             this.komutlarBox.SuspendLayout();
+            this.konumBox.SuspendLayout();
             this.videoAktarimiBox.SuspendLayout();
             this.manuelTahrikbox.SuspendLayout();
             this.ayrilmaBox.SuspendLayout();
@@ -200,6 +207,7 @@
             // komutlarBox
             // 
             this.komutlarBox.BackColor = System.Drawing.Color.Transparent;
+            this.komutlarBox.Controls.Add(this.konumBox);
             this.komutlarBox.Controls.Add(this.videoAktarimiBox);
             this.komutlarBox.Controls.Add(this.manuelTahrikbox);
             this.komutlarBox.Controls.Add(this.ayrilmaBox);
@@ -213,6 +221,45 @@
             this.komutlarBox.TabIndex = 1;
             this.komutlarBox.TabStop = false;
             this.komutlarBox.Text = "Komutlar";
+            // 
+            // konumBox
+            // 
+            this.konumBox.Controls.Add(this.konumGönderButton);
+            this.konumBox.Controls.Add(this.label3);
+            this.konumBox.Controls.Add(this.label2);
+            this.konumBox.Controls.Add(this.boylamTextBox);
+            this.konumBox.Controls.Add(this.enlemTextBox);
+            this.konumBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.konumBox.ForeColor = System.Drawing.Color.White;
+            this.konumBox.Location = new System.Drawing.Point(965, 25);
+            this.konumBox.Name = "konumBox";
+            this.konumBox.Size = new System.Drawing.Size(279, 120);
+            this.konumBox.TabIndex = 4;
+            this.konumBox.TabStop = false;
+            this.konumBox.Text = "Konum Gönderme";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Enlem Giriniz: ";
+            // 
+            // boylamTextBox
+            // 
+            this.boylamTextBox.Location = new System.Drawing.Point(146, 49);
+            this.boylamTextBox.Name = "boylamTextBox";
+            this.boylamTextBox.Size = new System.Drawing.Size(117, 23);
+            this.boylamTextBox.TabIndex = 1;
+            // 
+            // enlemTextBox
+            // 
+            this.enlemTextBox.Location = new System.Drawing.Point(146, 21);
+            this.enlemTextBox.Name = "enlemTextBox";
+            this.enlemTextBox.Size = new System.Drawing.Size(117, 23);
+            this.enlemTextBox.TabIndex = 0;
             // 
             // videoAktarimiBox
             // 
@@ -230,6 +277,48 @@
             this.videoAktarimiBox.TabIndex = 3;
             this.videoAktarimiBox.TabStop = false;
             this.videoAktarimiBox.Text = "Video Aktarımı";
+            // 
+            // secButton
+            // 
+            this.secButton.BackColor = System.Drawing.Color.White;
+            this.secButton.BackgroundColor = System.Drawing.Color.White;
+            this.secButton.BorderColor = System.Drawing.Color.Red;
+            this.secButton.BorderRadius = 20;
+            this.secButton.BorderSize = 0;
+            this.secButton.FlatAppearance.BorderSize = 0;
+            this.secButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.secButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.secButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.secButton.Location = new System.Drawing.Point(153, 15);
+            this.secButton.Name = "secButton";
+            this.secButton.Size = new System.Drawing.Size(59, 33);
+            this.secButton.TabIndex = 10;
+            this.secButton.Text = "Seç";
+            this.secButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.secButton.UseVisualStyleBackColor = false;
+            this.secButton.Click += new System.EventHandler(this.secButton_Click);
+            // 
+            // gonderButton
+            // 
+            this.gonderButton.BackColor = System.Drawing.Color.White;
+            this.gonderButton.BackgroundColor = System.Drawing.Color.White;
+            this.gonderButton.BorderColor = System.Drawing.Color.Red;
+            this.gonderButton.BorderRadius = 20;
+            this.gonderButton.BorderSize = 0;
+            this.gonderButton.FlatAppearance.BorderSize = 0;
+            this.gonderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gonderButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.gonderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.gonderButton.Image = ((System.Drawing.Image)(resources.GetObject("gonderButton.Image")));
+            this.gonderButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.gonderButton.Location = new System.Drawing.Point(59, 40);
+            this.gonderButton.Name = "gonderButton";
+            this.gonderButton.Size = new System.Drawing.Size(89, 35);
+            this.gonderButton.TabIndex = 9;
+            this.gonderButton.Text = "Gönder";
+            this.gonderButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.gonderButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.gonderButton.UseVisualStyleBackColor = false;
             // 
             // dosyaSecLabel
             // 
@@ -256,6 +345,48 @@
             this.manuelTahrikbox.TabStop = false;
             this.manuelTahrikbox.Text = "Manuel Tahrik Komutu";
             // 
+            // durdurButton
+            // 
+            this.durdurButton.BackColor = System.Drawing.Color.White;
+            this.durdurButton.BackgroundColor = System.Drawing.Color.White;
+            this.durdurButton.BorderColor = System.Drawing.Color.Red;
+            this.durdurButton.BorderRadius = 20;
+            this.durdurButton.BorderSize = 0;
+            this.durdurButton.FlatAppearance.BorderSize = 0;
+            this.durdurButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.durdurButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.durdurButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.durdurButton.Image = ((System.Drawing.Image)(resources.GetObject("durdurButton.Image")));
+            this.durdurButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.durdurButton.Location = new System.Drawing.Point(134, 21);
+            this.durdurButton.Name = "durdurButton";
+            this.durdurButton.Size = new System.Drawing.Size(114, 33);
+            this.durdurButton.TabIndex = 8;
+            this.durdurButton.Text = "Durdur";
+            this.durdurButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.durdurButton.UseVisualStyleBackColor = false;
+            // 
+            // baslatButton
+            // 
+            this.baslatButton.BackColor = System.Drawing.Color.White;
+            this.baslatButton.BackgroundColor = System.Drawing.Color.White;
+            this.baslatButton.BorderColor = System.Drawing.Color.Red;
+            this.baslatButton.BorderRadius = 20;
+            this.baslatButton.BorderSize = 0;
+            this.baslatButton.FlatAppearance.BorderSize = 0;
+            this.baslatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.baslatButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.baslatButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.baslatButton.Image = ((System.Drawing.Image)(resources.GetObject("baslatButton.Image")));
+            this.baslatButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.baslatButton.Location = new System.Drawing.Point(5, 21);
+            this.baslatButton.Name = "baslatButton";
+            this.baslatButton.Size = new System.Drawing.Size(114, 33);
+            this.baslatButton.TabIndex = 7;
+            this.baslatButton.Text = "Başlat";
+            this.baslatButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.baslatButton.UseVisualStyleBackColor = false;
+            // 
             // ayrilmaBox
             // 
             this.ayrilmaBox.Controls.Add(this.ayirButton);
@@ -270,6 +401,27 @@
             this.ayrilmaBox.TabStop = false;
             this.ayrilmaBox.Text = "Ayrılma Komutu";
             // 
+            // ayirButton
+            // 
+            this.ayirButton.BackColor = System.Drawing.Color.White;
+            this.ayirButton.BackgroundColor = System.Drawing.Color.White;
+            this.ayirButton.BorderColor = System.Drawing.Color.Red;
+            this.ayirButton.BorderRadius = 20;
+            this.ayirButton.BorderSize = 0;
+            this.ayirButton.FlatAppearance.BorderSize = 0;
+            this.ayirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ayirButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.ayirButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.ayirButton.Image = ((System.Drawing.Image)(resources.GetObject("ayirButton.Image")));
+            this.ayirButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ayirButton.Location = new System.Drawing.Point(29, 21);
+            this.ayirButton.Name = "ayirButton";
+            this.ayirButton.Size = new System.Drawing.Size(129, 33);
+            this.ayirButton.TabIndex = 6;
+            this.ayirButton.Text = "Ayır";
+            this.ayirButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.ayirButton.UseVisualStyleBackColor = false;
+            // 
             // uyduKalibresiBox
             // 
             this.uyduKalibresiBox.Controls.Add(this.kalibreEtButton);
@@ -283,6 +435,27 @@
             this.uyduKalibresiBox.TabIndex = 0;
             this.uyduKalibresiBox.TabStop = false;
             this.uyduKalibresiBox.Text = "Uydu Kalibresi";
+            // 
+            // kalibreEtButton
+            // 
+            this.kalibreEtButton.BackColor = System.Drawing.Color.White;
+            this.kalibreEtButton.BackgroundColor = System.Drawing.Color.White;
+            this.kalibreEtButton.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.kalibreEtButton.BorderRadius = 20;
+            this.kalibreEtButton.BorderSize = 0;
+            this.kalibreEtButton.FlatAppearance.BorderSize = 0;
+            this.kalibreEtButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.kalibreEtButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.kalibreEtButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.kalibreEtButton.Image = ((System.Drawing.Image)(resources.GetObject("kalibreEtButton.Image")));
+            this.kalibreEtButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.kalibreEtButton.Location = new System.Drawing.Point(30, 21);
+            this.kalibreEtButton.Name = "kalibreEtButton";
+            this.kalibreEtButton.Size = new System.Drawing.Size(129, 33);
+            this.kalibreEtButton.TabIndex = 5;
+            this.kalibreEtButton.Text = "Kalibre Et";
+            this.kalibreEtButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.kalibreEtButton.UseVisualStyleBackColor = false;
             // 
             // anlikGoruntu
             // 
@@ -494,82 +667,13 @@
             this.dataTable.Size = new System.Drawing.Size(1880, 244);
             this.dataTable.TabIndex = 12;
             // 
-            // gpsAltitudeGrafik
-            // 
-            chartArea6.Name = "ChartArea1";
-            this.gpsAltitudeGrafik.ChartAreas.Add(chartArea6);
-            legend6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            legend6.DockedToChartArea = "ChartArea1";
-            legend6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend6.Name = "Legend1";
-            this.gpsAltitudeGrafik.Legends.Add(legend6);
-            this.gpsAltitudeGrafik.Location = new System.Drawing.Point(1119, 275);
-            this.gpsAltitudeGrafik.Margin = new System.Windows.Forms.Padding(2);
-            this.gpsAltitudeGrafik.Name = "gpsAltitudeGrafik";
-            this.gpsAltitudeGrafik.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Legend = "Legend1";
-            series6.Name = "GPS Altitude";
-            this.gpsAltitudeGrafik.Series.Add(series6);
-            this.gpsAltitudeGrafik.Size = new System.Drawing.Size(352, 224);
-            this.gpsAltitudeGrafik.TabIndex = 13;
-            this.gpsAltitudeGrafik.Text = "Gps Altitude";
-            // 
-            // basincGrafik2
-            // 
-            this.basincGrafik2.BackColor = System.Drawing.SystemColors.HighlightText;
-            chartArea7.Name = "ChartArea1";
-            this.basincGrafik2.ChartAreas.Add(chartArea7);
-            legend7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            legend7.DockedToChartArea = "ChartArea1";
-            legend7.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend7.Name = "Legend1";
-            this.basincGrafik2.Legends.Add(legend7);
-            this.basincGrafik2.Location = new System.Drawing.Point(1119, 527);
-            this.basincGrafik2.Margin = new System.Windows.Forms.Padding(2);
-            this.basincGrafik2.Name = "basincGrafik2";
-            this.basincGrafik2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series7.Legend = "Legend1";
-            series7.Name = "Basınç 2";
-            this.basincGrafik2.Series.Add(series7);
-            this.basincGrafik2.Size = new System.Drawing.Size(352, 224);
-            this.basincGrafik2.TabIndex = 14;
-            this.basincGrafik2.Text = "Basınç";
-            // 
-            // sicaklikGrafik
-            // 
-            chartArea8.Name = "ChartArea1";
-            this.sicaklikGrafik.ChartAreas.Add(chartArea8);
-            legend8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            legend8.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Left;
-            legend8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            legend8.DockedToChartArea = "ChartArea1";
-            legend8.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend8.Name = "Yükseklik 1";
-            this.sicaklikGrafik.Legends.Add(legend8);
-            this.sicaklikGrafik.Location = new System.Drawing.Point(21, 275);
-            this.sicaklikGrafik.Margin = new System.Windows.Forms.Padding(2);
-            this.sicaklikGrafik.Name = "sicaklikGrafik";
-            this.sicaklikGrafik.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series8.Legend = "Yükseklik 1";
-            series8.Name = "Sıcaklık";
-            this.sicaklikGrafik.Series.Add(series8);
-            this.sicaklikGrafik.Size = new System.Drawing.Size(352, 224);
-            this.sicaklikGrafik.TabIndex = 15;
-            this.sicaklikGrafik.Text = "Yükseklik";
-            // 
             // Takim_No
             // 
             this.Takim_No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Takim_No.HeaderText = "Takım No";
             this.Takim_No.Name = "Takim_No";
             this.Takim_No.ReadOnly = true;
-            this.Takim_No.Width = 78;
+            this.Takim_No.Width = 72;
             // 
             // paket_no
             // 
@@ -703,131 +807,105 @@
             this.video_aktarim_bilgisi.Name = "video_aktarim_bilgisi";
             this.video_aktarim_bilgisi.ReadOnly = true;
             // 
-            // secButton
+            // gpsAltitudeGrafik
             // 
-            this.secButton.BackColor = System.Drawing.Color.White;
-            this.secButton.BackgroundColor = System.Drawing.Color.White;
-            this.secButton.BorderColor = System.Drawing.Color.Red;
-            this.secButton.BorderRadius = 20;
-            this.secButton.BorderSize = 0;
-            this.secButton.FlatAppearance.BorderSize = 0;
-            this.secButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.secButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.secButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.secButton.Location = new System.Drawing.Point(153, 15);
-            this.secButton.Name = "secButton";
-            this.secButton.Size = new System.Drawing.Size(59, 33);
-            this.secButton.TabIndex = 10;
-            this.secButton.Text = "Seç";
-            this.secButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.secButton.UseVisualStyleBackColor = false;
-            this.secButton.Click += new System.EventHandler(this.secButton_Click);
+            chartArea6.Name = "ChartArea1";
+            this.gpsAltitudeGrafik.ChartAreas.Add(chartArea6);
+            legend6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            legend6.DockedToChartArea = "ChartArea1";
+            legend6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend6.Name = "Legend1";
+            this.gpsAltitudeGrafik.Legends.Add(legend6);
+            this.gpsAltitudeGrafik.Location = new System.Drawing.Point(1119, 275);
+            this.gpsAltitudeGrafik.Margin = new System.Windows.Forms.Padding(2);
+            this.gpsAltitudeGrafik.Name = "gpsAltitudeGrafik";
+            this.gpsAltitudeGrafik.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Legend = "Legend1";
+            series6.Name = "GPS Altitude";
+            this.gpsAltitudeGrafik.Series.Add(series6);
+            this.gpsAltitudeGrafik.Size = new System.Drawing.Size(352, 224);
+            this.gpsAltitudeGrafik.TabIndex = 13;
+            this.gpsAltitudeGrafik.Text = "Gps Altitude";
             // 
-            // gonderButton
+            // basincGrafik2
             // 
-            this.gonderButton.BackColor = System.Drawing.Color.White;
-            this.gonderButton.BackgroundColor = System.Drawing.Color.White;
-            this.gonderButton.BorderColor = System.Drawing.Color.Red;
-            this.gonderButton.BorderRadius = 20;
-            this.gonderButton.BorderSize = 0;
-            this.gonderButton.FlatAppearance.BorderSize = 0;
-            this.gonderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gonderButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.gonderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.gonderButton.Image = ((System.Drawing.Image)(resources.GetObject("gonderButton.Image")));
-            this.gonderButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.gonderButton.Location = new System.Drawing.Point(59, 40);
-            this.gonderButton.Name = "gonderButton";
-            this.gonderButton.Size = new System.Drawing.Size(89, 35);
-            this.gonderButton.TabIndex = 9;
-            this.gonderButton.Text = "Gönder";
-            this.gonderButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.gonderButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.gonderButton.UseVisualStyleBackColor = false;
+            this.basincGrafik2.BackColor = System.Drawing.SystemColors.HighlightText;
+            chartArea7.Name = "ChartArea1";
+            this.basincGrafik2.ChartAreas.Add(chartArea7);
+            legend7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            legend7.DockedToChartArea = "ChartArea1";
+            legend7.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend7.Name = "Legend1";
+            this.basincGrafik2.Legends.Add(legend7);
+            this.basincGrafik2.Location = new System.Drawing.Point(1119, 527);
+            this.basincGrafik2.Margin = new System.Windows.Forms.Padding(2);
+            this.basincGrafik2.Name = "basincGrafik2";
+            this.basincGrafik2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.Legend = "Legend1";
+            series7.Name = "Basınç 2";
+            this.basincGrafik2.Series.Add(series7);
+            this.basincGrafik2.Size = new System.Drawing.Size(352, 224);
+            this.basincGrafik2.TabIndex = 14;
+            this.basincGrafik2.Text = "Basınç";
             // 
-            // durdurButton
+            // sicaklikGrafik
             // 
-            this.durdurButton.BackColor = System.Drawing.Color.White;
-            this.durdurButton.BackgroundColor = System.Drawing.Color.White;
-            this.durdurButton.BorderColor = System.Drawing.Color.Red;
-            this.durdurButton.BorderRadius = 20;
-            this.durdurButton.BorderSize = 0;
-            this.durdurButton.FlatAppearance.BorderSize = 0;
-            this.durdurButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.durdurButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.durdurButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.durdurButton.Image = ((System.Drawing.Image)(resources.GetObject("durdurButton.Image")));
-            this.durdurButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.durdurButton.Location = new System.Drawing.Point(134, 21);
-            this.durdurButton.Name = "durdurButton";
-            this.durdurButton.Size = new System.Drawing.Size(114, 33);
-            this.durdurButton.TabIndex = 8;
-            this.durdurButton.Text = "Durdur";
-            this.durdurButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.durdurButton.UseVisualStyleBackColor = false;
+            chartArea8.Name = "ChartArea1";
+            this.sicaklikGrafik.ChartAreas.Add(chartArea8);
+            legend8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            legend8.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Left;
+            legend8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            legend8.DockedToChartArea = "ChartArea1";
+            legend8.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend8.Name = "Yükseklik 1";
+            this.sicaklikGrafik.Legends.Add(legend8);
+            this.sicaklikGrafik.Location = new System.Drawing.Point(21, 275);
+            this.sicaklikGrafik.Margin = new System.Windows.Forms.Padding(2);
+            this.sicaklikGrafik.Name = "sicaklikGrafik";
+            this.sicaklikGrafik.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series8.Legend = "Yükseklik 1";
+            series8.Name = "Sıcaklık";
+            this.sicaklikGrafik.Series.Add(series8);
+            this.sicaklikGrafik.Size = new System.Drawing.Size(352, 224);
+            this.sicaklikGrafik.TabIndex = 15;
+            this.sicaklikGrafik.Text = "Yükseklik";
             // 
-            // baslatButton
+            // label3
             // 
-            this.baslatButton.BackColor = System.Drawing.Color.White;
-            this.baslatButton.BackgroundColor = System.Drawing.Color.White;
-            this.baslatButton.BorderColor = System.Drawing.Color.Red;
-            this.baslatButton.BorderRadius = 20;
-            this.baslatButton.BorderSize = 0;
-            this.baslatButton.FlatAppearance.BorderSize = 0;
-            this.baslatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.baslatButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.baslatButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.baslatButton.Image = ((System.Drawing.Image)(resources.GetObject("baslatButton.Image")));
-            this.baslatButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.baslatButton.Location = new System.Drawing.Point(5, 21);
-            this.baslatButton.Name = "baslatButton";
-            this.baslatButton.Size = new System.Drawing.Size(114, 33);
-            this.baslatButton.TabIndex = 7;
-            this.baslatButton.Text = "Başlat";
-            this.baslatButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.baslatButton.UseVisualStyleBackColor = false;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 52);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 15);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Boylam Giriniz: ";
             // 
-            // ayirButton
+            // konumGönderButton
             // 
-            this.ayirButton.BackColor = System.Drawing.Color.White;
-            this.ayirButton.BackgroundColor = System.Drawing.Color.White;
-            this.ayirButton.BorderColor = System.Drawing.Color.Red;
-            this.ayirButton.BorderRadius = 20;
-            this.ayirButton.BorderSize = 0;
-            this.ayirButton.FlatAppearance.BorderSize = 0;
-            this.ayirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ayirButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.ayirButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.ayirButton.Image = ((System.Drawing.Image)(resources.GetObject("ayirButton.Image")));
-            this.ayirButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ayirButton.Location = new System.Drawing.Point(29, 21);
-            this.ayirButton.Name = "ayirButton";
-            this.ayirButton.Size = new System.Drawing.Size(129, 33);
-            this.ayirButton.TabIndex = 6;
-            this.ayirButton.Text = "Ayır";
-            this.ayirButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.ayirButton.UseVisualStyleBackColor = false;
-            // 
-            // kalibreEtButton
-            // 
-            this.kalibreEtButton.BackColor = System.Drawing.Color.White;
-            this.kalibreEtButton.BackgroundColor = System.Drawing.Color.White;
-            this.kalibreEtButton.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.kalibreEtButton.BorderRadius = 20;
-            this.kalibreEtButton.BorderSize = 0;
-            this.kalibreEtButton.FlatAppearance.BorderSize = 0;
-            this.kalibreEtButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.kalibreEtButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.kalibreEtButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.kalibreEtButton.Image = ((System.Drawing.Image)(resources.GetObject("kalibreEtButton.Image")));
-            this.kalibreEtButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.kalibreEtButton.Location = new System.Drawing.Point(30, 21);
-            this.kalibreEtButton.Name = "kalibreEtButton";
-            this.kalibreEtButton.Size = new System.Drawing.Size(129, 33);
-            this.kalibreEtButton.TabIndex = 5;
-            this.kalibreEtButton.Text = "Kalibre Et";
-            this.kalibreEtButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.kalibreEtButton.UseVisualStyleBackColor = false;
+            this.konumGönderButton.BackColor = System.Drawing.Color.White;
+            this.konumGönderButton.BackgroundColor = System.Drawing.Color.White;
+            this.konumGönderButton.BorderColor = System.Drawing.Color.Red;
+            this.konumGönderButton.BorderRadius = 20;
+            this.konumGönderButton.BorderSize = 0;
+            this.konumGönderButton.FlatAppearance.BorderSize = 0;
+            this.konumGönderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.konumGönderButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.konumGönderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.konumGönderButton.Image = ((System.Drawing.Image)(resources.GetObject("konumGönderButton.Image")));
+            this.konumGönderButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.konumGönderButton.Location = new System.Drawing.Point(57, 79);
+            this.konumGönderButton.Name = "konumGönderButton";
+            this.konumGönderButton.Size = new System.Drawing.Size(163, 35);
+            this.konumGönderButton.TabIndex = 10;
+            this.konumGönderButton.Text = "Konumu Gönder";
+            this.konumGönderButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.konumGönderButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.konumGönderButton.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -859,6 +937,8 @@
             this.takimBilgileriBox.ResumeLayout(false);
             this.takimBilgileriBox.PerformLayout();
             this.komutlarBox.ResumeLayout(false);
+            this.konumBox.ResumeLayout(false);
+            this.konumBox.PerformLayout();
             this.videoAktarimiBox.ResumeLayout(false);
             this.videoAktarimiBox.PerformLayout();
             this.manuelTahrikbox.ResumeLayout(false);
@@ -932,6 +1012,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn yaw;
         private System.Windows.Forms.DataGridViewTextBoxColumn donus_sayisi;
         private System.Windows.Forms.DataGridViewTextBoxColumn video_aktarim_bilgisi;
+        private System.Windows.Forms.GroupBox konumBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox boylamTextBox;
+        private System.Windows.Forms.TextBox enlemTextBox;
+        private CustomButton konumGönderButton;
+        private System.Windows.Forms.Label label3;
     }
 }
 
