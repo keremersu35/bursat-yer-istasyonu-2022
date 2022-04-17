@@ -424,7 +424,19 @@
         QtM1ist5MhDrP04AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="kalibreEtButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="yumursakKalibreButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        dgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEmSURBVDhPnZI9
+        SgNRFEajiFXiDizS2NhkGQE3YCGW1iIqRoxI/P8je3AL2qUMWNi4i2QJiojxHPLuMONMkfjBYWa+N/Pd
+        ++6bGprk+NaYV374A6dwolGhBtSnt2VF9XM408hpAbZhDCPYgUUoKDqw+rFG0gq8QhQIhmBHmWLhEnoa
+        SS1Yg2eIdwawDq5lcsEOrH6kkfQO8cEGtMHAF3iDTJF+DRcaSQbof8EmbKV7vVKAHVj9UCMpAsQTcnvx
+        XNnBLVxpJHXgE/4GfMABZNK0A6vva+S0Ck/QBQMcaBMKig7u4UajQh6pVCoC5F+/8lKOZTDEgXoibsu5
+        uDW724M72IUHKBU0xE78JzxWgxyuQW7RoEcwqA++W1AEONRZrlJQBMxIbfILrbRxZr310xsAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <data name="sertKalibreButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
         dgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEmSURBVDhPnZI9

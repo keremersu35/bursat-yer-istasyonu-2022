@@ -39,25 +39,25 @@ namespace WindowsFormsApp1
 
         public void UpdateCpuChart()
         {
-            sicaklikGrafik.Series["Sıcaklık"].Points.Clear();
-            yukseklikGrafik.Series["Yükseklik 1"].Points.Clear();
-            pilGerilimiGrafik.Series["Pil Gerilimi"].Points.Clear();
-            inisHiziGrafik.Series["İniş Hızı"].Points.Clear();
-            basincGrafik.Series["Basınç 1"].Points.Clear();
-            yukseklikGrafik2.Series["Yükseklik 2"].Points.Clear();
-            basincGrafik2.Series["Basınç 2"].Points.Clear();
-            gpsAltitudeGrafik.Series["GPS Altitude"].Points.Clear();
+            sicaklikGrafik.Series["Sıcaklık (°C)"].Points.Clear();
+            yukseklikGrafik.Series["Yükseklik 1 (m)"].Points.Clear();
+            pilGerilimiGrafik.Series["Pil Gerilimi (V)"].Points.Clear();
+            inisHiziGrafik.Series["İniş Hızı (m/s)"].Points.Clear();
+            basincGrafik.Series["Basınç 1 (Pa)"].Points.Clear();
+            yukseklikGrafik2.Series["Yükseklik 2 (m)"].Points.Clear();
+            basincGrafik2.Series["Basınç 2 (Pa)"].Points.Clear();
+            gpsAltitudeGrafik.Series["GPS Altitude (m)"].Points.Clear();
 
             for (int i = 0; i < cpuArray.Length - 1; ++i)
             {
-                sicaklikGrafik.Series["Sıcaklık"].Points.AddY(cpuArray[i]);
-                yukseklikGrafik.Series["Yükseklik 1"].Points.AddY(cpuArray[i]);
-                pilGerilimiGrafik.Series["Pil Gerilimi"].Points.AddY(cpuArray[i]);
-                inisHiziGrafik.Series["İniş Hızı"].Points.AddY(cpuArray[i]);
-                basincGrafik.Series["Basınç 1"].Points.AddY(cpuArray[i]);
-                yukseklikGrafik2.Series["Yükseklik 2"].Points.AddY(cpuArray[i]);
-                basincGrafik2.Series["Basınç 2"].Points.AddY(cpuArray[i]);
-                gpsAltitudeGrafik.Series["GPS Altitude"].Points.AddY(cpuArray[i]);
+                sicaklikGrafik.Series["Sıcaklık (°C)"].Points.AddY(cpuArray[i]);
+                yukseklikGrafik.Series["Yükseklik 1 (m)"].Points.AddY(cpuArray[i]);
+                pilGerilimiGrafik.Series["Pil Gerilimi (V)"].Points.AddY(cpuArray[i]);
+                inisHiziGrafik.Series["İniş Hızı (m/s)"].Points.AddY(cpuArray[i]);
+                basincGrafik.Series["Basınç 1 (Pa)"].Points.AddY(cpuArray[i]);
+                yukseklikGrafik2.Series["Yükseklik 2 (m)"].Points.AddY(cpuArray[i]);
+                basincGrafik2.Series["Basınç 2 (Pa)"].Points.AddY(cpuArray[i]);
+                gpsAltitudeGrafik.Series["GPS Altitude (m)"].Points.AddY(cpuArray[i]);
             }
         }
 

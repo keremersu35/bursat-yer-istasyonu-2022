@@ -62,6 +62,8 @@
             this.takimIsmiLabel = new System.Windows.Forms.Label();
             this.komutlarBox = new System.Windows.Forms.GroupBox();
             this.konumBox = new System.Windows.Forms.GroupBox();
+            this.konumGönderButton = new WindowsFormsApp1.CustomButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.boylamTextBox = new System.Windows.Forms.TextBox();
             this.enlemTextBox = new System.Windows.Forms.TextBox();
@@ -75,7 +77,7 @@
             this.ayrilmaBox = new System.Windows.Forms.GroupBox();
             this.ayirButton = new WindowsFormsApp1.CustomButton();
             this.uyduKalibresiBox = new System.Windows.Forms.GroupBox();
-            this.kalibreEtButton = new WindowsFormsApp1.CustomButton();
+            this.sertKalibreButton = new WindowsFormsApp1.CustomButton();
             this.anlikGoruntu = new System.Windows.Forms.PictureBox();
             this.yukseklikGrafik = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.basincGrafik = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -110,8 +112,7 @@
             this.gpsAltitudeGrafik = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.basincGrafik2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.sicaklikGrafik = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label3 = new System.Windows.Forms.Label();
-            this.konumGönderButton = new WindowsFormsApp1.CustomButton();
+            this.yumursakKalibreButton = new WindowsFormsApp1.CustomButton();
             this.takimBilgileriBox.SuspendLayout();
             this.komutlarBox.SuspendLayout();
             this.konumBox.SuspendLayout();
@@ -237,6 +238,37 @@
             this.konumBox.TabIndex = 4;
             this.konumBox.TabStop = false;
             this.konumBox.Text = "Konum Gönderme";
+            // 
+            // konumGönderButton
+            // 
+            this.konumGönderButton.BackColor = System.Drawing.Color.White;
+            this.konumGönderButton.BackgroundColor = System.Drawing.Color.White;
+            this.konumGönderButton.BorderColor = System.Drawing.Color.Red;
+            this.konumGönderButton.BorderRadius = 20;
+            this.konumGönderButton.BorderSize = 0;
+            this.konumGönderButton.FlatAppearance.BorderSize = 0;
+            this.konumGönderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.konumGönderButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.konumGönderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.konumGönderButton.Image = ((System.Drawing.Image)(resources.GetObject("konumGönderButton.Image")));
+            this.konumGönderButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.konumGönderButton.Location = new System.Drawing.Point(57, 79);
+            this.konumGönderButton.Name = "konumGönderButton";
+            this.konumGönderButton.Size = new System.Drawing.Size(163, 35);
+            this.konumGönderButton.TabIndex = 10;
+            this.konumGönderButton.Text = "Konumu Gönder";
+            this.konumGönderButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.konumGönderButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.konumGönderButton.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 52);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 15);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Boylam Giriniz: ";
             // 
             // label2
             // 
@@ -424,38 +456,39 @@
             // 
             // uyduKalibresiBox
             // 
-            this.uyduKalibresiBox.Controls.Add(this.kalibreEtButton);
+            this.uyduKalibresiBox.Controls.Add(this.yumursakKalibreButton);
+            this.uyduKalibresiBox.Controls.Add(this.sertKalibreButton);
             this.uyduKalibresiBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.uyduKalibresiBox.ForeColor = System.Drawing.Color.White;
             this.uyduKalibresiBox.Location = new System.Drawing.Point(67, 25);
             this.uyduKalibresiBox.Margin = new System.Windows.Forms.Padding(2);
             this.uyduKalibresiBox.Name = "uyduKalibresiBox";
             this.uyduKalibresiBox.Padding = new System.Windows.Forms.Padding(2);
-            this.uyduKalibresiBox.Size = new System.Drawing.Size(180, 66);
+            this.uyduKalibresiBox.Size = new System.Drawing.Size(180, 100);
             this.uyduKalibresiBox.TabIndex = 0;
             this.uyduKalibresiBox.TabStop = false;
             this.uyduKalibresiBox.Text = "Uydu Kalibresi";
             // 
-            // kalibreEtButton
+            // sertKalibreButton
             // 
-            this.kalibreEtButton.BackColor = System.Drawing.Color.White;
-            this.kalibreEtButton.BackgroundColor = System.Drawing.Color.White;
-            this.kalibreEtButton.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.kalibreEtButton.BorderRadius = 20;
-            this.kalibreEtButton.BorderSize = 0;
-            this.kalibreEtButton.FlatAppearance.BorderSize = 0;
-            this.kalibreEtButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.kalibreEtButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.kalibreEtButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.kalibreEtButton.Image = ((System.Drawing.Image)(resources.GetObject("kalibreEtButton.Image")));
-            this.kalibreEtButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.kalibreEtButton.Location = new System.Drawing.Point(30, 21);
-            this.kalibreEtButton.Name = "kalibreEtButton";
-            this.kalibreEtButton.Size = new System.Drawing.Size(129, 33);
-            this.kalibreEtButton.TabIndex = 5;
-            this.kalibreEtButton.Text = "Kalibre Et";
-            this.kalibreEtButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.kalibreEtButton.UseVisualStyleBackColor = false;
+            this.sertKalibreButton.BackColor = System.Drawing.Color.White;
+            this.sertKalibreButton.BackgroundColor = System.Drawing.Color.White;
+            this.sertKalibreButton.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.sertKalibreButton.BorderRadius = 20;
+            this.sertKalibreButton.BorderSize = 0;
+            this.sertKalibreButton.FlatAppearance.BorderSize = 0;
+            this.sertKalibreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sertKalibreButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.sertKalibreButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.sertKalibreButton.Image = ((System.Drawing.Image)(resources.GetObject("sertKalibreButton.Image")));
+            this.sertKalibreButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sertKalibreButton.Location = new System.Drawing.Point(30, 21);
+            this.sertKalibreButton.Name = "sertKalibreButton";
+            this.sertKalibreButton.Size = new System.Drawing.Size(129, 33);
+            this.sertKalibreButton.TabIndex = 5;
+            this.sertKalibreButton.Text = "Sert Kalibre";
+            this.sertKalibreButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.sertKalibreButton.UseVisualStyleBackColor = false;
             // 
             // anlikGoruntu
             // 
@@ -487,7 +520,7 @@
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Yükseklik 1";
-            series1.Name = "Yükseklik 1";
+            series1.Name = "Yükseklik 1 (m)";
             this.yukseklikGrafik.Series.Add(series1);
             this.yukseklikGrafik.Size = new System.Drawing.Size(352, 224);
             this.yukseklikGrafik.TabIndex = 4;
@@ -510,7 +543,7 @@
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series2.Legend = "Legend1";
-            series2.Name = "Basınç 1";
+            series2.Name = "Basınç 1 (Pa)";
             this.basincGrafik.Series.Add(series2);
             this.basincGrafik.Size = new System.Drawing.Size(352, 224);
             this.basincGrafik.TabIndex = 5;
@@ -532,7 +565,7 @@
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series3.Legend = "Legend1";
-            series3.Name = "İniş Hızı";
+            series3.Name = "İniş Hızı (m/s)";
             this.inisHiziGrafik.Series.Add(series3);
             this.inisHiziGrafik.Size = new System.Drawing.Size(352, 224);
             this.inisHiziGrafik.TabIndex = 7;
@@ -554,7 +587,7 @@
             series4.ChartArea = "ChartArea1";
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series4.Legend = "Legend1";
-            series4.Name = "Pil Gerilimi";
+            series4.Name = "Pil Gerilimi (V)";
             this.pilGerilimiGrafik.Series.Add(series4);
             this.pilGerilimiGrafik.Size = new System.Drawing.Size(352, 224);
             this.pilGerilimiGrafik.TabIndex = 8;
@@ -578,7 +611,7 @@
             series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series5.LabelBackColor = System.Drawing.Color.Black;
             series5.Legend = "Yükseklik 2";
-            series5.Name = "Yükseklik 2";
+            series5.Name = "Yükseklik 2 (m)";
             series5.ShadowColor = System.Drawing.Color.Black;
             this.yukseklikGrafik2.Series.Add(series5);
             this.yukseklikGrafik2.Size = new System.Drawing.Size(352, 224);
@@ -823,7 +856,7 @@
             series6.ChartArea = "ChartArea1";
             series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series6.Legend = "Legend1";
-            series6.Name = "GPS Altitude";
+            series6.Name = "GPS Altitude (m)";
             this.gpsAltitudeGrafik.Series.Add(series6);
             this.gpsAltitudeGrafik.Size = new System.Drawing.Size(352, 224);
             this.gpsAltitudeGrafik.TabIndex = 13;
@@ -846,7 +879,7 @@
             series7.ChartArea = "ChartArea1";
             series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series7.Legend = "Legend1";
-            series7.Name = "Basınç 2";
+            series7.Name = "Basınç 2 (Pa)";
             this.basincGrafik2.Series.Add(series7);
             this.basincGrafik2.Size = new System.Drawing.Size(352, 224);
             this.basincGrafik2.TabIndex = 14;
@@ -870,42 +903,33 @@
             series8.ChartArea = "ChartArea1";
             series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series8.Legend = "Yükseklik 1";
-            series8.Name = "Sıcaklık";
+            series8.Name = "Sıcaklık (°C)";
             this.sicaklikGrafik.Series.Add(series8);
             this.sicaklikGrafik.Size = new System.Drawing.Size(352, 224);
             this.sicaklikGrafik.TabIndex = 15;
             this.sicaklikGrafik.Text = "Yükseklik";
             // 
-            // label3
+            // yumursakKalibreButton
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 15);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Boylam Giriniz: ";
-            // 
-            // konumGönderButton
-            // 
-            this.konumGönderButton.BackColor = System.Drawing.Color.White;
-            this.konumGönderButton.BackgroundColor = System.Drawing.Color.White;
-            this.konumGönderButton.BorderColor = System.Drawing.Color.Red;
-            this.konumGönderButton.BorderRadius = 20;
-            this.konumGönderButton.BorderSize = 0;
-            this.konumGönderButton.FlatAppearance.BorderSize = 0;
-            this.konumGönderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.konumGönderButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.konumGönderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.konumGönderButton.Image = ((System.Drawing.Image)(resources.GetObject("konumGönderButton.Image")));
-            this.konumGönderButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.konumGönderButton.Location = new System.Drawing.Point(57, 79);
-            this.konumGönderButton.Name = "konumGönderButton";
-            this.konumGönderButton.Size = new System.Drawing.Size(163, 35);
-            this.konumGönderButton.TabIndex = 10;
-            this.konumGönderButton.Text = "Konumu Gönder";
-            this.konumGönderButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.konumGönderButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.konumGönderButton.UseVisualStyleBackColor = false;
+            this.yumursakKalibreButton.BackColor = System.Drawing.Color.White;
+            this.yumursakKalibreButton.BackgroundColor = System.Drawing.Color.White;
+            this.yumursakKalibreButton.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.yumursakKalibreButton.BorderRadius = 20;
+            this.yumursakKalibreButton.BorderSize = 0;
+            this.yumursakKalibreButton.FlatAppearance.BorderSize = 0;
+            this.yumursakKalibreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.yumursakKalibreButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.yumursakKalibreButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.yumursakKalibreButton.Image = ((System.Drawing.Image)(resources.GetObject("yumursakKalibreButton.Image")));
+            this.yumursakKalibreButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.yumursakKalibreButton.Location = new System.Drawing.Point(18, 60);
+            this.yumursakKalibreButton.Name = "yumursakKalibreButton";
+            this.yumursakKalibreButton.Size = new System.Drawing.Size(150, 33);
+            this.yumursakKalibreButton.TabIndex = 6;
+            this.yumursakKalibreButton.Text = "Yumuşak Kalibre";
+            this.yumursakKalibreButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.yumursakKalibreButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.yumursakKalibreButton.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -982,7 +1006,7 @@
         private System.Windows.Forms.DataGridView dataTable;
         private System.Windows.Forms.DataVisualization.Charting.Chart gpsAltitudeGrafik;
         private System.Windows.Forms.DataVisualization.Charting.Chart basincGrafik2;
-        private CustomButton kalibreEtButton;
+        private CustomButton sertKalibreButton;
         private CustomButton gonderButton;
         private CustomButton durdurButton;
         private CustomButton baslatButton;
@@ -1018,6 +1042,7 @@
         private System.Windows.Forms.TextBox enlemTextBox;
         private CustomButton konumGönderButton;
         private System.Windows.Forms.Label label3;
+        private CustomButton yumursakKalibreButton;
     }
 }
 
