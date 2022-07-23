@@ -38,10 +38,13 @@ namespace WindowsFormsApp1
             GMapOverlay markersOverlay = new GMapOverlay("markers");
             GMarkerGoogle marker = new GMarkerGoogle(new PointLatLng(40.187343622987534, 29.12989315397961), GMarkerGoogleType.red);
             GMarkerGoogle marker2 = new GMarkerGoogle(new PointLatLng(40.187190314637085, 29.13101166174355), GMarkerGoogleType.pink);
+            
             markersOverlay.Markers.Add(marker);
             markersOverlay.Markers.Add(marker2);
+            
             marker.ToolTipText = "Görev Yükü";
             marker2.ToolTipText = "Taşıyıcı";
+            
             gMap.Overlays.Add(markersOverlay);
         }
     }

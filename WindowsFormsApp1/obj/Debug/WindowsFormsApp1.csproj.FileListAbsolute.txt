@@ -39,3 +39,7 @@ C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Newtonso
 C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Data.SqlClient.xml
 C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Data.SQLite.xml
 C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\HtmlAgilityPack.dll
+C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\SimpleTCP.dll
+C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\HtmlAgilityPack.xml

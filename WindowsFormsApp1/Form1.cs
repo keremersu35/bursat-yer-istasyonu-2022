@@ -30,6 +30,7 @@ namespace WindowsFormsApp1
         
         FilterInfoCollection videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
         VideoCaptureDevice videoSource = null;
+
         
         public Form1()
         {
@@ -49,7 +50,12 @@ namespace WindowsFormsApp1
 
             myTimer2.Tick += new EventHandler(TableUpdate);
             myTimer2.Interval = 1000;
-            myTimer2.Start();    
+            myTimer2.Start();
+
+            Communication communication = new Communication();
+            
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -76,6 +82,8 @@ namespace WindowsFormsApp1
         {
             CommandsButtons.secButton_Click();
         }
+
+
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
