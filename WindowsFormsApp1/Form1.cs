@@ -36,9 +36,12 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
 
-            Gmap = new googleMap(this, gMap);
-            CommandsButtons = new CommandsButtons(this, dataTable);
-            Graphs = new Graphs(this, sicaklikGrafik, yukseklikGrafik, yukseklikGrafik2, basincGrafik, basincGrafik2, inisHiziGrafik, gpsAltitudeGrafik, pilGerilimiGrafik);
+            Communication communication = new Communication();
+            communication.initialize();
+            communication.getDataAsync();
+            Gmap = new googleMap(this, gMap, communication);
+            CommandsButtons = new CommandsButtons(this, dataTable, communication);
+            Graphs = new Graphs(this, communication, sicaklikGrafik, yukseklikGrafik, yukseklikGrafik2, basincGrafik, basincGrafik2, inisHiziGrafik, gpsAltitudeGrafik, pilGerilimiGrafik);
 
             cpuThread = new Thread(new ThreadStart(Graphs.getPerformanceCounters));
             cpuThread.IsBackground = true;
@@ -51,11 +54,7 @@ namespace WindowsFormsApp1
             myTimer2.Tick += new EventHandler(TableUpdate);
             myTimer2.Interval = 1000;
             myTimer2.Start();
-
-            Communication communication = new Communication();
             
-
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -83,6 +82,11 @@ namespace WindowsFormsApp1
             CommandsButtons.secButton_Click();
         }
 
+        private void ayirButton_Click(object sender, EventArgs e)
+        {
+            CommandsButtons.ayirButton_Click();
+        }
+
 
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -101,5 +105,24 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
+        private void baslatButton_Click(object sender, EventArgs e)
+        {
+            CommandsButtons.baslatButton_Click();
+        }
+
+        private void durdurButton_Click(object sender, EventArgs e)
+        {
+            CommandsButtons.durdurButton_Click();
+        }
+
+        private void sertKalibreButton_Click(object sender, EventArgs e)
+        {
+            CommandsButtons.sertKalibreButton_Click();
+        }
+
+        private void yumursakKalibreButton_Click(object sender, EventArgs e)
+        {
+            CommandsButtons.yumusakKalibreButton_Click();
+        }
     }
 }

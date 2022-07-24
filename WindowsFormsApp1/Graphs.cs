@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
     class Graphs
     {
         Form1 form;
+        Communication comm;
         Chart sicaklikGrafik;
         Chart yukseklikGrafik;
         Chart yukseklikGrafik2;
@@ -24,9 +25,10 @@ namespace WindowsFormsApp1
 
         private double[] cpuArray = new double[60];
 
-        public Graphs(Form1 form, Chart sicaklikGrafik, Chart yukseklikGrafik, Chart yukseklikGrafik2, Chart basincGrafik, Chart basincGrafik2, Chart inisHiziGrafik, Chart gpsAltitudeGrafik, Chart pilGerilimiGrafik)
+        public Graphs(Form1 form, Communication comm, Chart sicaklikGrafik, Chart yukseklikGrafik, Chart yukseklikGrafik2, Chart basincGrafik, Chart basincGrafik2, Chart inisHiziGrafik, Chart gpsAltitudeGrafik, Chart pilGerilimiGrafik)
         {
             this.form = form;
+            this.comm = comm;
             this.sicaklikGrafik = sicaklikGrafik;
             this.yukseklikGrafik = yukseklikGrafik;
             this.yukseklikGrafik2 = yukseklikGrafik2;
@@ -48,28 +50,25 @@ namespace WindowsFormsApp1
             basincGrafik2.Series["Basınç 2 (Pa)"].Points.Clear();
             gpsAltitudeGrafik.Series["GPS Altitude (m)"].Points.Clear();
 
+
             for (int i = 0; i < cpuArray.Length - 1; ++i)
             {
-                sicaklikGrafik.Series["Sıcaklık (°C)"].Points.AddY(cpuArray[i]);
-                yukseklikGrafik.Series["Yükseklik 1 (m)"].Points.AddY(cpuArray[i]);
-                pilGerilimiGrafik.Series["Pil Gerilimi (V)"].Points.AddY(cpuArray[i]);
-                inisHiziGrafik.Series["İniş Hızı (m/s)"].Points.AddY(cpuArray[i]);
-                basincGrafik.Series["Basınç 1 (Pa)"].Points.AddY(cpuArray[i]);
-                yukseklikGrafik2.Series["Yükseklik 2 (m)"].Points.AddY(cpuArray[i]);
-                basincGrafik2.Series["Basınç 2 (Pa)"].Points.AddY(cpuArray[i]);
-                gpsAltitudeGrafik.Series["GPS Altitude (m)"].Points.AddY(cpuArray[i]);
+                sicaklikGrafik.Series["Sıcaklık (°C)"].Points.AddY(double.Parse(comm.package.temperature));
+                yukseklikGrafik.Series["Yükseklik 1 (m)"].Points.AddY(double.Parse(comm.package.altitude1));
+                pilGerilimiGrafik.Series["Pil Gerilimi (V)"].Points.AddY(double.Parse(comm.package.voltage));
+                inisHiziGrafik.Series["İniş Hızı (m/s)"].Points.AddY(double.Parse(comm.package.speed));
+                basincGrafik.Series["Basınç 1 (Pa)"].Points.AddY(double.Parse(comm.package.pressure1));
+                yukseklikGrafik2.Series["Yükseklik 2 (m)"].Points.AddY(double.Parse(comm.package.altitude2));
+                basincGrafik2.Series["Basınç 2 (Pa)"].Points.AddY(double.Parse(comm.package.pressure2));
+                gpsAltitudeGrafik.Series["GPS Altitude (m)"].Points.AddY(double.Parse(comm.package.gps1altitude));
             }
         }
 
         public void getPerformanceCounters()
         {
-            var cpuPerfCounter = new PerformanceCounter("Processor Information", "% Processor Time", "_Total");
-
+   
             while (true)
             {
-                cpuArray[cpuArray.Length - 1] = Math.Round(cpuPerfCounter.NextValue(), 0);
-
-                Array.Copy(cpuArray, 1, cpuArray, 0, cpuArray.Length - 1);
 
                 if (sicaklikGrafik.IsHandleCreated)
                 {

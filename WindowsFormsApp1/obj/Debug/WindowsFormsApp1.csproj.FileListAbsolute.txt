@@ -43,3 +43,15 @@ C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\HtmlAgil
 C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\SimpleTCP.dll
 C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\HtmlAgilityPack.xml
+C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.App.config
+C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\FireSharp.dll
+C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\kerem\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Net.Http.Primitives.xml
