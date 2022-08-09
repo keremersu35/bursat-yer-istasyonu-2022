@@ -19,8 +19,8 @@ namespace WindowsFormsApp1
         {
             IFirebaseConfig config = new FirebaseConfig
             {
-                BasePath = "https://bursat-99909-default-rtdb.firebaseio.com/",
-                AuthSecret = "PJYq71y5YF5OPOUDLK9dAVjCQWox4tFqQGTkblvf"
+                BasePath = "*****************,
+                AuthSecret = "****************"
             };
 
             client = new FireSharp.FirebaseClient(config);
