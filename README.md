@@ -1,3 +1,3 @@
 # Bursat Yer İstasyonu
 
-<img src="ss.png">
+<img src="WindowsFormsApp1/ss.png">
